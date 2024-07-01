@@ -1,4 +1,8 @@
-# goit-advancedjs-team-3
+# GOIT JS Advanced Team 3
+
+## Live page
+
+[Visit Live Page](https://olexandrd.github.io/goit-advancedjs-team-3/)
 
 ## Development environment setup
 
