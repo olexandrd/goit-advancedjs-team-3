@@ -1,0 +1,29 @@
+.menu {
+  display: flex;
+  gap: 6px;
+  border-radius: 60px;
+  background: var(--dark);
+  padding: 8px 50px;
+
+  .menu-item {
+    border-radius: 30px;
+    padding: 6px 12px;
+    line-height: 1.5;
+    background-color: var(--dark);
+    color: var(--light);
+
+    a {
+      color: var(--light);
+      text-decoration: none;
+    }
+
+    &.menu-item--active {
+      background-color: var(--light);
+      color: var(--dark);
+
+      a {
+        color: var(--dark);
+      }
+    }
+  }
+}

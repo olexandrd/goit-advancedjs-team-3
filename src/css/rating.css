@@ -1,0 +1,32 @@
+.rating {
+  display: flex;
+  gap: 2px;
+
+  .rating-label {
+    color: var(--dark);
+    font-feature-settings:
+      'clig' off,
+      'liga' off;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .rating-star-container {
+    display: flex;
+    width: 18px;
+    height: 18px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rating-star {
+    width: 14px;
+    height: 14px;
+  }
+
+  &.rating--dark {
+    .rating-label {
+      color: var(--light);
+    }
+  }
+}

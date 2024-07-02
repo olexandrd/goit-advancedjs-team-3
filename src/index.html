@@ -23,8 +23,7 @@
       referrerpolicy="no-referrer"
     />
     <link href="./css/common.css" rel="stylesheet" />
-    <link href="./css/buttons.css" rel="stylesheet" />
-    <link href="./css/search-input.css" rel="stylesheet" />
+
     <title>Your Energy</title>
     <link rel="icon" type="image/x-icon" href="./favicon.svg" />
   </head>
@@ -55,68 +54,5 @@
 
     <!-- Load scripts -->
     <load src="./partials/index_scripts.html" />
-
-    <h2>Buttons</h2>
-    <div style="width: 280px; height: 250px; background-color: #242424">
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          padding: 16px;
-          align-items: self-start;
-        "
-      >
-        <button class="button">Add to favorites<span>ic</span></button>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          padding: 16px;
-          align-items: self-start;
-        "
-      >
-        <button class="button">Give a rating</button>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          padding: 16px;
-          align-items: self-start;
-        "
-      >
-        <button class="button">Remove from favorites<span>ic</span></button>
-      </div>
-    </div>
-
-    <h2>Inputs</h2>
-    <div style="width: 280px; height: 250px; border: 1px solid #242424">
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          padding: 16px;
-          align-items: self-start;
-        "
-      >
-        <form class="search-form">
-          <input
-            type="search"
-            name="search"
-            placeholder="Search"
-            class="search-input"
-          />
-          <span class="search-input-icon search-icon">🔍</span>
-          <span class="search-input-icon cross-icon">✖️</span>
-        </form>
-      </div>
-    </div>
-
-    <script type="module" src="./js/search-input.js"></script>
   </body>
 </html>
