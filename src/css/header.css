@@ -1,0 +1,126 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 111;
+  background-color: var(--light);
+  transition: box-shadow var(--transition);
+}
+
+.header-scrolled {
+  box-shadow: 0px 3px 8px 0px rgba(18, 20, 23, 0.5);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.logo {
+  width: 132px;
+  height: 24px;
+}
+
+.icon-logo {
+  fill: var(--dark);
+}
+
+.nav,
+.menu-soc-list {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .nav,
+  .menu-soc-list {
+    display: flex;
+  }
+}
+
+.nav-list {
+  width: 233px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  background-color: var(--dark);
+  gap: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-list {
+    width: 265px;
+  }
+}
+
+.nav-link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 6px 12px;
+  color: var(--light);
+  border-radius: 30px;
+  outline: transparent;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.nav-link.active,
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+.menu-soc-list {
+  gap: 12px;
+}
+
+.menu-soc-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(36, 36, 36, 0.1);
+  border-radius: 10px;
+  outline: transparent;
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.menu-soc-link:hover,
+.menu-soc-link:focus {
+  border-color: transparent;
+  background-color: rgba(36, 36, 36, 0.8);
+}
+
+.menu-soc-icon {
+  fill: var(--dark);
+  opacity: 0.8;
+  transition: fill var(--transition);
+}
+
+.menu-soc-link:hover .menu-soc-icon,
+.menu-soc-link:focus .menu-soc-icon {
+  fill: var(--light);
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.mobile-menu-icon {
+  stroke: var(--dark);
+}
