@@ -1,6 +1,4 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 
