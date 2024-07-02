@@ -1,3 +1,5 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
 const mobileMenu = document.querySelector('.js-menu-container');
 const openMenuBtn = document.querySelector('.js-open-menu');
 const closeMenuBtn = document.querySelector('.js-close-menu');
@@ -8,15 +10,13 @@ const toggleMenu = () => {
     openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
   openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
   mobileMenu.classList.toggle('is-open');
-  const scrollLockMethod = !isMenuOpen
-    ? 'disableBodyScroll'
-    : 'enableBodyScroll';
-  bodyScrollLock[scrollLockMethod](document.body);
 
   if (!isMenuOpen) {
+    disableBodyScroll(document.body);
     document.addEventListener('keydown', onEscKeyPress);
     mobileMenu.addEventListener('click', onBackdropClick);
   } else {
+    enableBodyScroll(document.body);
     document.removeEventListener('keydown', onEscKeyPress);
     mobileMenu.removeEventListener('click', onBackdropClick);
   }
