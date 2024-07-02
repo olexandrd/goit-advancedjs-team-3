@@ -12,6 +12,11 @@ export default defineConfig(({ command }) => {
       sourcemap: true,
 
       rollupOptions: {
+        input: {
+          main: 'src/index.html',
+          favorites: 'src/favorites.html',
+          components: 'src/components.html',
+        },
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {

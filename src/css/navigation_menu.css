@@ -12,7 +12,7 @@
     background-color: var(--dark);
     color: var(--light);
 
-    a {
+    & a {
       color: var(--light);
       text-decoration: none;
     }
@@ -21,7 +21,7 @@
       background-color: var(--light);
       color: var(--dark);
 
-      a {
+      & a {
         color: var(--dark);
       }
     }
