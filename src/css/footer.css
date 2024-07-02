@@ -1,0 +1,50 @@
+.footer-background {
+    background-color: var(--dark);
+}
+
+.footer-container {
+    padding-top: 40px;
+    padding-bottom: 10px
+}
+
+/* .container {} should be in common*/ 
+
+.footer-left-wrap {}
+
+.logo {}
+
+.footer-logo {}
+
+.footer-socials-list {}
+
+.socials-link {}
+
+.socials-icon {}
+
+.socials-icon-footer {}
+
+.socials__icon {}
+
+.socials__icon-footer {}
+
+.footer-right-wrap {}
+
+.footer-title {}
+
+.accent-text {}
+
+.subscribe-form {}
+
+.subscribe-form-title {}
+
+.subscribe-form-input {}
+
+.subscribe-form-btn {}
+
+.footer-text-outer-wrap {}
+
+.footer-text {}
+
+.footer-text-inner-wrap {}
+
+.privacy-policy-text {}
