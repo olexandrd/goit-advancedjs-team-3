@@ -6,14 +6,14 @@ const refs = {
   pagination: document.querySelector('.js-pagination'),
 };
 
-const Filters = {
+const FILTERS = {
   MUSCLES: 'Muscles',
   BODY_PARTS: 'Body parts',
   EQUIPMENT: 'Equipment',
 };
 
 const queryParamsFilters = new URLSearchParams({
-  filter: Filters.MUSCLES,
+  filter: FILTERS.MUSCLES,
   page: 1,
   limit: window.matchMedia('(min-width: 768px)').matches ? 12 : 9,
 });
@@ -23,4 +23,4 @@ const dataOptions = {
   totalPages: 0,
 };
 
-export { BASE_URL, Filters, queryParamsFilters, refs, dataOptions };
+export { BASE_URL, FILTERS, queryParamsFilters, refs, dataOptions };

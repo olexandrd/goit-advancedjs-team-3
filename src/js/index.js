@@ -9,7 +9,6 @@ window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   } else {
     queryParamsFilters.set('limit', 9);
   }
-  console.log(queryParamsFilters.toString());
   serviceGetFilters();
 });
 
@@ -22,7 +21,6 @@ serviceGetFilters()
     const activePage = Array.from(refs.pagination.childNodes).find(
       p => p.dataset.id == data.page
     );
-    console.log(activePage); // TODO remove
     activePage.classList.add('active');
   })
   .catch(error => {
