@@ -30,20 +30,26 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    stroke: var(--dark);
   }
 
   .search-icon {
+    fill: none;
     right: 14px;
   }
 
   .cross-icon {
     display: none;
     right: 38px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &:has(.search-input:not(:placeholder-shown)) {
     .cross-icon {
-      display: block;
+      display: inline-block;
     }
   }
 }

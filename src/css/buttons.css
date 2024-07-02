@@ -17,8 +17,16 @@
     height: 20px;
   }
 
-  .button-icon path {
-    transition: stroke 0.3s ease;
+  .button-icon {
+    width: 20px;
+    height: 20px;
+
+    stroke: var(--dark);
+    fill: var(--light);
+
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-property: fill, stroke;
   }
 
   &:hover {
@@ -27,8 +35,9 @@
     color: var(--light);
     border-color: var(--light);
 
-    .button-icon path {
+    .button-icon {
       stroke: var(--light);
+      fill: var(--dark);
     }
   }
 }
@@ -43,7 +52,10 @@
   background-color: var(--light);
   transition: background-color 0.3s ease;
 
-  .social-button-icon path {
+  .social-button-icon {
+    width: 28px;
+    height: 28px;
+    opacity: 0.8;
     transition: fill 0.3s ease;
   }
 
@@ -51,7 +63,8 @@
     cursor: pointer;
     background: rgba(36, 36, 36, 0.8);
 
-    .social-button-icon path {
+    .social-button-icon {
+      opacity: 1;
       fill: var(--light);
     }
   }
@@ -61,17 +74,14 @@
     background-color: var(--dark);
 
     .social-button-icon {
-      opacity: 0.8;
-    }
-
-    .social-button-icon path {
       fill: var(--light);
     }
 
     &:hover {
       background-color: var(--light);
 
-      .social-button-icon path {
+      .social-button-icon {
+        opacity: 0.8;
         fill: var(--dark);
       }
     }
@@ -91,6 +101,7 @@
   .scroll-up-button-icon {
     width: 20px;
     height: 20px;
+    fill: var(--light);
   }
 
   &.scroll-up-button--large {
