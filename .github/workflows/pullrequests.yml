@@ -1,0 +1,43 @@
+name: Deploy static content to Pages
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write # Added permission for posting comments
+
+jobs:
+  preview:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          BASE_PART=$(echo $GITHUB_REPOSITORY | sed 's|^.*/||g')
+          npm run build -- --base=/${BASE_PART}/
+
+      - name: Deploy to GitHub Pages Preview
+        uses: rossjrw/pr-preview-action@v1.4.7
+        with:
+          source-dir: ./dist/
+          umbrella-dir: pr-preview
+          preview-branch: gh-pages
