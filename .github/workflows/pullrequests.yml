@@ -33,7 +33,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           BASE_PART=$(echo $GITHUB_REPOSITORY | sed 's|^.*/||g')
-          npm run build -- --base=/${BASE_PART}/
+          npm run build -- --base=/${BASE_PART}/pr-preview/pr-${{ github.event.pull_request.number }}
 
       - name: Deploy to GitHub Pages Preview
         uses: rossjrw/pr-preview-action@v1.4.7
