@@ -190,7 +190,8 @@
   color: var(--light);
 }
 
-.subscribe-form-input:focus {
+.subscribe-form-input:focus,
+.subscribe-form-input:hover {
   outline: none;
   border-color: orange;
 }
@@ -223,13 +224,11 @@
   background-color: var(--light-grey);
 }
 
-@media screen and (min-width: 1440px) {
-  .subscribe-form-btn:hover,
-  .subscribe-form-btn:focus {
-    border: 1px solid var(--light);
-    color: var(--light);
-    background-color: var(--dark);
-  }
+.subscribe-form-btn:hover,
+.subscribe-form-btn:focus {
+  border: 1px solid var(--light);
+  color: var(--light);
+  background-color: var(--dark);
 }
 
 @media screen and (min-width: 768px) {

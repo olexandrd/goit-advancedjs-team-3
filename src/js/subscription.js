@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Subscription failed. Please try again.');
     } finally {
       subscribeBtn.disabled = false;
-      subscribeBtn.textContent = 'Subscribe';
+      subscribeBtn.textContent = 'Send';
     }
   });
 });
