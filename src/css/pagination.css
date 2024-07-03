@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  gap: 8px;
+
+  .pagination-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border: none;
+    color: var(--light-grey);
+    font-size: 24px;
+    line-height: 1.33333;
+    letter-spacing: 0.96px;
+    cursor: pointer;
+
+    &.pagination-item--active {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      cursor: default;
+    }
+  }
+}
