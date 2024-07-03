@@ -1,7 +1,7 @@
-import { refs, dataOptions } from '../js/constants';
-import { serviceGetFilters } from '../js/services';
-import { renderCategories } from '../js/renderCategories';
-import { renderPagination } from '../js/renderPagination';
+import { refs, dataOptions } from './constants';
+import { serviceGetFilters } from './services';
+import { renderCategories } from './renderCategories';
+import { renderPagination } from './renderPagination';
 
 function rerender() {
   serviceGetFilters()

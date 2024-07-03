@@ -2,10 +2,13 @@
   gap: 20px;
 }
 
+.filter-item button {
+  cursor: pointer;
+}
+
 .filter-item.active button {
   background-color: var(--dark);
   color: var(--light);
-  cursor: pointer;
 }
 
 .filtered-list {

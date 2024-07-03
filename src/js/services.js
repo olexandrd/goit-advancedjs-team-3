@@ -2,7 +2,7 @@ import {
   BASE_URL,
   queryParamsFilters,
   queryParamsExercises,
-} from '../js/constants';
+} from './constants';
 
 const requestOptionsGET = {
   method: 'GET',

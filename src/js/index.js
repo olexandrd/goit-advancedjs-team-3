@@ -2,9 +2,9 @@ import {
   queryParamsFilters,
   queryParamsExercises,
   refs,
-} from '../js/constants';
-import { rerender } from '../js/rerender';
-import { onFilterClick, onPaginationClick } from '../js/eventHandlers';
+} from './constants';
+import { rerender } from './rerender';
+import { onFilterClick, onPaginationClick } from './eventHandlers';
 import './search-input';
 
 window.matchMedia('(min-width: 768px)').addEventListener('change', e => {

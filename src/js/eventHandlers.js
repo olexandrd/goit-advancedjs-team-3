@@ -2,8 +2,8 @@ import {
   queryParamsFilters,
   queryParamsExercises,
   FILTERS,
-} from '../js/constants';
-import { rerender } from '../js/rerender';
+} from './constants';
+import { rerender } from './rerender';
 
 function onPaginationClick(e) {
   const target = e.target;
