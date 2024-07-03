@@ -26,10 +26,10 @@
     <title>Your Energy</title>
     <link rel="icon" type="image/x-icon" href="/goit-advancedjs-team-3/assets/favicon-5df10a06.svg" />
     <script type="module" crossorigin src="/goit-advancedjs-team-3/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/main-20f5286a.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-a99b05e6.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/main-5eb84389.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-81799c6d.js">
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/vendor-9ceb8365.js">
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/main-6ad311b6.css">
+    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/main-155cab2c.css">
   </head>
   <body>
     <header class="header">
@@ -106,14 +106,21 @@
 
       <!-- Exercises Section -->
       <section>
-  <ul class="filters js-filters">
-    <li data-filter="Muscles"><button>Muscles</button></li>
-    <li data-filter="Body parts"><button>Body Parts</button></li>
-    <li data-filter="Equipment"><button>Equipment</button></li>
+  <ul class="list filters js-filters">
+    <li data-filter="Muscles" class="filter-item active">
+      <button>Muscles</button>
+    </li>
+    <li data-filter="Body parts" class="filter-item">
+      <button>Body Parts</button>
+    </li>
+    <li data-filter="Equipment" class="filter-item">
+      <button>Equipment</button>
+    </li>
   </ul>
-  <ul class="filtered-list js-filtered-list"></ul>
-  <ul class="pagination js-pagination"></ul>
+  <ul class="list filtered-list js-filtered-list"></ul>
+  <ul class="list pagination js-pagination"></ul>
 </section>
+
       <!-- Quote of the day -->
       <div></div>
 
