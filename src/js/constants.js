@@ -18,9 +18,21 @@ const queryParamsFilters = new URLSearchParams({
   limit: window.matchMedia('(min-width: 768px)').matches ? 12 : 9,
 });
 
+const queryParamsExercises = new URLSearchParams({
+  page: 1,
+  limit: window.matchMedia('(min-width: 768px)').matches ? 10 : 8,
+});
+
 const dataOptions = {
   page: 1,
   totalPages: 0,
 };
 
-export { BASE_URL, FILTERS, queryParamsFilters, refs, dataOptions };
+export {
+  BASE_URL,
+  FILTERS,
+  queryParamsFilters,
+  queryParamsExercises,
+  refs,
+  dataOptions,
+};
