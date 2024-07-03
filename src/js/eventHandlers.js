@@ -2,8 +2,9 @@ import {
   queryParamsFilters,
   queryParamsExercises,
   FILTERS,
+  refs,
 } from './constants';
-import { rerender } from './rerender';
+import { rerender, rerenderExercises } from './rerender';
 
 function onPaginationClick(e) {
   const target = e.target;
@@ -13,8 +14,13 @@ function onPaginationClick(e) {
 
   const page = Number(paginationItem.dataset.id);
   queryParamsFilters.set('page', page);
+  queryParamsExercises.set('page', page);
 
-  rerender();
+  if (refs.exerciseHeader.dataset.exercise) {
+    rerenderExercises(queryParamsExercises);
+  } else {
+    rerender();
+  }
 }
 
 function onFilterClick(e) {
@@ -35,10 +41,42 @@ function onFilterClick(e) {
     queryParamsFilters.set('filter', FILTERS[filterKey]);
     queryParamsFilters.set('page', 1);
 
+    queryParamsExercises.delete('muscles');
+    queryParamsExercises.delete('bodypart');
+    queryParamsExercises.delete('equipment');
     queryParamsExercises.set('page', 1);
 
     rerender();
   }
+  resetExerciseHeader();
 }
 
-export { onPaginationClick, onFilterClick };
+function onExerciseClick(e) {
+  const target = e.target;
+  const exerciseItem = target.closest('li.filtered-item');
+  if (!exerciseItem) return;
+  let exerciseFilter = exerciseItem.dataset.filter.toString().toLowerCase();
+  if (exerciseFilter === 'body parts') {
+    exerciseFilter = 'bodypart';
+  }
+  const exerciseName = exerciseItem.dataset.name;
+
+  setExerciseHeader(exerciseName);
+
+  queryParamsExercises.set(exerciseFilter, exerciseName);
+  queryParamsExercises.set('page', 1);
+
+  rerenderExercises(queryParamsExercises);
+}
+
+function setExerciseHeader(name) {
+  refs.exerciseHeader.textContent = ` / ${name}`;
+  refs.exerciseHeader.dataset.exercise = name;
+}
+
+function resetExerciseHeader() {
+  refs.exerciseHeader.textContent = '';
+  refs.exerciseHeader.dataset.exercise = '';
+}
+
+export { onPaginationClick, onFilterClick, onExerciseClick };
