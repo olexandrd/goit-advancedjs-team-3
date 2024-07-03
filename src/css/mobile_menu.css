@@ -47,11 +47,6 @@
   transition: stroke var(--transition);
 }
 
-/* .menu-close-btn:hover .menu-close-icon,
-.menu-close-btn:focus .menu-close-icon {
-  stroke: var(--black);
-}*/
-
 .mobile-menu {
   flex-direction: column;
   align-items: center;
