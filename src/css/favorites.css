@@ -1,0 +1,111 @@
+.favorites-image {
+  display: block;
+  height: 119px;
+  width: 335px;
+  outline: 1px solid red;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.favorites-container {
+  outline: 2px solid blueviolet;
+  margin: 0 auto;
+  /*some*/
+}
+.practice-list {
+  background-color: #f4f4f4;
+  outline: 1px solid red;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.practice-list-item {
+  border: 1px solid green;
+  max-width: 335px;
+  height: 141px;
+}
+.favorites-pagination {
+  display: block;
+  height: 31px;
+  outline: 1px solid red;
+  width: 80px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.favorites-text {
+  color: #242424;
+  font-size: 14px;
+  line-height: 1.2857;
+  text-align: center;
+  max-width: 318px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .favorites-image {
+    width: 704px;
+    height: 377px;
+  }
+  .container {
+    padding: 0 32px;
+  }
+  .practice-list {
+    flex-direction: unset;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .practice-list-item {
+    width: 344px;
+    max-width: 344px;
+  }
+  .practice-list {
+    max-width: 704px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .favorites-image {
+    margin: 0;
+    width: 494px;
+    height: 387px;
+  }
+  .practice-list {
+    max-width: 850px;
+  }
+  .favorites-container {
+    margin-top: 200px;
+    display: flex;
+  }
+  .practice-list-item {
+    width: 405px;
+    max-width: 405px;
+    row-gap: 16px;
+    column-gap: 32px;
+  }
+  .practice-list {
+    height: 487px;
+    overflow: scroll;
+  }
+  /* Customize the scrollbar track */
+  .practice-list::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 153px;
+  }
+
+  /* Customize the track (background of the scrollbar) */
+  .practice-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  /* Customize the thumb (the draggable part of the scrollbar) */
+  .practice-list::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+  }
+
+  /* Customize the thumb when hovered */
+  .practice-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
