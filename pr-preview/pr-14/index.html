@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Your Energy: Get Body in shape, Stay healthy."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <title>Your Energy</title>
+    <link rel="icon" type="image/x-icon" href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/favicon-5df10a06.svg" />
+    <script type="module" crossorigin src="/goit-advancedjs-team-3/pr-preview/pr-14/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/main-555b0601.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/search-input-81799c6d.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/vendor-9ceb8365.js">
+    <link rel="stylesheet" href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/main-1f3984c6.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+  <a href="./index.html" class="link logo">
+    <svg class="icon-logo" width="132" height="24">
+      <use href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/icons-b70fffe3.svg#icon-logo"></use>
+    </svg>
+  </a>
+  <nav class="nav">
+    <ul class="list nav-list">
+      <li><a href="./index.html" class="link nav-link active">Home</a></li>
+      <li><a href="./favorites.html" class="link nav-link">Favorites</a></li>
+    </ul>
+  </nav>
+  <ul class="list menu-soc-list">
+    <li>
+      <a
+        href="https://www.facebook.com/goITclub/"
+        class="link menu-soc-link"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        aria-label="Navigate to Facebook goITclub"
+      >
+        <svg class="menu-soc-icon" width="28" height="28">
+          <use href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/icons-b70fffe3.svg#icon-facebook"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/goitclub/"
+        class="link menu-soc-link"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        aria-label="Navigate to Instagram goitclub"
+      >
+        <svg class="menu-soc-icon" width="28" height="28">
+          <use href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/icons-b70fffe3.svg#icon-instagram"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.youtube.com/c/GoIT"
+        class="link menu-soc-link"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        aria-label="Navigate to YouTube GoIT"
+      >
+        <svg class="menu-soc-icon" width="28" height="28">
+          <use href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/icons-b70fffe3.svg#icon-youtube"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+  <button
+    class="menu-toggle js-open-menu"
+    type="button"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+    aria-label="Open menu"
+  >
+    <svg class="mobile-menu-icon" width="32" height="32">
+      <use href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/icons-b70fffe3.svg#icon-burger-menu"></use>
+    </svg>
+  </button>
+</div>
+
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section></section>
+
+      <!-- Exercises Section -->
+      <section>
+  <ul class="list filters js-filters">
+    <li data-filter="Muscles" class="filter-item active">
+      <button>Muscles</button>
+    </li>
+    <li data-filter="Body parts" class="filter-item">
+      <button>Body Parts</button>
+    </li>
+    <li data-filter="Equipment" class="filter-item">
+      <button>Equipment</button>
+    </li>
+  </ul>
+  <ul class="list filtered-list js-filtered-list"></ul>
+  <ul class="list pagination js-pagination"></ul>
+</section>
+
+      <!-- Quote of the day -->
+      <div></div>
+
+    </main>
+    <footer class="footer">
+      <section class="footer-background">
+  <div class="footer-container container">
+    <div class="footer-left-wrap">
+      <a class="logo" id="logo" href="/index.html">
+        <svg
+          class="footer-logo logo"
+          width="132"
+          height="24"
+          aria-label="scroll down icon"
+        >
+          <use href="./img/sprite.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <ul class="footer-socials-list">
+        <li>
+          <a
+            class="socials-link"
+            href="https://www.facebook.com/goITclub/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="facebook icon"
+          >
+            <svg class="socials-icon socials-icon-footer" width="7" height="17">
+              <use href="./img/sprite.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="socials-link"
+            href="https://www.instagram.com/goitclub/"
+            aria-label="instagram icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="socials__icon socials__icon-footer"
+              width="24"
+              height="24"
+            >
+              <use href="./img/sprite.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="socials-link"
+            href="https://www.youtube.com/c/GoIT"
+            aria-label="youtube icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="socials-icon socials-icon-footer"
+              width="24"
+              height="24"
+            >
+              <use href="./img/sprite.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-right-wrap">
+      <h2 class="footer-title">
+        Transforming your <span class="accent-text">body</span> shape with us
+      </h2>
+      <form class="subscribe-form" id="subscribeForm">
+        <h3 class="subscribe-form-title">
+          Subscribe and learn about new exercises!
+        </h3>
+        <input
+          class="subscribe-form-input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          required
+        />
+        <button class="subscribe-form-btn" type="submit" id="subscribeBtn">
+          Send
+        </button>
+      </form>
+    </div>
+    <div class="footer-text-outer-wrap">
+      <div>
+        <p class="footer-text">Your Energy. All rights reserved.</p>
+      </div>
+      <div class="footer-text-inner-wrap">
+        <p class="footer-text privacy-policy-text">
+          <span>Privacy Policy</span><span>&sol;</span
+          ><span>Terms of Service</span>
+        </p>
+        <p class="footer-text">©2023</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </footer>
+
+    <!--  Menu -->
+    <div class="menu-backdrop js-menu-container">
+  <div class="menu-container" id="mobile-menu">
+    <button
+      class="menu-toggle menu-close-btn js-close-menu"
+      aria-label="Close menu"
+    >
+      <svg class="menu-close-icon" width="32" height="32">
+        <use href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/icons-b70fffe3.svg#icon-close"></use>
+      </svg>
+    </button>
+
+    <ul class="list mobile-menu">
+      <li><a href="./index.html" class="link mobile-menu-link">Home</a></li>
+      <li>
+        <a href="./favorites.html" class="link mobile-menu-link">Favorites</a>
+      </li>
+    </ul>
+    <ul class="list mobile-menu-soc-list">
+      <li>
+        <a
+          href="https://www.facebook.com/goITclub/"
+          class="link mobile-menu-soc-link"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          aria-label="Navigate to Facebook goITclub"
+        >
+          <svg class="mobile-menu-soc-icon" width="28" height="28">
+            <use href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/icons-b70fffe3.svg#icon-facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/goitclub/"
+          class="link mobile-menu-soc-link"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          aria-label="Navigate to Instagram goitclub"
+        >
+          <svg class="mobile-menu-soc-icon" width="28" height="28">
+            <use href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/icons-b70fffe3.svg#icon-instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/c/GoIT"
+          class="link mobile-menu-soc-link"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          aria-label="Navigate to YouTube GoIT"
+        >
+          <svg class="mobile-menu-soc-icon" width="28" height="28">
+            <use href="/goit-advancedjs-team-3/pr-preview/pr-14/assets/icons-b70fffe3.svg#icon-youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+    <!--  Exercise pop-up -->
+    <div></div>
+
+
+    <!--  Rating pop-up -->
+    <div></div>
+
+
+    <!-- Load scripts -->
+    
+
+
+  </body>
+</html>
