@@ -1,32 +1,28 @@
-import { queryParamsFilters, dataOptions, refs } from '../js/constants';
-import { serviceGetFilters } from '../js/services';
-import { renderPagination } from '../js/renderPagination';
-import { renderCategories } from '../js/renderCategories';
+import {
+  queryParamsFilters,
+  queryParamsExercises,
+  refs,
+} from './constants';
+import { rerender } from './rerender';
+import { onFilterClick, onPaginationClick } from './eventHandlers';
 import './search-input';
 
 window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   if (e.matches) {
     queryParamsFilters.set('limit', 12);
+    queryParamsExercises.set('limit', 10);
   } else {
     queryParamsFilters.set('limit', 9);
+    queryParamsExercises.set('limit', 8);
   }
-  serviceGetFilters();
+
+  queryParamsFilters.set('page', 1);
+  queryParamsExercises.set('page', 1);
+
+  rerender();
 });
 
-serviceGetFilters()
-  .then(data => {
-    dataOptions.totalPages = data.totalPages;
-    renderCategories(data.results);
-    renderPagination(data.totalPages);
-
-    const activePage = Array.from(refs.pagination.childNodes).find(
-      p => p.dataset.id == data.page
-    );
-    activePage.classList.add('active');
-  })
-  .catch(error => {
-    console.log(error); // TODO toast error message?
-  });
+rerender();
 
 refs.filter.addEventListener('click', onFilterClick);
-function onFilterClick(e) {}
+refs.pagination.addEventListener('click', onPaginationClick);

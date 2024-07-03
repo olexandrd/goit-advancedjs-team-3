@@ -1,4 +1,4 @@
-import { refs } from '../js/constants';
+import { refs } from './constants';
 
 export function renderPagination(totalPages) {
   let markup = '';

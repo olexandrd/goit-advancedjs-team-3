@@ -3,8 +3,8 @@ const searchInputCrossIcon = document.querySelector(
   '.search-input-icon.cross-icon'
 );
 
-searchInputCrossIcon.addEventListener('click', () => {
-  searchForm.reset();
-});
+// searchInputCrossIcon.addEventListener('click', () => {
+//   searchForm.reset();
+// });
 
 export {};
