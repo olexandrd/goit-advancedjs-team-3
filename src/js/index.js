@@ -2,6 +2,7 @@ import { queryParamsFilters, dataOptions, refs } from '../js/constants';
 import { serviceGetFilters } from '../js/services';
 import { renderPagination } from '../js/renderPagination';
 import { renderCategories } from '../js/renderCategories';
+import './search-input';
 
 window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   if (e.matches) {
