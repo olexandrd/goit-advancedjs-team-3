@@ -1,4 +1,8 @@
-import { BASE_URL, queryParamsFilters } from '../js/constants';
+import {
+  BASE_URL,
+  queryParamsFilters,
+  queryParamsExercises,
+} from './constants';
 
 const requestOptionsGET = {
   method: 'GET',
@@ -8,11 +12,6 @@ const requestOptionsGET = {
 };
 
 // Exercises
-
-const queryParamsExercises = new URLSearchParams({
-  page: 1,
-  limit: window.matchMedia('(min-width: 768px)').matches ? 10 : 8,
-});
 
 export async function serviceGetExercises({
   bodypart,

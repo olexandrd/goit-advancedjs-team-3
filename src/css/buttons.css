@@ -1,0 +1,120 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.5;
+  border-radius: 30px;
+  padding: 12px 24px;
+  color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid transparent;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-property: background-color, color, border-color;
+
+  .button-icon-container {
+    width: 20px;
+    height: 20px;
+  }
+
+  .button-icon {
+    width: 20px;
+    height: 20px;
+
+    stroke: var(--dark);
+    fill: var(--light);
+
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-property: fill, stroke;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--light);
+    border-color: var(--light);
+
+    .button-icon {
+      stroke: var(--light);
+      fill: var(--dark);
+    }
+  }
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(36, 36, 36, 0.1);
+  background-color: var(--light);
+  transition: background-color 0.3s ease;
+
+  .social-button-icon {
+    width: 28px;
+    height: 28px;
+    opacity: 0.8;
+    transition: fill 0.3s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: rgba(36, 36, 36, 0.8);
+
+    .social-button-icon {
+      opacity: 1;
+      fill: var(--light);
+    }
+  }
+
+  &.social-button--dark {
+    border: 1px solid rgba(244, 244, 244, 0.1);
+    background-color: var(--dark);
+
+    .social-button-icon {
+      fill: var(--light);
+    }
+
+    &:hover {
+      background-color: var(--light);
+
+      .social-button-icon {
+        opacity: 0.8;
+        fill: var(--dark);
+      }
+    }
+  }
+}
+
+.scroll-up-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--dark);
+
+  .scroll-up-button-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--light);
+  }
+
+  &.scroll-up-button--large {
+    width: 100px;
+    height: 100px;
+
+    .scroll-up-button-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
