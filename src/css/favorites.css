@@ -1,0 +1,51 @@
+.favorites-image{
+    display: block;
+    height: 119px;
+    max-width: 335px;
+    border: 1px solid red;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.favorites-container{
+    border: 2px solid blueviolet;
+    max-width: 375px;
+    margin: 0 auto;
+    /*some*/
+}
+.practice-list{
+    background-color: #f4f4f4;
+;
+    border: 1px solid red;
+    margin: 0 auto;
+    max-width: 375px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px
+}
+.practice-list-item {
+    border: 1px solid green;
+    max-width: 335px;
+    height: 141px;
+}
+.favorites-pagination{
+    display: block;
+    height: 31px;
+    border: 1px solid red;
+    width: 80px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+.hidden {
+    display: none;
+}
+
+.favorites-text{
+    color:  #242424;
+    font-size: 14px;
+    line-height: 1.2857;
+    text-align: center;
+    max-width: 318px;
+    margin: 0 auto;
+}
+
