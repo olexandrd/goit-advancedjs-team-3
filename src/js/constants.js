@@ -4,6 +4,7 @@ const refs = {
   list: document.querySelector('.js-filtered-list'),
   filter: document.querySelector('.js-filters'),
   pagination: document.querySelector('.js-pagination'),
+  exerciseHeader: document.querySelector('.js-exercise-header'),
 };
 
 const FILTERS = {

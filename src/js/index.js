@@ -1,10 +1,10 @@
-import {
-  queryParamsFilters,
-  queryParamsExercises,
-  refs,
-} from './constants';
+import { queryParamsFilters, queryParamsExercises, refs } from './constants';
 import { rerender } from './rerender';
-import { onFilterClick, onPaginationClick } from './eventHandlers';
+import {
+  onFilterClick,
+  onPaginationClick,
+  onExerciseClick,
+} from './eventHandlers';
 import './search-input';
 
 window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
@@ -26,3 +26,4 @@ rerender();
 
 refs.filter.addEventListener('click', onFilterClick);
 refs.pagination.addEventListener('click', onPaginationClick);
+refs.list.addEventListener('click', onExerciseClick);
