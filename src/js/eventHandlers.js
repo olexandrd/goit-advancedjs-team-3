@@ -9,8 +9,11 @@ import { resetExerciseHeader, setExerciseHeader } from './header';
 import { openExercisePopUp } from './exercisePopUp.js';
 
 function onPaginationClick(e) {
+  debugger;
   const target = e.target;
-  const paginationItem = target.closest('li.pagination-item');
+  const paginationItem =
+    target.closest('li.pagination-item:not(.active):not(.three-dots)') ??
+    target.closest('li.pagination-arrow:not(.disabled)');
 
   if (!paginationItem) return;
 
