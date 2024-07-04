@@ -88,13 +88,6 @@ function onSearchFormSubmit(e) {
   rerenderExercises();
 }
 
-export {
-  onPaginationClick,
-  onFilterClick,
-  onExerciseClick,
-  onSearchFormSubmit,
-};
-
 function onExerciseStartClick(e) {
   const target = e.target.closest('.exercise-start-btn');
 
@@ -108,4 +101,10 @@ function onExerciseStartClick(e) {
   }
 }
 
-export { onPaginationClick, onFilterClick, onExerciseClick, onExerciseStartClick };
+export {
+  onPaginationClick,
+  onFilterClick,
+  onExerciseClick,
+  onSearchFormSubmit,
+  onExerciseStartClick,
+};
