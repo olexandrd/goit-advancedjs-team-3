@@ -60,28 +60,49 @@
   margin-bottom: 10px;
 }
 
+.exercise-rating-wrapper {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .exercise-rating {
+  display: inline;
   color: var(--light);
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
-  padding-bottom: 20px;
-  border-bottom:  1px solid var(--light);
-  margin-bottom: 10px;
+  margin-right: 2px;
+}
+
+.exercise-rating-stars-wrapper {
+  display: inline-flex;
+  gap: 2px;
+  line-height: 1;
+}
+
+.exercise-rating-star {
+
 }
 
 .exercise-data {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  row-gap: 0;
   min-height: 64px;
-  border-bottom:  1px solid var(--light);
+  border-top:  1px solid var(--light-20);
+  padding-top: 10px;
+  border-bottom:  1px solid var(--light-20);
   margin-bottom: 20px;
 }
 
 .exercise-data-list-item {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .exercise-data-parameter-name {
-  color: var(--light);
+  color: var(--light-40);
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
@@ -100,7 +121,7 @@
 }
 
 .exercise-description {
-  color: var(--light);
+  color: var(--light-60);
   font-weight: 400;
   font-size: 14px;
   line-height: 1.286;

@@ -37,3 +37,7 @@ export {
   refs,
   dataOptions,
 };
+
+export const exercisePopUpBackdrop = document.querySelector('.exercise-pop-up-backdrop');
+export const exercisePopUpContent = document.querySelector('.exercise-pop-up-content');
+export const exercisePopUpCloseBtn = document.querySelector('.exercise-pop-up-close-btn');
