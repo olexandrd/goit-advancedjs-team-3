@@ -16,6 +16,7 @@ const refs = {
   exercisePopUpContent: document.querySelector('.exercise-pop-up-content'),
   exercisePopUpCloseBtn: document.querySelector('.exercise-pop-up-close-btn'),
   exercisesContainer: document.querySelector('.exercises-container'),
+  body: document.querySelector('body'),
 };
 
 const FILTERS = {
