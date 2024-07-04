@@ -33,10 +33,37 @@
     <main>
       <!-- Hero Section -->
       <load src="./partials/hero.html" />
-      <!-- Exercises Section -->
-      <load src="./partials/exercises.html" />
-      <!-- Quote of the day -->
-      <load src="./partials/quote.html" />
+      <!-- Main Section -->
+      <section class="main-section">
+        <div class="container">
+          <div class="exercises-header-container">
+            <h2 class="exercise-header js-exercise-header">Exercises</h2>
+            <span
+              data-exercise=""
+              class="exercise-title-span js-exercise-header-span"
+            ></span>
+          </div>
+          <ul class="list filters js-filters">
+            <li data-filter="Muscles" class="filter-item active">
+              <button>Muscles</button>
+            </li>
+            <li data-filter="Body parts" class="filter-item">
+              <button>Body Parts</button>
+            </li>
+            <li data-filter="Equipment" class="filter-item">
+              <button>Equipment</button>
+            </li>
+          </ul>
+          <div class="main-content">
+            <aside class="aside">
+              <!-- Quote of the day -->
+              <load src="./partials/quote.html" />
+            </aside>
+            <!-- Exercises Section -->
+            <load src="./partials/exercises.html" />
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <load src="./partials/footer.html" />
