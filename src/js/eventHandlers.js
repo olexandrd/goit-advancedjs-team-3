@@ -18,7 +18,7 @@ function onPaginationClick(e) {
   queryParamsExercises.set('page', page);
 
   if (refs.exerciseHeader.dataset.exercise) {
-    rerenderExercises(queryParamsExercises);
+    rerenderExercises();
   } else {
     rerender();
   }
@@ -67,7 +67,7 @@ function onExerciseClick(e) {
   queryParamsExercises.set(exerciseFilter, exerciseName);
   queryParamsExercises.set('page', 1);
 
-  rerenderExercises(queryParamsExercises);
+  rerenderExercises();
 }
 
 export { onPaginationClick, onFilterClick, onExerciseClick };
