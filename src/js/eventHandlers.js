@@ -17,7 +17,7 @@ function onPaginationClick(e) {
   queryParamsFilters.set('page', page);
   queryParamsExercises.set('page', page);
 
-  if (refs.exerciseHeader.dataset.exercise) {
+  if (refs.exerciseHeaderSpan.dataset.exercise) {
     rerenderExercises();
   } else {
     rerender();
@@ -70,6 +70,7 @@ function onExerciseClick(e) {
   queryParamsExercises.set('page', 1);
 
   refs.list.classList.replace('filtered-list', 'exercise-list');
+  refs.list.innerHTML = '';
   rerenderExercises();
 }
 
