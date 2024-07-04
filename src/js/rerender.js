@@ -32,8 +32,8 @@ function rerender() {
     });
 }
 
-function rerenderExercises(params) {
-  serviceGetExercises(params)
+function rerenderExercises() {
+  serviceGetExercises()
     .then(data => {
       renderExercises(data.results);
       renderPagination(data.totalPages);

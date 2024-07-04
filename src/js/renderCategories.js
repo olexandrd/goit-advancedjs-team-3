@@ -5,7 +5,6 @@ export function renderCategories(arr) {
     .map(
       ({ filter, name, imgURL }) =>
         `<li class="filtered-item" data-filter="${filter}" data-name="${name}">
-          <a href="#" class="filtered-link" >
             <img
               src="${imgURL}"
               alt="${name}"
@@ -15,7 +14,6 @@ export function renderCategories(arr) {
             />
             <h3 class="filtered-title">${filter}</h3>
             <p class="filtered-text">${name}</p>
-          </a>
         </li>`
     )
     .join('');
