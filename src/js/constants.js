@@ -4,6 +4,7 @@ const refs = {
   list: document.querySelector('.js-filtered-list'),
   filter: document.querySelector('.js-filters'),
   pagination: document.querySelector('.js-pagination'),
+  exerciseHeaderSpan: document.querySelector('.js-exercise-header-span'),
   exerciseHeader: document.querySelector('.js-exercise-header'),
   exercisePopUpBackdrop: document.querySelector('.exercise-pop-up-backdrop'),
   exercisePopUpContent: document.querySelector('.exercise-pop-up-content'),

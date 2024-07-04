@@ -17,7 +17,7 @@ function onPaginationClick(e) {
   queryParamsFilters.set('page', page);
   queryParamsExercises.set('page', page);
 
-  if (refs.exerciseHeader.dataset.exercise) {
+  if (refs.exerciseHeaderSpan.dataset.exercise) {
     rerenderExercises();
   } else {
     rerender();
@@ -47,6 +47,8 @@ function onFilterClick(e) {
     queryParamsExercises.delete('equipment');
     queryParamsExercises.set('page', 1);
 
+    refs.list.classList.replace('exercise-list', 'filtered-list');
+
     rerender();
   }
   resetExerciseHeader();
@@ -67,6 +69,8 @@ function onExerciseClick(e) {
   queryParamsExercises.set(exerciseFilter, exerciseName);
   queryParamsExercises.set('page', 1);
 
+  refs.list.classList.replace('filtered-list', 'exercise-list');
+  refs.list.innerHTML = '';
   rerenderExercises();
 }
 
