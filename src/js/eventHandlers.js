@@ -5,6 +5,7 @@ import {
   refs,
 } from './constants';
 import { rerender, rerenderExercises } from './rerender';
+import { resetExerciseHeader, setExerciseHeader } from './header';
 
 function onPaginationClick(e) {
   const target = e.target;
@@ -67,16 +68,6 @@ function onExerciseClick(e) {
   queryParamsExercises.set('page', 1);
 
   rerenderExercises(queryParamsExercises);
-}
-
-function setExerciseHeader(name) {
-  refs.exerciseHeader.textContent = ` / ${name}`;
-  refs.exerciseHeader.dataset.exercise = name;
-}
-
-function resetExerciseHeader() {
-  refs.exerciseHeader.textContent = '';
-  refs.exerciseHeader.dataset.exercise = '';
 }
 
 export { onPaginationClick, onFilterClick, onExerciseClick };

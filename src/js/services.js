@@ -14,7 +14,6 @@ const requestOptionsGET = {
 // Exercises
 
 export async function serviceGetExercises() {
-  console.log(`${BASE_URL}exercises?${queryParamsExercises}`);
   const res = await fetch(
     `${BASE_URL}exercises?${queryParamsExercises}`,
     requestOptionsGET

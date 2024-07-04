@@ -4,6 +4,9 @@ import { renderCategories } from './renderCategories';
 import { renderPagination } from './renderPagination';
 import { renderExercises } from './renderExercises';
 
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 function rerender() {
   serviceGetFilters()
     .then(data => {
@@ -23,7 +26,9 @@ function rerender() {
       }
     })
     .catch(error => {
-      console.log(error); // TODO toast error message?
+      iziToast.error({
+        message: `${error}`,
+      });
     });
 }
 
@@ -45,7 +50,9 @@ function rerenderExercises(params) {
       }
     })
     .catch(error => {
-      console.log(error);
+      iziToast.error({
+        message: `${error}`,
+      });
     });
 }
 
