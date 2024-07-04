@@ -218,6 +218,7 @@
   line-height: 1.28px;
   color: var(--dark);
   transition: all var(--transition);
+  cursor: pointer;
 }
 
 .subscribe-form-btn:disabled {
