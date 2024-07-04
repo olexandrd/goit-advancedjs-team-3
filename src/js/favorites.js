@@ -39,14 +39,11 @@ function itemHandler(recievedData) {
 
 function resizerHandler() {
   const widthVP = window.innerWidth;
-  console.log('logic run again');
   favoritesPaginationRef.classList.add('visually-hidden');
 
   if (widthVP >= 1440) {
-    console.log('loading 1440');
     itemHandler(localData);
   } else if (widthVP >= 768 && widthVP < 1440) {
-    console.log('loading 768+');
     if (localData.length <= 10) {
       itemHandler(localData);
     } else {
@@ -71,7 +68,6 @@ function resizerHandler() {
       favoritesPaginationRef.append(...pages);
     }
   } else {
-    console.log('loading 375');
     if (localData.length <= 8) {
       itemHandler(localData);
     } else {
@@ -90,10 +86,8 @@ function resizerHandler() {
         const bindList = () => {
           itemHandler(curentData);
         };
-        console.log(bindList);
 
         pageItem.addEventListener('click', e => {
-          console.log('click');
           bindList();
         });
         pages.push(pageItem);
