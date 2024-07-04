@@ -32,6 +32,4 @@ function renderExercisePopUp(exerciseID) {
   });
 }
 
-// openExercisePopUp('64f389465ae26083f39b17a3');
-
 refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp);

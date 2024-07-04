@@ -85,10 +85,6 @@
   line-height: 1;
 }
 
-.exercise-rating-star {
-
-}
-
 .exercise-data {
   display: flex;
   flex-wrap: wrap;
@@ -134,8 +130,4 @@
 
 .add-exercise-to-favorites-btn {
   margin-bottom: 10px;
-}
-
-.give-a-rating-to-exercise-btn {
-
 }
