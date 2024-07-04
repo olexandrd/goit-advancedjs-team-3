@@ -41,7 +41,7 @@
   max-width: 318px;
   margin: 0 auto;
 }
-.favorites-pagination{
+.favorites-pagination {
   display: flex;
   outline: 1px solid red;
   gap: 20px;
