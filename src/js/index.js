@@ -4,6 +4,7 @@ import {
   onFilterClick,
   onPaginationClick,
   onExerciseClick,
+  onExerciseStartClick,
 } from './eventHandlers';
 import './search-input';
 
@@ -30,3 +31,4 @@ rerender();
 refs.filter.addEventListener('click', onFilterClick);
 refs.pagination.addEventListener('click', onPaginationClick);
 refs.list.addEventListener('click', onExerciseClick);
+refs.exercisesContainer.addEventListener('click', onExerciseStartClick);

@@ -1,73 +1,35 @@
+import { createExerciseMarkup } from './exercisePopUpMarkup.js';
 import { serviceGetExercisesById } from './services.js';
+import { refs } from './constants.js';
+import iziToast from 'izitoast';
 
-const exercisePopUpBackdrop = document.querySelector('.exercise-pop-up-backdrop');
-const exercisePopUpContent = document.querySelector('.exercise-pop-up-content');
-const exercisePopUpCloseBtn = document.querySelector('.exercise-pop-up-close-btn')
-
-const exerciseDataPropertiesMapping = {
-  target: 'Target',
-  bodyPart: 'Body Part',
-  equipment: 'Equipment',
-  popularity: 'Popular'
+export function openExercisePopUp(exerciseID) {
+  renderExercisePopUp(exerciseID)
+    .then(() => {
+      refs.exercisePopUpBackdrop.classList.add('is-open');
+    })
+    .catch(error => {
+      iziToast.error({
+        message: `${error}`,
+      });
+    });
 }
 
-function createExerciseDataMarkup (exercise) {
-  let markup = '';
-
-  Object.keys(exerciseDataPropertiesMapping).forEach(key => {
-    if (exercise.hasOwnProperty(key)) {
-      markup += `
-        <li class="exercise-data-list-item">
-          <p class="exercise-data-parameter-name">${exerciseDataPropertiesMapping[key]}</p>
-          <p class="exercise-data-parameter-value">${exercise[key]}</p>
-        </li>
-      `;
-    }
-  });
-
-  if (exercise.hasOwnProperty('burnedCalories')) {
-    markup += `
-        <li class="exercise-data-list-item">
-          <p class="exercise-data-parameter-name">Burned Calories</p>
-          <p class="exercise-data-parameter-value">${exercise.burnedCalories}/${exercise.time} min</p>
-        </li>
-      `;
-  }
-
-  return markup;
-};
-
-function createExerciseMarkup(exercise) {
-  const exerciseDataMarkup = createExerciseDataMarkup(exercise);
-
-  const markup = `
-    <img class="exercise-instruction-image" src="${exercise.gifUrl}" alt="${exercise.name} instruction">
-    <p class="exercise-name">${exercise.name}</p>
-    <div class="exercise-rating-wrapper">
-      <p class="exercise-rating">${exercise.rating}</p>
-      <ul class="exercise-data">${exerciseDataMarkup}</ul>
-      <p class="exercise-description">${exercise.description}</p>
-    </div>
-  `
-
-  return markup
+function closeExercisePopUp() {
+  refs.exercisePopUpBackdrop.classList.remove('is-open');
 }
 
 function renderExercisePopUp(exerciseID) {
-  serviceGetExercisesById(exerciseID)
-    .then( data => {
-      console.log(data)
-
-      exercisePopUpContent.innerHTML = createExerciseMarkup(data)
-    }
-  )
-    .catch(error => {
-      console.log(error)
-    })
+  return new Promise((resolve, reject) => {
+    serviceGetExercisesById(exerciseID)
+      .then(data => {
+        refs.exercisePopUpContent.innerHTML = createExerciseMarkup(data);
+        resolve();
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
 }
 
-renderExercisePopUp('64f389465ae26083f39b17a2')
-
-exercisePopUpCloseBtn.addEventListener('click', () => {
-  exercisePopUpBackdrop.classList.remove('is-open');
-})
+refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp);
