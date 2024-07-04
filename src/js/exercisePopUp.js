@@ -7,6 +7,7 @@ export function openExercisePopUp(exerciseID) {
   renderExercisePopUp(exerciseID)
     .then(() => {
       refs.exercisePopUpBackdrop.classList.add('is-open');
+      refs.body.classList.add('overflow-hidden');
     })
     .catch(error => {
       iziToast.error({
@@ -17,6 +18,7 @@ export function openExercisePopUp(exerciseID) {
 
 function closeExercisePopUp() {
   refs.exercisePopUpBackdrop.classList.remove('is-open');
+  refs.body.classList.remove('overflow-hidden');
 }
 
 function renderExercisePopUp(exerciseID) {
