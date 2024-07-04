@@ -10,7 +10,7 @@ const capitalizeFirstLetter = string => {
 export function renderExercises(arr) {
   const markup = arr
     .map(
-      ({ name, rating, bodyPart, burnedCalories, target, time }) =>
+      ({ _id, name, rating, bodyPart, burnedCalories, target, time }) =>
         `<li class="exercise-card">
           <div class="exercise-card-top">
             <div class="exercise-card-top-info">
@@ -20,7 +20,7 @@ export function renderExercises(arr) {
                 </svg>
               </p> 
             </div>
-            <button class="exercise-start-btn" type="button">
+            <button class="exercise-start-btn" data-exercise-id="${_id}" type="button">
               Start<svg class="exercise-start-icon">
                 <use href="./images/icons.svg#icon-start-arrow"></use>
               </svg>
