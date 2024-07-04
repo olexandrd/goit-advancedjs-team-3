@@ -98,8 +98,6 @@ function onExerciseStartClick(e) {
 
   const exerciseID = target.getAttribute('data-exercise-id');
   if (exerciseID) {
-    console.log('Exercise ID:', exerciseID);
-
     openExercisePopUp(exerciseID);
   }
 }
