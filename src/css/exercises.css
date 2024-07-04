@@ -71,16 +71,17 @@
   box-shadow: var(--box-shadow);
 }
 
-/* @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .exercise-card {
     width: 344px;
   }
 }
+
 @media only screen and (min-width: 1440px) {
   .exercise-card {
     width: 442px;
   }
-} */
+}
 
 .exercise-general-header {
   display: flex;
