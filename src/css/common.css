@@ -1,10 +1,14 @@
 :root {
   /* Colors */
   --light: #f4f4f4;
+  --light-20: #f4f4f433;
+  --light-40: #f4f4f466;
+  --light-60: #f4f4f499;
   --light-grey: #d4d4d4;
   --light-blue-grey: #c6cdd1;
   --dark: #242424;
   --yellow: #eea10c;
+  --white: #ffffff;
 
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -17,6 +21,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  background-color: #f4f4f4;
 }
 
 body {
@@ -105,5 +110,9 @@ button {
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.overflow-hidden {
   overflow: hidden;
 }

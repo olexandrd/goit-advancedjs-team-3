@@ -1,4 +1,8 @@
+import { refs } from './constants';
+
 const header = document.querySelector('.header');
+const linkHomePage = document.querySelector('[data-home]');
+const linkFavoritesPage = document.querySelector('[data-favorites]');
 let isScrolled = false;
 
 window.addEventListener('scroll', () => {
@@ -12,3 +16,28 @@ window.addEventListener('scroll', () => {
     isScrolled = false;
   }
 });
+
+(function setActiveTab() {
+  const currentURL = window.location.href;
+  if (currentURL.includes('favorites.html')) {
+    linkHomePage.classList.remove('active');
+    linkFavoritesPage.classList.add('active');
+  } else {
+    linkHomePage.classList.add('active');
+    linkFavoritesPage.classList.remove('active');
+  }
+})();
+
+function setExerciseHeader(name) {
+  refs.exerciseHeader.textContent = 'Exercise /';
+  refs.exerciseHeaderSpan.textContent = `${name}`;
+  refs.exerciseHeaderSpan.dataset.exercise = name;
+}
+
+function resetExerciseHeader() {
+  refs.exerciseHeader.textContent = 'Exercise';
+  refs.exerciseHeaderSpan.textContent = '';
+  refs.exerciseHeaderSpan.dataset.exercise = '';
+}
+
+export { setExerciseHeader, resetExerciseHeader };

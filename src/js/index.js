@@ -1,10 +1,11 @@
-import {
-  queryParamsFilters,
-  queryParamsExercises,
-  refs,
-} from './constants';
+import { queryParamsFilters, queryParamsExercises, refs } from './constants';
 import { rerender } from './rerender';
-import { onFilterClick, onPaginationClick } from './eventHandlers';
+import {
+  onFilterClick,
+  onPaginationClick,
+  onExerciseClick,
+  onExerciseStartClick,
+} from './eventHandlers';
 import './search-input';
 
 window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
@@ -19,6 +20,9 @@ window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   queryParamsFilters.set('page', 1);
   queryParamsExercises.set('page', 1);
 
+  refs.searchForm.reset();
+  refs.searchForm.classList.add('visually-hidden');
+
   rerender();
 });
 
@@ -26,3 +30,5 @@ rerender();
 
 refs.filter.addEventListener('click', onFilterClick);
 refs.pagination.addEventListener('click', onPaginationClick);
+refs.list.addEventListener('click', onExerciseClick);
+refs.exercisesContainer.addEventListener('click', onExerciseStartClick);
