@@ -164,34 +164,31 @@
   </div>
 </section>
 
-      <!-- Exercises Section -->
-      <section class="exercises">
-  <div class="container">
-    <div class="exercises-header-container">
-      <h2 class="exercise-header js-exercise-header">Exercises</h2>
-      <span
-        data-exercise=""
-        class="exercise-title-span js-exercise-header-span"
-      ></span>
-    </div>
-    <ul class="list filters js-filters">
-      <li data-filter="Muscles" class="filter-item active">
-        <button>Muscles</button>
-      </li>
-      <li data-filter="Body parts" class="filter-item">
-        <button>Body Parts</button>
-      </li>
-      <li data-filter="Equipment" class="filter-item">
-        <button>Equipment</button>
-      </li>
-    </ul>
-    <ul class="list filtered-list js-filtered-list"></ul>
-    <ul class="list pagination js-pagination"></ul>
-  </div>
-</section>
-
-      <!-- Quote of the day -->
-      <div id="quote" class="quote hidden">
+      <!-- Main Section -->
+      <section class="main-section">
+        <div class="container">
+          <div class="exercises-header-container">
+            <h2 class="exercise-header js-exercise-header">Exercises</h2>
+            <span
+              data-exercise=""
+              class="exercise-title-span js-exercise-header-span"
+            ></span>
+          </div>
+          <ul class="list filters js-filters">
+            <li data-filter="Muscles" class="filter-item active">
+              <button>Muscles</button>
+            </li>
+            <li data-filter="Body parts" class="filter-item">
+              <button>Body Parts</button>
+            </li>
+            <li data-filter="Equipment" class="filter-item">
+              <button>Equipment</button>
+            </li>
+          </ul>
+          <div class="main-content">
+            <aside class="aside">
+              <!-- Quote of the day -->
+              <div id="quote" class="quote hidden">
   <div>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -236,6 +233,16 @@
   </div>
 </div>
 
+            </aside>
+            <!-- Exercises Section -->
+            <div class="exerсises-container">
+  <ul class="list filtered-list js-filtered-list"></ul>
+  <ul class="list pagination js-pagination"></ul>
+</div>
+
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div></div>
