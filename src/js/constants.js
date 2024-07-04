@@ -5,6 +5,9 @@ const refs = {
   filter: document.querySelector('.js-filters'),
   pagination: document.querySelector('.js-pagination'),
   exerciseHeader: document.querySelector('.js-exercise-header'),
+  exercisePopUpBackdrop: document.querySelector('.exercise-pop-up-backdrop'),
+  exercisePopUpContent: document.querySelector('.exercise-pop-up-content'),
+  exercisePopUpCloseBtn: document.querySelector('.exercise-pop-up-close-btn'),
 };
 
 const FILTERS = {
@@ -37,7 +40,3 @@ export {
   refs,
   dataOptions,
 };
-
-export const exercisePopUpBackdrop = document.querySelector('.exercise-pop-up-backdrop');
-export const exercisePopUpContent = document.querySelector('.exercise-pop-up-content');
-export const exercisePopUpCloseBtn = document.querySelector('.exercise-pop-up-close-btn');
