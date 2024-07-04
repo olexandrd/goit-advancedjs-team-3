@@ -6,6 +6,7 @@ import {
 } from './constants';
 import { rerender, rerenderExercises } from './rerender';
 import { resetExerciseHeader, setExerciseHeader } from './header';
+import { openExercisePopUp } from './exercisePopUp.js';
 
 function onPaginationClick(e) {
   const target = e.target;
@@ -17,7 +18,7 @@ function onPaginationClick(e) {
   queryParamsFilters.set('page', page);
   queryParamsExercises.set('page', page);
 
-  if (refs.exerciseHeader.dataset.exercise) {
+  if (refs.exerciseHeaderSpan.dataset.exercise) {
     rerenderExercises();
   } else {
     rerender();
@@ -34,6 +35,8 @@ function onFilterClick(e) {
   activeItems.forEach(item => item.classList.remove('active'));
 
   listItem.classList.add('active');
+  refs.searchForm.reset();
+  refs.searchForm.classList.add('visually-hidden');
 
   const filter = listItem.dataset.filter;
   const filterKey = Object.keys(FILTERS).find(key => FILTERS[key] === filter);
@@ -46,6 +49,8 @@ function onFilterClick(e) {
     queryParamsExercises.delete('bodypart');
     queryParamsExercises.delete('equipment');
     queryParamsExercises.set('page', 1);
+
+    refs.list.classList.replace('exercise-list', 'filtered-list');
 
     rerender();
   }
@@ -67,7 +72,39 @@ function onExerciseClick(e) {
   queryParamsExercises.set(exerciseFilter, exerciseName);
   queryParamsExercises.set('page', 1);
 
+  refs.list.classList.replace('filtered-list', 'exercise-list');
+  refs.searchForm.classList.remove('visually-hidden');
+
+  refs.list.innerHTML = '';
   rerenderExercises();
 }
 
-export { onPaginationClick, onFilterClick, onExerciseClick };
+function onSearchFormSubmit(e) {
+  e.preventDefault();
+
+  const keyword = refs.searchInput.value.trim();
+  queryParamsExercises.set('keyword', keyword);
+
+  rerenderExercises();
+}
+
+function onExerciseStartClick(e) {
+  const target = e.target.closest('.exercise-start-btn');
+
+  if (!target) return;
+
+  const exerciseID = target.getAttribute('data-exercise-id');
+  if (exerciseID) {
+    console.log('Exercise ID:', exerciseID);
+
+    openExercisePopUp(exerciseID);
+  }
+}
+
+export {
+  onPaginationClick,
+  onFilterClick,
+  onExerciseClick,
+  onSearchFormSubmit,
+  onExerciseStartClick,
+};
