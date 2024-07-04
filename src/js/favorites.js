@@ -8,33 +8,68 @@ localStorage.setItem('myData', jsonData);
 const retrievedData = localStorage.getItem('myData');
 // 5. Convert the retrieved data back to an array
 const recievedData = JSON.parse(retrievedData);
-
 const favoritesListRef = document.querySelector('.practice-list');
-
+const favoritesPaginationRef = document.querySelector('.favorites-pagination')
 const widthVP = window.innerWidth;
 
 function splitHandler(arr) {
-  // If the array length is less than or equal to 9, return the original array
-  if (arr.length <= 9) {
-    return [arr];
-  }
-  const spliter = widthVP < 768 ? 9 : 10;
-  // Split the array into chunks of 9 elements
+  const spliter = widthVP < 768 ? 8 : 10;
+ 
   let result = [];
-  for (let i = 0; i < arr.length; i += spliter) {
-    result.push(arr.slice(i, i + spliter));
+  if (arr.length <= spliter){
+    return arr
+  } else {
+    for (let i = 0; i < arr.length; i += spliter) {
+      let chunk = arr.slice(i, i + spliter);
+      result.push(chunk);
+  }
+  return result;
   }
 
-  return result;
 }
-if (widthVP < 1440) {
-  console.log(splitHandler(recievedData));
-}
+function itemHandler() {
+  let items = '';
 
-let items = '';
-
-recievedData.forEach(e => {
-  const item = `<li class="practice-list-item"></li>`;
-  items += item;
-});
+  recievedData.forEach(e => {
+    const item = `<li class="practice-list-item"></li>`;
+    items += item;
+})
 favoritesListRef.innerHTML = items;
+}
+if (widthVP > 1440) {
+  itemHandler()
+
+  //просто відмальовка зі скролом
+} else if ( widthVP > 768) {
+  if (recievedData.length <= 10) {
+    itemHandler()
+
+} else {
+
+  //pagination logic
+  const data = splitHandler(recievedData)
+  console.log ('data')
+  console.log (data)
+  let pages = ''
+  let i = 1;
+  data.forEach(()=> {
+    pages+=`<li class="favorites-page">${i}</li>`;
+    i+=1;
+  })
+  favoritesPaginationRef.innerHTML = pages;
+  favoritesPaginationRef.classList.remove('visually-hidden');
+
+  itemHandler()
+};
+
+  
+} else {
+  if (recievedData.length <= 8) {
+    itemHandler()
+
+} else {
+  //pagination logic
+  itemHandler()
+}
+
+}

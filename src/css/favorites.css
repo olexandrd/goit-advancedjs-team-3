@@ -41,6 +41,11 @@
   max-width: 318px;
   margin: 0 auto;
 }
+.favorites-pagination{
+  display: flex;
+  outline: 1px solid red;
+  gap: 20px;
+}
 
 @media screen and (min-width: 768px) {
   .favorites-image {
