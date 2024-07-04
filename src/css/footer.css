@@ -50,20 +50,11 @@
   gap: 12px;
 }
 
-@media screen and (min-width: 768px) {
-  .footer-socials-list {
-  }
-}
-
 .socials-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 40px;
   height: 40px;
   padding: 8px;
   outline: 1px solid rgba(244, 244, 244, 0.1);
-  border-radius: 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -190,10 +181,8 @@
   color: var(--light);
 }
 
-.subscribe-form-input:focus,
-.subscribe-form-input:hover {
-  outline: none;
-  border-color: orange;
+.subscribe-form-input:focus {
+  outline: 1px solid var(--light);
 }
 
 @media screen and (min-width: 768px) {

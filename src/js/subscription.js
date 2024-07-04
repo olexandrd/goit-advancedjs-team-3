@@ -1,4 +1,6 @@
 import { servicePostSubscription } from './services';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   const subscribeForm = document.getElementById('subscribeForm');
@@ -14,13 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
       subscribeBtn.textContent = 'Subscribing...';
 
       const response = await servicePostSubscription(email);
-      console.log('Subscription successful:', response);
+      // console.log('Subscription successful:', response);
 
-      alert('Subscription successful!');
+      iziToast.success({
+        title: 'Success',
+        message: 'Subscription successful!',
+      });
     } catch (error) {
-      console.error('Subscription failed:', error);
+      // console.error('Subscription failed:', error);
 
-      alert('Subscription failed. Please try again.');
+      iziToast.error({
+        title: 'Error',
+        message: 'Subscription failed. Please try again.',
+      });
     } finally {
       subscribeBtn.disabled = false;
       subscribeBtn.textContent = 'Send';
