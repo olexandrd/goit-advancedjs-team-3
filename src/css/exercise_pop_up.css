@@ -1,0 +1,115 @@
+.exercise-pop-up-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(4, 4, 4, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.exercise-pop-up-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.exercise-pop-up-container {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: var(--dark);
+  border-radius: 20px;
+}
+
+.exercise-pop-up-close-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.exercise-pop-up-close-icon {
+  stroke: var(--light);
+  transition: stroke var(--transition);
+}
+
+.exercise-instruction-image {
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.exercise-name {
+  color: var(--light);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.exercise-rating {
+  color: var(--light);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  padding-bottom: 20px;
+  border-bottom:  1px solid var(--light);
+  margin-bottom: 10px;
+}
+
+.exercise-data {
+  min-height: 64px;
+  border-bottom:  1px solid var(--light);
+  margin-bottom: 20px;
+}
+
+.exercise-data-list-item {
+  margin-bottom: 20px;
+}
+
+.exercise-data-parameter-name {
+  color: var(--light);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.exercise-data-parameter-value {
+  color: var(--light);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.286;
+}
+
+.exercise-data-parameter-value::first-letter {
+  text-transform: capitalize;
+}
+
+.exercise-description {
+  color: var(--light);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.286;
+  margin-bottom: 40px;
+}
+
+.add-exercise-to-favorites-btn {
+  margin-bottom: 10px;
+}
+
+.give-a-rating-to-exercise-btn {
+
+}
