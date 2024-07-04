@@ -26,11 +26,11 @@
     <title>Your Energy</title>
     <link rel="icon" type="image/x-icon" href="./favicon.svg" />
     <script type="module" crossorigin src="/goit-advancedjs-team-3/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/header-378bfd7c.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/header-0256d207.js">
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/vendor-790bbfe5.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-6b242165.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/quote-40d0fa84.js">
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/header-c2b88edb.css">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-19fcee33.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/quote-c00ce131.js">
+    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/header-e15841a5.css">
     <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -330,7 +330,28 @@
 
 
     <!--  Exercise pop-up -->
-    <div></div>
+    <div class="exercise-pop-up-backdrop js-exercise-pop-up-container">
+  <div class="exercise-pop-up-container" id="exercise-pop-up">
+    <button class="exercise-pop-up-close-btn js-close-exercise-pop-up" aria-label="Close exercise">
+      <svg class="exercise-pop-up-close-icon" width="24" height="24">
+        <use href="../images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+
+    <div class="exercise-pop-up-content">
+      <img class="exercise-instruction-image" src="" alt="">
+      <p class="exercise-name"></p>
+      <div class="exercise-rating-wrapper">
+        <p class="exercise-rating"></p>
+        <ul class="exercise-data"></ul>
+        <p class="exercise-description"></p>
+      </div>
+    </div>
+
+    <button class="add-exercise-to-favorites-btn">Add to favorites</button>
+    <button class="give-a-rating-to-exercise-btn">Give a rating</button>
+  </div>
+</div>
 
 
     <!--  Rating pop-up -->
@@ -339,6 +360,7 @@
 
     <!-- Load scripts -->
     
+
 
 
 
