@@ -29,13 +29,13 @@ window.addEventListener('scroll', () => {
 })();
 
 function setExerciseHeader(name) {
-  refs.exerciseHeader.textContent = 'Exercise /';
+  refs.exerciseHeader.textContent = 'Exercises /';
   refs.exerciseHeaderSpan.textContent = `${name}`;
   refs.exerciseHeaderSpan.dataset.exercise = name;
 }
 
 function resetExerciseHeader() {
-  refs.exerciseHeader.textContent = 'Exercise';
+  refs.exerciseHeader.textContent = 'Exercises';
   refs.exerciseHeaderSpan.textContent = '';
   refs.exerciseHeaderSpan.dataset.exercise = '';
 }
