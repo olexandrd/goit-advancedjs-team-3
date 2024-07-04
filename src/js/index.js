@@ -19,6 +19,9 @@ window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   queryParamsFilters.set('page', 1);
   queryParamsExercises.set('page', 1);
 
+  refs.searchForm.reset();
+  refs.searchForm.classList.add('visually-hidden');
+
   rerender();
 });
 

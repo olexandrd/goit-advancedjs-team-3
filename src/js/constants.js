@@ -6,6 +6,12 @@ const refs = {
   pagination: document.querySelector('.js-pagination'),
   exerciseHeaderSpan: document.querySelector('.js-exercise-header-span'),
   exerciseHeader: document.querySelector('.js-exercise-header'),
+  searchForm: document.querySelector('.search-form'),
+  searchInput: document.querySelector('.search-input'),
+  searchInputCrossIcon: document.querySelector('.search-input-icon.cross-icon'),
+  searchInputSearchIcon: document.querySelector(
+    '.search-input-icon.search-icon'
+  ),
 };
 
 const FILTERS = {

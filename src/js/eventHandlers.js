@@ -34,6 +34,8 @@ function onFilterClick(e) {
   activeItems.forEach(item => item.classList.remove('active'));
 
   listItem.classList.add('active');
+  refs.searchForm.reset();
+  refs.searchForm.classList.add('visually-hidden');
 
   const filter = listItem.dataset.filter;
   const filterKey = Object.keys(FILTERS).find(key => FILTERS[key] === filter);
@@ -70,8 +72,24 @@ function onExerciseClick(e) {
   queryParamsExercises.set('page', 1);
 
   refs.list.classList.replace('filtered-list', 'exercise-list');
+  refs.searchForm.classList.remove('visually-hidden');
+
   refs.list.innerHTML = '';
   rerenderExercises();
 }
 
-export { onPaginationClick, onFilterClick, onExerciseClick };
+function onSearchFormSubmit(e) {
+  e.preventDefault();
+
+  const keyword = refs.searchInput.value.trim();
+  queryParamsExercises.set('keyword', keyword);
+
+  rerenderExercises();
+}
+
+export {
+  onPaginationClick,
+  onFilterClick,
+  onExerciseClick,
+  onSearchFormSubmit,
+};
