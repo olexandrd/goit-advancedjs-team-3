@@ -26,11 +26,11 @@
     <title>Your Energy</title>
     <link rel="icon" type="image/x-icon" href="./favicon.svg" />
     <script type="module" crossorigin src="/goit-advancedjs-team-3/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/main-8c51de94.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/header-378bfd7c.js">
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/vendor-790bbfe5.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/quote-165641b1.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-81799c6d.js">
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/main-c2b88edb.css">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-6b242165.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/quote-40d0fa84.js">
+    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/header-c2b88edb.css">
     <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -174,17 +174,34 @@
               class="exercise-title-span js-exercise-header-span"
             ></span>
           </div>
-          <ul class="list filters js-filters">
-            <li data-filter="Muscles" class="filter-item active">
-              <button>Muscles</button>
-            </li>
-            <li data-filter="Body parts" class="filter-item">
-              <button>Body Parts</button>
-            </li>
-            <li data-filter="Equipment" class="filter-item">
-              <button>Equipment</button>
-            </li>
-          </ul>
+          <div class="filters-container">
+            <form class="search-form visually-hidden">
+              <input
+                type="search"
+                name="search"
+                placeholder="Search"
+                class="search-input"
+              />
+              <svg class="search-input-icon search-icon">
+                <use href="./images/icons.svg#icon-search"></use>
+              </svg>
+              <svg class="search-input-icon cross-icon">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </form>
+
+            <ul class="list filters js-filters">
+              <li data-filter="Muscles" class="filter-item active">
+                <button>Muscles</button>
+              </li>
+              <li data-filter="Body parts" class="filter-item">
+                <button>Body Parts</button>
+              </li>
+              <li data-filter="Equipment" class="filter-item">
+                <button>Equipment</button>
+              </li>
+            </ul>
+          </div>
           <div class="main-content">
             <aside class="aside">
               <!-- Quote of the day -->
@@ -235,7 +252,7 @@
 
             </aside>
             <!-- Exercises Section -->
-            <div class="exerсises-container">
+            <div class="exercises-container">
   <ul class="list filtered-list js-filtered-list"></ul>
   <ul class="list pagination js-pagination"></ul>
 </div>
