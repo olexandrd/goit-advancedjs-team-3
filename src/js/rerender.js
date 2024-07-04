@@ -35,6 +35,13 @@ function rerender() {
 function rerenderExercises() {
   serviceGetExercises()
     .then(data => {
+      if (!data.results.length) {
+        iziToast.warning({
+          message:
+            'Sorry, this request did not match. Try changing the request parameters.',
+        });
+      }
+
       renderExercises(data.results);
       renderPagination(data.totalPages);
 

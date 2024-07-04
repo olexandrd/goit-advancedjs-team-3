@@ -1,10 +1,16 @@
-const searchForm = document.querySelector('.search-form');
-const searchInputCrossIcon = document.querySelector(
-  '.search-input-icon.cross-icon'
-);
+import { queryParamsExercises, refs } from './constants';
+import { rerenderExercises } from './rerender';
+import { onSearchFormSubmit } from './eventHandlers';
 
-// searchInputCrossIcon.addEventListener('click', () => {
-//   searchForm.reset();
-// });
+refs.searchInputCrossIcon.addEventListener('click', () => {
+  queryParamsExercises.set('page', 1);
+  queryParamsExercises.delete('keyword');
+  refs.searchForm.reset();
+
+  rerenderExercises();
+});
+
+refs.searchInputSearchIcon.addEventListener('click', onSearchFormSubmit);
+refs.searchForm.addEventListener('submit', onSearchFormSubmit);
 
 export {};
