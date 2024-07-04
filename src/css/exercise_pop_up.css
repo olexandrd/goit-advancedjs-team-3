@@ -60,6 +60,10 @@
   margin-bottom: 10px;
 }
 
+.exercise-name::first-letter {
+  text-transform: capitalize;
+}
+
 .exercise-rating-wrapper {
   display: inline-flex;
   align-items: center;

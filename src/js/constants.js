@@ -9,6 +9,7 @@ const refs = {
   exercisePopUpBackdrop: document.querySelector('.exercise-pop-up-backdrop'),
   exercisePopUpContent: document.querySelector('.exercise-pop-up-content'),
   exercisePopUpCloseBtn: document.querySelector('.exercise-pop-up-close-btn'),
+  exercisesContainer: document.querySelector('.exercises-container'),
 };
 
 const FILTERS = {
