@@ -8,6 +8,7 @@ export function openExercisePopUp(exerciseID) {
     .then(() => {
       refs.exercisePopUpBackdrop.classList.add('is-open');
       refs.body.classList.add('overflow-hidden');
+      addOutsideClickListener();
     })
     .catch(error => {
       iziToast.error({
@@ -19,6 +20,7 @@ export function openExercisePopUp(exerciseID) {
 function closeExercisePopUp() {
   refs.exercisePopUpBackdrop.classList.remove('is-open');
   refs.body.classList.remove('overflow-hidden');
+  removeOutsideClickListener(); // removing event listener to prevent memory leaks
 }
 
 function renderExercisePopUp(exerciseID) {
@@ -32,6 +34,21 @@ function renderExercisePopUp(exerciseID) {
         reject(error);
       });
   });
+}
+
+function addOutsideClickListener() {
+  document.addEventListener('click', outsideClickListener);
+}
+
+function removeOutsideClickListener() {
+  document.removeEventListener('click', outsideClickListener);
+}
+
+function outsideClickListener(event) {
+  const popup = refs.exercisePopUpContent;
+  if (popup && !popup.contains(event.target)) {
+    closeExercisePopUp();
+  }
 }
 
 refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp);

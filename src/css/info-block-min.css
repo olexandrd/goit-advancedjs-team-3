@@ -1,0 +1,38 @@
+.info-block-min {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: var(--white);
+  max-width: 500px;
+}
+
+.info-block-min-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-block-min-title-main {
+  color: var(--dark);
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.33333;
+  margin-bottom: 6px;
+}
+
+.info-block-min-title-sub {
+  color: var(--dark);
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 1.28571;
+}
+
+.info-block-min-icon {
+  margin: 0 0 8px 0;
+}
+.info-block-min-icon svg {
+  fill: var(--dark);
+}

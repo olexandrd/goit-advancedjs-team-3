@@ -23,10 +23,14 @@
   padding: 10px;
 }
 
+.exerсises-container {
+  margin: 20px auto;
+}
 .exercises-header-container {
   display: flex;
   align-items: baseline;
   gap: 8px;
+  margin: 40px auto 20px;
 }
 
 .exercise-title-span {
