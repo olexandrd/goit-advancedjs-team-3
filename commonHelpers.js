@@ -1,14 +1,29 @@
-import"./assets/main-a19dbcad.js";import{r as s,s as g,q as a,F as d,a as n}from"./assets/quote-ab1b9322.js";import"./assets/search-input-81799c6d.js";import"./assets/vendor-9ceb8365.js";function m(e){const i=e.map(({filter:t,name:r,imgURL:c})=>`<li class="filtered-item">
-          <a href="#" class="filtered-link" data-filter="${t}">
+import"./assets/main-288ba5d6.js";import{r as a,s as u,a as h,q as n,b as r,F as g,c as v,d as x}from"./assets/quote-550f796a.js";import{i as f}from"./assets/vendor-790bbfe5.js";import"./assets/search-input-81799c6d.js";function E(t){const s=t.map(({filter:e,name:i,imgURL:c})=>`<li class="filtered-item" data-filter="${e}" data-name="${i}">
             <img
               src="${c}"
-              alt="${r}"
+              alt="${i}"
               class="filter-img"
               width="80"
               height="80"
             />
-            <h3 class="filtered-title">${t}</h3>
-            <p class="filtered-text">${r}</p>
-          </a>
-        </li>`).join("");s.list.innerHTML=i}function p(e){let i="";for(let t=1;t<=e;t++)i+=`<li class="pagination-item" data-id="${t}"><a href="#" class="pagination-link">${t}</a></li>`;s.pagination.innerHTML=i}function l(){g().then(e=>{e.totalPages,m(e.results),p(e.totalPages),Array.from(s.pagination.childNodes).forEach(t=>{t.classList.remove("active")});const i=Array.from(s.pagination.childNodes).find(t=>t.dataset.id==e.page);i&&i.classList.add("active")}).catch(e=>{console.log(e)})}function h(e){const t=e.target.closest("li.pagination-item");if(!t)return;const r=Number(t.dataset.id);a.set("page",r),l()}function u(e){const t=e.target.closest("li[data-filter]");if(!t)return;document.querySelectorAll(".js-filters .active").forEach(o=>o.classList.remove("active")),t.classList.add("active");const c=t.dataset.filter,f=Object.keys(d).find(o=>d[o]===c);f&&(a.set("filter",d[f]),a.set("page",1),n.set("page",1),l())}window.matchMedia("(min-width: 768px)").addEventListener("change",e=>{e.matches?(a.set("limit",12),n.set("limit",10)):(a.set("limit",9),n.set("limit",8)),a.set("page",1),n.set("page",1),l()});l();s.filter.addEventListener("click",u);s.pagination.addEventListener("click",h);
+            <h3 class="filtered-title">${e}</h3>
+            <p class="filtered-text">${i}</p>
+        </li>`).join("");a.list.innerHTML=s}function m(t){let s="";for(let e=1;e<=t;e++)s+=`<li class="pagination-item" data-id="${e}"><a href="#" onclick="event.preventDefault();" class="pagination-link">${e}</a></li>`;a.pagination.innerHTML=s}function L(t){const s=t.map(({name:e,rating:i,bodyPart:c,burnedCalories:l,target:o})=>`<li class="exercise-card" >
+          <h3 class="exercise-general-header">Workout</h3>
+          <p class="exercise-rating">${i} 
+            <svg>
+              <use href="./images/icons.svg#icon-star"></use>
+            </svg>
+          </p> 
+          <button class="exercise-start-btn" type="button">
+            start
+            <svg>
+              <use href="./images/icons.svg#icon-start-arrow"></use>
+            </svg>
+          </button>
+          <h2 class="exercise-name">${e}</h2>
+          <p class="exercise-text">Burned calories: ${l}</p>
+          <p class="exercise-text">Body part: ${c}</p>
+          <p class="exercise-text">Target: ${o}</p>
+        </li>`).join("");a.list.innerHTML=s}function d(){u().then(t=>{t.totalPages,E(t.results),m(t.totalPages),Array.from(a.pagination.childNodes).forEach(e=>{e.classList.remove("active")});const s=Array.from(a.pagination.childNodes).find(e=>e.dataset.id==t.page);s&&s.classList.add("active")}).catch(t=>{f.error({message:`${t}`})})}function p(){h().then(t=>{L(t.results),m(t.totalPages),Array.from(a.pagination.childNodes).forEach(e=>{e.classList.remove("active")});const s=Array.from(a.pagination.childNodes).find(e=>e.dataset.id==t.page);s&&s.classList.add("active")}).catch(t=>{f.error({message:`${t}`})})}function $(t){const e=t.target.closest("li.pagination-item");if(!e)return;const i=Number(e.dataset.id);n.set("page",i),r.set("page",i),a.exerciseHeader.dataset.exercise?p():d()}function y(t){const e=t.target.closest("li[data-filter]");if(!e)return;document.querySelectorAll(".js-filters .active").forEach(o=>o.classList.remove("active")),e.classList.add("active");const c=e.dataset.filter,l=Object.keys(g).find(o=>g[o]===c);l&&(n.set("filter",g[l]),n.set("page",1),r.delete("muscles"),r.delete("bodypart"),r.delete("equipment"),r.set("page",1),d()),v()}function k(t){const e=t.target.closest("li.filtered-item");if(!e)return;let i=e.dataset.filter.toString().toLowerCase();i==="body parts"&&(i="bodypart");const c=e.dataset.name;x(c),r.set(i,c),r.set("page",1),p()}window.matchMedia("(min-width: 768px)").addEventListener("change",t=>{t.matches?(n.set("limit",12),r.set("limit",10)):(n.set("limit",9),r.set("limit",8)),n.set("page",1),r.set("page",1),d()});d();a.filter.addEventListener("click",y);a.pagination.addEventListener("click",$);a.list.addEventListener("click",k);
 //# sourceMappingURL=commonHelpers.js.map
