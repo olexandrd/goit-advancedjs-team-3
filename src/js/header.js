@@ -1,3 +1,5 @@
+import { refs } from './constants';
+
 const header = document.querySelector('.header');
 const linkHomePage = document.querySelector('[data-home]');
 const linkFavoritesPage = document.querySelector('[data-favorites]');
@@ -25,3 +27,17 @@ window.addEventListener('scroll', () => {
     linkFavoritesPage.classList.remove('active');
   }
 })();
+
+function setExerciseHeader(name) {
+  refs.exerciseHeader.textContent = 'Exercise /';
+  refs.exerciseHeaderSpan.textContent = `${name}`;
+  refs.exerciseHeaderSpan.dataset.exercise = name;
+}
+
+function resetExerciseHeader() {
+  refs.exerciseHeader.textContent = 'Exercise';
+  refs.exerciseHeaderSpan.textContent = '';
+  refs.exerciseHeaderSpan.dataset.exercise = '';
+}
+
+export { setExerciseHeader, resetExerciseHeader };
