@@ -6,6 +6,7 @@ import {
 } from './constants';
 import { rerender, rerenderExercises } from './rerender';
 import { resetExerciseHeader, setExerciseHeader } from './header';
+import { openExercisePopUp } from './exercisePopUp.js';
 
 function onPaginationClick(e) {
   const target = e.target;
@@ -87,9 +88,23 @@ function onSearchFormSubmit(e) {
   rerenderExercises();
 }
 
+function onExerciseStartClick(e) {
+  const target = e.target.closest('.exercise-start-btn');
+
+  if (!target) return;
+
+  const exerciseID = target.getAttribute('data-exercise-id');
+  if (exerciseID) {
+    console.log('Exercise ID:', exerciseID);
+
+    openExercisePopUp(exerciseID);
+  }
+}
+
 export {
   onPaginationClick,
   onFilterClick,
   onExerciseClick,
   onSearchFormSubmit,
+  onExerciseStartClick,
 };

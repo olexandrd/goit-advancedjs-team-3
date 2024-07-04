@@ -12,6 +12,10 @@ const refs = {
   searchInputSearchIcon: document.querySelector(
     '.search-input-icon.search-icon'
   ),
+  exercisePopUpBackdrop: document.querySelector('.exercise-pop-up-backdrop'),
+  exercisePopUpContent: document.querySelector('.exercise-pop-up-content'),
+  exercisePopUpCloseBtn: document.querySelector('.exercise-pop-up-close-btn'),
+  exercisesContainer: document.querySelector('.exercises-container'),
 };
 
 const FILTERS = {
