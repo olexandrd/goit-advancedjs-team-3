@@ -1,28 +1,3 @@
-.filter-item {
-  gap: 20px;
-}
-
-.filter-item button {
-  cursor: pointer;
-}
-
-.filter-item.active button {
-  background-color: var(--dark);
-  color: var(--light);
-}
-
-.filtered-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.filtered-item {
-  border: 1px solid var(--dark);
-  border-radius: 10px;
-  padding: 10px;
-}
-
 .pagination-item {
   border: 1px solid var(--dark);
   border-radius: 10px;
@@ -37,10 +12,14 @@
   color: var(--light);
 }
 
+.exerсises-container {
+  margin: 20px auto;
+}
 .exercises-header-container {
   display: flex;
   align-items: baseline;
   gap: 8px;
+  margin: 20px auto;
 }
 
 .exercise-title-span {
