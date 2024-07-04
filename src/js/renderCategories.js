@@ -1,19 +1,25 @@
 import { refs } from './constants';
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 export function renderCategories(arr) {
   const markup = arr
     .map(
       ({ filter, name, imgURL }) =>
-        `<li class="filtered-item" data-filter="${filter}" data-name="${name}">
+        `<li class="category-card fade-item" data-filter="${filter}" data-name="${name}">
             <img
               src="${imgURL}"
               alt="${name}"
-              class="filter-img"
+              class="category-card-img"
               width="80"
               height="80"
             />
-            <h3 class="filtered-title">${filter}</h3>
-            <p class="filtered-text">${name}</p>
+            <div class="category-card-content">
+              <h3 class="category-card-title">${capitalizeFirstLetter(filter)}</h3>
+              <p class="category-card-text">${capitalizeFirstLetter(name)}</p> 
+            </div>
         </li>`
     )
     .join('');
