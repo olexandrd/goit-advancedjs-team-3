@@ -23,6 +23,7 @@
 .exercise-pop-up-container {
   position: relative;
   margin: auto;
+  max-width: var(--container-max-width);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
