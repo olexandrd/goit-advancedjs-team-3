@@ -13,17 +13,7 @@ const requestOptionsGET = {
 
 // Exercises
 
-export async function serviceGetExercises({
-  bodypart,
-  muscles,
-  equipment,
-  keyword,
-}) {
-  if (bodypart) queryParamsExercises.set('bodypart', bodypart);
-  if (muscles) queryParamsExercises.set('muscles', muscles);
-  if (equipment) queryParamsExercises.set('equipment', equipment);
-  if (keyword) queryParamsExercises.set('keyword', keyword);
-
+export async function serviceGetExercises() {
   const res = await fetch(
     `${BASE_URL}exercises?${queryParamsExercises}`,
     requestOptionsGET
