@@ -89,7 +89,49 @@
   }
   .practice-list {
     height: 487px;
-    overflow: scroll;
+    overflow: auto;
+  }
+
+  /* Customize the scrollbar track for WebKit browsers */
+  .practice-list::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 153px;
+    border-radius: 12px;
+  }
+
+  /* Customize the track (background of the scrollbar) for WebKit browsers */
+  .practice-list::-webkit-scrollbar-track {
+    background: #2424241a;
+    border-radius: 12px;
+  }
+
+  /* Customize the thumb (the draggable part of the scrollbar) for WebKit browsers */
+  .practice-list::-webkit-scrollbar-thumb {
+    background: #242424;
+    border-radius: 12px;
+  }
+
+  /* Customize the thumb when hovered for WebKit browsers */
+  .practice-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+  }
+
+  /* Hide the up and down arrows on the scrollbar for WebKit browsers */
+  .practice-list::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  /* Firefox scrollbar customization */
+  .practice-list {
+    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-color: #242424 #2424241a; /* Color of the thumb and track */
+  }
+
+  /* Customize the thumb when hovered for Firefox */
+  .practice-list::-moz-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
   }
   /* Customize the scrollbar track */
   .practice-list::-webkit-scrollbar {
@@ -99,18 +141,21 @@
 
   /* Customize the track (background of the scrollbar) */
   .practice-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
+    background: #2424241a;
+
+    border-radius: 12px;
   }
 
   /* Customize the thumb (the draggable part of the scrollbar) */
   .practice-list::-webkit-scrollbar-thumb {
-    background: black;
-    border-radius: 10px;
+    background: #242424;
+
+    border-radius: 12px;
   }
 
   /* Customize the thumb when hovered */
   .practice-list::-webkit-scrollbar-thumb:hover {
     background: #555;
+    cursor: pointer;
   }
 }
