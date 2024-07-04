@@ -16,15 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
       subscribeBtn.textContent = 'Subscribing...';
 
       const response = await servicePostSubscription(email);
-      // console.log('Subscription successful:', response);
 
       iziToast.success({
         title: 'Success',
         message: 'Subscription successful!',
       });
     } catch (error) {
-      // console.error('Subscription failed:', error);
-
       iziToast.error({
         title: 'Error',
         message: 'Subscription failed. Please try again.',
