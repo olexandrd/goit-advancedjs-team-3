@@ -1,4 +1,4 @@
-import"./assets/main-d788657c.js";import{r as s,s as g,q as a,F as d,a as n}from"./assets/quote-ab1b9322.js";import"./assets/search-input-81799c6d.js";import"./assets/vendor-9ceb8365.js";function m(e){const i=e.map(({filter:t,name:r,imgURL:c})=>`<li class="filtered-item">
+import"./assets/main-a19dbcad.js";import{r as s,s as g,q as a,F as d,a as n}from"./assets/quote-ab1b9322.js";import"./assets/search-input-81799c6d.js";import"./assets/vendor-9ceb8365.js";function m(e){const i=e.map(({filter:t,name:r,imgURL:c})=>`<li class="filtered-item">
           <a href="#" class="filtered-link" data-filter="${t}">
             <img
               src="${c}"
