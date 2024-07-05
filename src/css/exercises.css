@@ -35,8 +35,9 @@
   width: 335px;
   height: 141px;
   padding: 16px;
-  transition: box-shadow var(--animation-fast);
+  /* transition: box-shadow var(--transition); */
 }
+
 @media screen and (max-width: 375px) {
   .exercise-card {
     width: 100%;
@@ -44,7 +45,7 @@
 }
 .exercise-card:hover {
   border-radius: 15px;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-light);
 }
 
 @media only screen and (min-width: 768px) {
@@ -240,4 +241,97 @@
   .exercise-card-info-element-content-target-no-overflow {
     max-width: 65px;
   }
+}
+
+.filtered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .filtered-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 14px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .filtered-list {
+    row-gap: 32px;
+  }
+}
+
+.category-card {
+  width: 335px;
+  height: 225px;
+  border-radius: 12px;
+  transition: box-shadow var(--transition);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .category-card {
+    width: 225px;
+    height: 225px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .category-card {
+    height: 242px;
+    width: 290px;
+  }
+}
+
+.category-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-card:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.category-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.5);
+}
+
+.category-card-title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--light);
+}
+
+@media only screen and (min-width: 768px) {
+  .category-card-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+.category-card-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--light);
+  opacity: 0.4;
 }

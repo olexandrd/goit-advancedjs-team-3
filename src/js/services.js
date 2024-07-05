@@ -106,10 +106,12 @@ export async function servicePostSubscription(email) {
   };
 
   const res = await fetch(`${BASE_URL}subscription`, requestOptionsPost);
+  const data = await res.json();
+
   if (!res.ok) {
-    throw new Error(`Ooops, status code: ${res.status}`);
+    throw new Error(data.message || 'Failed to subscribe');
   }
-  return await res.json();
+  return data;
 }
 
 // TODO test
