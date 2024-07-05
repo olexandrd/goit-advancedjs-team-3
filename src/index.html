@@ -36,40 +36,42 @@
       <!-- Main Section -->
       <section class="main-section">
         <div class="container">
-          <div class="exercises-header-container">
-            <h2 class="exercise-header js-exercise-header">Exercises</h2>
-            <span
-              data-exercise=""
-              class="exercise-title-span js-exercise-header-span"
-            ></span>
-          </div>
-          <div class="filters-container">
-            <form class="search-form visually-hidden">
-              <input
-                type="search"
-                name="search"
-                placeholder="Search"
-                class="search-input"
-              />
-              <svg class="search-input-icon search-icon">
-                <use href="./images/icons.svg#icon-search"></use>
-              </svg>
-              <svg class="search-input-icon cross-icon">
-                <use href="./images/icons.svg#icon-close"></use>
-              </svg>
-            </form>
+          <div class="filters-wrapper">
+            <div class="exercises-header-container">
+              <h2 class="exercise-header js-exercise-header">Exercises</h2>
+              <span
+                data-exercise=""
+                class="exercise-title-span js-exercise-header-span"
+              ></span>
+            </div>
+            <div class="filters-container">
+              <form class="search-form visually-hidden">
+                <input
+                  type="search"
+                  name="search"
+                  placeholder="Search"
+                  class="search-input"
+                />
+                <svg class="search-input-icon search-icon">
+                  <use href="./images/icons.svg#icon-search"></use>
+                </svg>
+                <svg class="search-input-icon cross-icon">
+                  <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+              </form>
 
-            <ul class="list filters js-filters">
-              <li data-filter="Muscles" class="filter-item active">
-                <button class="filter-item-btn">Muscles</button>
-              </li>
-              <li data-filter="Body parts" class="filter-item">
-                <button class="filter-item-btn">Body Parts</button>
-              </li>
-              <li data-filter="Equipment" class="filter-item">
-                <button class="filter-item-btn">Equipment</button>
-              </li>
-            </ul>
+              <ul class="list filters js-filters">
+                <li data-filter="Muscles" class="filter-item active">
+                  <button class="filter-item-btn">Muscles</button>
+                </li>
+                <li data-filter="Body parts" class="filter-item">
+                  <button class="filter-item-btn">Body Parts</button>
+                </li>
+                <li data-filter="Equipment" class="filter-item">
+                  <button class="filter-item-btn">Equipment</button>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="main-content">
             <!-- Exercises Section -->

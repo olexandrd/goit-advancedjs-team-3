@@ -22,8 +22,7 @@
   .rating-star {
     width: 14px;
     height: 14px;
-    fill: var(--light);
-    fill-opacity: 0.2;
+    fill: var(--light-20);
 
     &.rating-star--active {
       fill: #eea10c;

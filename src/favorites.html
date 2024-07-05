@@ -31,8 +31,27 @@
       <load src="./partials/header.html" />
     </header>
     <main>
-      <!-- Favorites Section -->
-      <load src="./partials/favorites.html" />
+      <h1 class="exercise-header-dt favorites-title">Favorites</h1>
+      <section class="favorites-container">
+        <h1 class="exercise-header favorites-title">Favorites</h1>
+        <section class="favorite-hero-section">
+          <load src="/partials/quote.html" />
+          <load src="/partials/info_block_min.html" />
+
+          <img
+            src="./img/favorite-baner_1.png"
+            alt="women sportswear workingout outdoors"
+            class="favorites-image"
+          />
+        </section>
+        <p class="favorites-text visually-hidden">
+          It appears that you haven't added any exercises to your favorites yet.
+          To get started, you can add exercises that you like to your favorites
+          for easier access in the future.
+        </p>
+        <ul class="practice-list"></ul>
+        <ul class="pagination favorites-pagination"></ul>
+      </section>
     </main>
 
     <!-- Up button -->
