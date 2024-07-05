@@ -73,12 +73,6 @@
   align-items: center;
 }
 
-/* .rating-stars-container {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-} */
-
 .rating-pop-up-content .rating .rating-star-container {
   width: 24px;
   height: 24px;
@@ -109,14 +103,13 @@
   border-radius: 30px;
   border: 1px solid var(--light);
   background-color: var(--dark);
-
-  color: rgba(244, 244, 244, 0.6);
   transition: all var(--transition);
   color: var(--light);
 }
 
 .rating-form-input:focus {
   outline: 1px solid var(--light);
+  background: var(--dark);
 }
 
 @media screen and (min-width: 768px) {
