@@ -25,6 +25,8 @@ function onPaginationClick(e) {
   } else {
     rerender();
   }
+
+  refs.mainSection.scrollIntoView();
 }
 
 function onFilterClick(e) {
@@ -79,6 +81,7 @@ function onExerciseClick(e) {
 
   refs.list.innerHTML = '';
   rerenderExercises();
+  refs.mainSection.scrollIntoView();
 }
 
 function onSearchFormSubmit(e) {

@@ -11,7 +11,7 @@ function fadeItems() {
   const items = document.getElementsByClassName('fade-item');
 
   for (let i = 0; i < items.length; ++i) {
-    fadeIn(items[i], i * 400);
+    fadeIn(items[i], i * 300);
   }
   function fadeIn(item, delay) {
     setTimeout(() => {

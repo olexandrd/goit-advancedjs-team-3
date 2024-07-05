@@ -86,11 +86,11 @@ function resizerHandler() {
   const widthVP = window.innerWidth;
   favoritesPaginationRef.classList.add('visually-hidden');
 
-  if (widthVP >= 1280) {
+  if (widthVP >= 1440) {
     headerDtRef.classList.remove('visually-hidden');
     headerRef.classList.add('visually-hidden');
     itemHandler(localData);
-  } else if (widthVP >= 768 && widthVP < 1280) {
+  } else if (widthVP >= 768 && widthVP < 1440) {
     headerDtRef.classList.add('visually-hidden');
     headerRef.classList.remove('visually-hidden');
     if (localData.length <= 10) {
