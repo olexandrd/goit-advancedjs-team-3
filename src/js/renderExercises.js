@@ -15,7 +15,7 @@ export function renderExercises(arr) {
           <div class="exercise-card-top">
             <div class="exercise-card-top-info">
               <h3 class="exercise-general-header">Workout</h3>
-              <p class="exercise-rating">${rating}<svg class="exercise-rating-icon">
+              <p class="exercise-rating">${Number.isInteger(rating) ? rating.toFixed(1) : rating}<svg class="exercise-rating-icon">
                   <use href="./images/icons.svg#icon-star"></use>
                 </svg>
               </p> 
