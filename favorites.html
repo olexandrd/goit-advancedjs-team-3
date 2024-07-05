@@ -25,10 +25,10 @@
     
     <title>Your Energy</title>
     <link rel="icon" type="image/x-icon" href="./favicon.svg" />
-    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/header-60776c59.js"></script>
+    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/header-f938ebaf.js"></script>
     <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/vendor-790bbfe5.js"></script>
-    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/quote-3aa7783e.js"></script>
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/header-ae423015.css">
+    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/quote-4ff188b7.js"></script>
+    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/header-65c19271.css">
     <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -272,9 +272,15 @@
         <p class="exercise-description"></p>
       </div>
     </div>
-
-    <button class="add-exercise-to-favorites-btn">Add to favorites</button>
-    <button class="give-a-rating-to-exercise-btn">Give a rating</button>
+    <div class="button-container">
+      <button class="button popup-btn" id="add-favorites">
+        <span class="button-label">Add to favorites</span>
+        <svg class="button-icon icon" width="18" height="18">
+          <use href="./images/icons.svg#icon-heart"></use>
+        </svg>
+      </button>
+      <button class="button popup-btn"><span class="button-label">Give a rating</span></button>
+    </div>
   </div>
 </div>
 
