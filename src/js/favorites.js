@@ -1,27 +1,28 @@
 import throttle from 'lodash.throttle';
-import data from './favorites-temp';
-import { renderExercises } from './renderExercises';
-// 2. Convert the array to JSON format
-const jsonData = JSON.stringify(data);
-// 3. Save this data in localStorage
-localStorage.setItem('myData', jsonData);
-// 4. Retrieve the data back from localStorage
-const retrievedData = localStorage.getItem('myData');
-// 5. Convert the retrieved data back to an array
-const localData = JSON.parse(retrievedData);
+
+// 1. Retrieve the data from localStorage
+const retrievedData = localStorage.getItem('favorites');
+// 2. Convert the retrieved data back to an array
+const localData = JSON.parse(retrievedData) || [];
+const noCardsTextRef = document.querySelector('.favorites-text');
 const favoritesListRef = document.querySelector('.practice-list');
 const favoritesPaginationRef = document.querySelector('.favorites-pagination');
 const headerDtRef = document.querySelector('.exercise-header-dt');
 const headerRef = document.querySelector('.exercise-header');
+
+if (!localData.length) {
+  noCardsTextRef.classList.remove('visually-hidden');
+}
+
 function splitHandler(arr, widthVP) {
-  const spliter = widthVP < 768 ? 8 : 10;
+  const splitter = widthVP < 768 ? 8 : 10;
 
   let result = [];
-  if (arr.length <= spliter) {
+  if (arr.length <= splitter) {
     return arr;
   } else {
-    for (let i = 0; i < arr.length; i += spliter) {
-      let chunk = arr.slice(i, i + spliter);
+    for (let i = 0; i < arr.length; i += splitter) {
+      let chunk = arr.slice(i, i + splitter);
       result.push(chunk);
     }
     return result;
@@ -85,11 +86,11 @@ function resizerHandler() {
   const widthVP = window.innerWidth;
   favoritesPaginationRef.classList.add('visually-hidden');
 
-  if (widthVP >= 1440) {
+  if (widthVP >= 1280) {
     headerDtRef.classList.remove('visually-hidden');
     headerRef.classList.add('visually-hidden');
     itemHandler(localData);
-  } else if (widthVP >= 768 && widthVP < 1440) {
+  } else if (widthVP >= 768 && widthVP < 1280) {
     headerDtRef.classList.add('visually-hidden');
     headerRef.classList.remove('visually-hidden');
     if (localData.length <= 10) {
@@ -106,9 +107,9 @@ function resizerHandler() {
         const pageItem = document.createElement('li');
         pageItem.classList.add('favorites-page');
         pageItem.textContent = i;
-        const curentData = data[i - 1];
+        const currentData = data[i - 1];
         pageItem.addEventListener('click', () => {
-          itemHandler(curentData);
+          itemHandler(currentData);
           favoritesListRef.scrollIntoView({ behavior: 'smooth' });
         });
         pages.push(pageItem);
@@ -133,9 +134,9 @@ function resizerHandler() {
         const pageItem = document.createElement('li');
         pageItem.classList.add('favorites-page');
         pageItem.textContent = i;
-        const curentData = data[i - 1];
+        const currentData = data[i - 1];
         const bindList = () => {
-          itemHandler(curentData);
+          itemHandler(currentData);
           favoritesListRef.scrollIntoView({ behavior: 'smooth' });
         };
 
