@@ -32,19 +32,7 @@ export function openExercisePopUp(exerciseID) {
 
       refs.exercisePopUpBackdrop.classList.add('is-open');
       refs.body.classList.add('overflow-hidden');
-      refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp, {
-        passive: true,
-      });
-      refs.exercisePopupAddFavoritesBtn.addEventListener(
-        'click',
-        handleAddToFavorites,
-        { passive: true }
-      );
-      refs.exercisePopUpBackdrop.addEventListener(
-        'click',
-        handleBackdropClick,
-        { passive: true }
-      );
+
       document.addEventListener('keydown', handleESCClick);
     })
     .catch(error => {
