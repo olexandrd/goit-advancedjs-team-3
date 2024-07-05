@@ -5,15 +5,27 @@ import iziToast from 'izitoast';
 
 export function openExercisePopUp(exerciseID) {
   renderExercisePopUp(exerciseID)
-    .then((exercise) => {
+    .then(exercise => {
       refs.exercisePopUpBackdrop.classList.add('is-open');
       refs.body.classList.add('overflow-hidden');
       // Store exercise data in the button's dataset
-      refs.exercisePopupAddFavoritesBtn.dataset.exercise = JSON.stringify(exercise);
+      refs.exercisePopupAddFavoritesBtn.dataset.exercise =
+        JSON.stringify(exercise);
 
-      refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp, { passive: true });
-      refs.exercisePopupAddFavoritesBtn.addEventListener('click', handleAddToFavorites, { passive: true });
-      refs.exercisePopUpBackdrop.addEventListener('click', handleBackdropClick, { passive: true });
+      refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp, {
+        passive: true,
+      });
+      refs.exercisePopupAddFavoritesBtn.addEventListener(
+        'click',
+        handleAddToFavorites,
+        { passive: true }
+      );
+      refs.exercisePopUpBackdrop.addEventListener(
+        'click',
+        handleBackdropClick,
+        { passive: true }
+      );
+      document.addEventListener('keydown', handleESCClick);
     })
     .catch(error => {
       iziToast.error({
@@ -26,9 +38,13 @@ function closeExercisePopUp() {
   refs.exercisePopUpBackdrop.classList.remove('is-open');
   refs.body.classList.remove('overflow-hidden');
   // Remove all event listeners
-  refs.exercisePopupAddFavoritesBtn.removeEventListener('click', handleAddToFavorites);
+  refs.exercisePopupAddFavoritesBtn.removeEventListener(
+    'click',
+    handleAddToFavorites
+  );
   refs.exercisePopUpBackdrop.removeEventListener('click', handleBackdropClick);
   refs.exercisePopUpCloseBtn.removeEventListener('click', closeExercisePopUp);
+  document.removeEventListener('keydown', handleESCClick);
 }
 
 function renderExercisePopUp(exerciseID) {
@@ -68,7 +84,15 @@ function addExerciseToFavorites(exercise) {
 }
 
 function handleAddToFavorites(event) {
-  const exercise = JSON.parse(refs.exercisePopupAddFavoritesBtn.dataset.exercise);
+  const exercise = JSON.parse(
+    refs.exercisePopupAddFavoritesBtn.dataset.exercise
+  );
   addExerciseToFavorites(exercise);
   event.stopPropagation();
+}
+
+function handleESCClick(e) {
+  if (e.code === 'Escape') {
+    closeExercisePopUp();
+  }
 }
