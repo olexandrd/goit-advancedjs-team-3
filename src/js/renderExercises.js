@@ -1,5 +1,3 @@
-import { refs } from './constants';
-
 const capitalizeFirstLetter = string => {
   if (!string) {
     return string;
@@ -8,7 +6,7 @@ const capitalizeFirstLetter = string => {
 };
 
 export function renderExercises(arr) {
-  const markup = arr
+  return arr
     .map(
       ({ _id, name, rating, bodyPart, burnedCalories, target, time }) =>
         `<li class="exercise-card fade-item">
@@ -18,7 +16,7 @@ export function renderExercises(arr) {
               <p class="exercise-rating">${Number.isInteger(rating) ? rating.toFixed(1) : rating}<svg class="exercise-rating-icon">
                   <use href="./images/icons.svg#icon-star"></use>
                 </svg>
-              </p> 
+              </p>
             </div>
             <button class="exercise-start-btn" data-exercise-id="${_id}" type="button">
               Start<svg class="exercise-start-icon">
@@ -33,7 +31,7 @@ export function renderExercises(arr) {
               </svg>
               <p class="exercise-card-title-text">${capitalizeFirstLetter(name)}</p>
             </div>
-            <div class="exercise-card-info"> 
+            <div class="exercise-card-info">
               <div class="exercise-card-info-element">
                 <div class="exercise-card-info-element-heading">Burned calories:</div>
                 <div class="exercise-card-info-element-content-target-no-overflow">${burnedCalories} / ${time} min</div>
@@ -51,6 +49,4 @@ export function renderExercises(arr) {
         </li>`
     )
     .join('');
-
-  refs.list.innerHTML = markup;
 }
