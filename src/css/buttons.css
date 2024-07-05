@@ -41,6 +41,28 @@
       fill: var(--dark);
     }
   }
+
+  &.button--secondary {
+    color: var(--light);
+    background-color: var(--dark);
+    border-color: var(--light);
+
+    .button-icon {
+      stroke: var(--light);
+      fill: var(--dark);
+    }
+
+    &:hover {
+      color: var(--dark);
+      background-color: var(--light);
+      border-color: var(--dark);
+
+      .button-icon {
+        stroke: var(--dark);
+        fill: var(--light);
+      }
+    }
+  }
 }
 
 .scroll-up-button {
