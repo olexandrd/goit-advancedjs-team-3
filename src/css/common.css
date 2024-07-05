@@ -12,7 +12,7 @@
   --dark-grey: #111111;
 
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-fast: --container-max-width 0.5s ease-in-out;
+  --animation-fast: var(--container-max-width) 0.5s ease-in-out;
   --tablet-max-width: 768px;
   --desktop-max-width: 1440px;
   --container-max-width: 375px;
