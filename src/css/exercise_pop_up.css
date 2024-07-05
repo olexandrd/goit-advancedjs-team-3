@@ -204,11 +204,11 @@
     height: 20px;
   }
 
-  .button-container .button.popup-btn {
+  .button-container .button.popup-btn:first-child {
     min-width: 194px;
   }
 
-  .button-container .button--secondary.popup-btn {
+  .button-container .button.popup-btn:nth-child(2) {
     flex: 1;
   }
 
