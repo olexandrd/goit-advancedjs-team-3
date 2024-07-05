@@ -7,11 +7,14 @@ let isScrolled = false;
 
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollUpEl = document.querySelector('.scroll-up-button-container');
 
   if (scrollTop >= 2 && !isScrolled) {
     header.classList.add('header-scrolled');
+    scrollUpEl.classList.remove('visually-hidden');
     isScrolled = true;
   } else if (scrollTop < 2 && isScrolled) {
+    scrollUpEl.classList.add('visually-hidden');
     header.classList.remove('header-scrolled');
     isScrolled = false;
   }
