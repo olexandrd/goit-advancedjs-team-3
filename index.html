@@ -26,11 +26,11 @@
     <title>Your Energy</title>
     <link rel="icon" type="image/x-icon" href="./favicon.svg" />
     <script type="module" crossorigin src="/goit-advancedjs-team-3/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/header-5e6dc6c8.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/header-76e2ce0d.js">
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/vendor-790bbfe5.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-12069d1b.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/quote-49749478.js">
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/header-ebe0919c.css">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-3f6fee8b.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/quote-600b11ce.js">
+    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/header-d10a3a0b.css">
     <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -198,11 +198,17 @@
                 <button class="filter-item-btn">Body Parts</button>
               </li>
               <li data-filter="Equipment" class="filter-item">
-                <button class="filter-item-btn">Equipment</button> 
+                <button class="filter-item-btn">Equipment</button>
               </li>
             </ul>
           </div>
           <div class="main-content">
+            <!-- Exercises Section -->
+            <div class="exercises-container">
+  <ul class="filtered-list js-filtered-list"></ul>
+  <ul class="pagination js-pagination"></ul>
+</div>
+
             <aside class="aside">
               <!-- Quote of the day -->
               <div id="quote" class="quote hidden">
@@ -283,12 +289,6 @@
 </div>
 
             </aside>
-            <!-- Exercises Section -->
-            <div class="exercises-container">
-  <ul class="filtered-list js-filtered-list"></ul>
-  <ul class="pagination js-pagination"></ul>
-</div>
-
           </div>
         </div>
       </section>
