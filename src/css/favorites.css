@@ -3,18 +3,18 @@
   display: block;
   height: 119px;
   width: 335px;
-
   margin: 0 auto;
   margin-bottom: 20px;
 }
+
 .favorites-container {
   max-width: 345px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   gap: 20px;
-  /*some*/
 }
+
 .practice-list {
   background-color: var(--light);
   margin: 0 auto;
@@ -22,18 +22,19 @@
   flex-direction: column;
   gap: 20px;
 }
+
 .exercise-card {
   max-width: 335px;
   height: 141px;
 }
+
 .favorites-pagination {
-  display: block;
+  display: flex;
   height: 31px;
   outline: 1px solid red;
   width: 80px;
   margin: 0 auto;
   margin-bottom: 80px;
-  display: flex;
   gap: 20px;
 }
 
@@ -45,6 +46,7 @@
   max-width: 318px;
   margin: 0 auto;
 }
+
 .favorite-hero-section {
   max-width: 335px;
   display: flex;
@@ -53,18 +55,57 @@
   padding: 0;
 }
 
+.favorites-title {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.357;
+  letter-spacing: -0.02em;
+}
+.exercise-header{
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.favorites-container #quote {
+  padding: 20px;
+  
+}
+
 @media screen and (min-width: 768px) {
+  .exercise-header {
+    margin-top: 100px;
+    margin-bottom: 32px;
+    font-family: inherit;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.0909;
+  }
+
   .favorites-container {
     max-width: 704px;
   }
+
+  .favorites-container #quote {
+
+    max-width: unset;
+    width: 704px;
+  }
+
+  .favorites-container .info-block-min {
+    width: 342px;
+    height: 141px;
+  }
+
   .favorite-hero-section {
     max-width: 704px;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 112px;
   }
+
   .favorites-image {
+    margin: 0;
     object-fit: cover;
-    width: 239px;
+    width: 342px;
     height: 141px;
   }
 
@@ -72,104 +113,102 @@
     flex-direction: unset;
     flex-wrap: wrap;
     gap: 16px;
+    max-width: 704px;
   }
+
   .exercise-card {
     width: 344px;
     max-width: 344px;
   }
-  .practice-list {
-    max-width: 704px;
+
+  .favorites-text {
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1.33;
+    text-align: center;
+    max-width: 554px;
+    margin: 0 auto;
   }
 }
+
 @media screen and (min-width: 1440px) {
-  .favorites-image {
-    margin: 0;
-    width: 239px;
-    height: 141px;
+  .favorite-hero-section {
+    margin-bottom: unset;
+    max-width: 494px;
   }
-  .practice-list {
-    max-width: 850px;
+
+  .favorites-text {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1.33;
+    text-align: center;
+    max-width: 554px;
+    margin: 0 auto;
+    height: 387px;
   }
+
   .favorites-container {
     flex-direction: row;
     max-width: 1376px;
-    margin-top: 150px;
     display: flex;
   }
-  .exercise-card {
-    width: 405px;
-    max-width: 405px;
+
+  .favorites-container #quote {
+    width: 494px;
   }
+
+  .favorites-container .info-block-min {
+    width: 237px;
+    height: 141px;
+  }
+
+  .favorites-image {
+    width: 237px;
+    height: 141px;
+  }
+
   .practice-list {
+    max-width: 850px;
     column-gap: 16px;
     row-gap: 32px;
     height: 487px;
     overflow: auto;
   }
 
-  /* Customize the scrollbar track for WebKit browsers */
+  /* Customize the scrollbar for WebKit browsers */
   .practice-list::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
+    width: 8px;
     height: 153px;
-    border-radius: 12px;
   }
 
-  /* Customize the track (background of the scrollbar) for WebKit browsers */
   .practice-list::-webkit-scrollbar-track {
     background: #2424241a;
     border-radius: 12px;
   }
 
-  /* Customize the thumb (the draggable part of the scrollbar) for WebKit browsers */
   .practice-list::-webkit-scrollbar-thumb {
     background: #242424;
     border-radius: 12px;
   }
 
-  /* Customize the thumb when hovered for WebKit browsers */
   .practice-list::-webkit-scrollbar-thumb:hover {
     background: #555;
     cursor: pointer;
   }
 
-  /* Hide the up and down arrows on the scrollbar for WebKit browsers */
   .practice-list::-webkit-scrollbar-button {
     display: none;
   }
 
-  /* Firefox scrollbar customization */
+  /* Customize the scrollbar for Firefox */
   .practice-list {
-    scrollbar-width: thin; /* Width of the scrollbar */
-    scrollbar-color: #242424 #2424241a; /* Color of the thumb and track */
+    scrollbar-width: thin;
+    scrollbar-color: #242424 #2424241a;
   }
 
-  /* Customize the thumb when hovered for Firefox */
   .practice-list::-moz-scrollbar-thumb:hover {
-    background: #555;
-    cursor: pointer;
-  }
-  /* Customize the scrollbar track */
-  .practice-list::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-    height: 153px;
-  }
-
-  /* Customize the track (background of the scrollbar) */
-  .practice-list::-webkit-scrollbar-track {
-    background: #2424241a;
-
-    border-radius: 12px;
-  }
-
-  /* Customize the thumb (the draggable part of the scrollbar) */
-  .practice-list::-webkit-scrollbar-thumb {
-    background: #242424;
-
-    border-radius: 12px;
-  }
-
-  /* Customize the thumb when hovered */
-  .practice-list::-webkit-scrollbar-thumb:hover {
     background: #555;
     cursor: pointer;
   }
