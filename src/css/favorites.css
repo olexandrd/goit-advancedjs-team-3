@@ -65,6 +65,10 @@
   margin-top: 60px;
   margin-bottom: 20px;
 }
+.favorites-container #quote {
+  padding: 20px;
+  
+}
 
 @media screen and (min-width: 768px) {
   .exercise-header {
@@ -81,6 +85,7 @@
   }
 
   .favorites-container #quote {
+
     max-width: unset;
     width: 704px;
   }
