@@ -1,4 +1,4 @@
-import{r as a,d as U,e as P,f as q,q as y,a as c,F as C,g as A,h as O}from"./header-cb6ed807.js";import{i as u}from"./vendor-7b59b48c.js";function L(e){return e.charAt(0).toUpperCase()+e.slice(1)}function H(e){const t=e.map(({filter:s,name:i,imgURL:r})=>`<li class="category-card fade-item" data-filter="${s}" data-name="${i}">
+import{r as a,d as U,e as P,f as q,q as y,a as c,F as C,g as A,h as O}from"./header-7678b136.js";import{i as u}from"./vendor-7b59b48c.js";function L(e){return e.charAt(0).toUpperCase()+e.slice(1)}function H(e){const t=e.map(({filter:s,name:i,imgURL:r})=>`<li class="category-card fade-item" data-filter="${s}" data-name="${i}">
             <img
               src="${r}"
               alt="${i}"
@@ -71,7 +71,7 @@ import{r as a,d as U,e as P,f as q,q as y,a as c,F as C,g as A,h as O}from"./hea
               </div>
             </div>
           </div>
-        </li>`).join("");a.list.innerHTML=t}function E(){const e=document.getElementsByClassName("fade-item");for(let s=0;s<e.length;++s)t(e[s],s*300);function t(s,i){setTimeout(()=>{s.classList.add("fadein")},i)}}function I(){U().then(e=>{e.totalPages,H(e.results),$(e.totalPages,Number(e.page)),E()}).catch(e=>{u.error({message:`${e}`})})}function g(){P().then(e=>{e.results.length||u.warning({message:"Sorry, this request did not match. Try changing the request parameters."}),_(e.results),$(e.totalPages,Number(e.page)),E()}).catch(e=>{u.error({message:`${e}`})})}const k={target:"Target",bodyPart:"Body Part",equipment:"Equipment",popularity:"Popular"};function G(e){let t="";return Object.keys(k).forEach(s=>{e.hasOwnProperty(s)&&(t+=`
+        </li>`).join("");a.list.innerHTML=t}function E(){const e=document.getElementsByClassName("fade-item");for(let s=0;s<e.length;++s)t(e[s],s*300);function t(s,i){setTimeout(()=>{s.classList.add("fadein")},i)}}function I(){U().then(e=>{e.totalPages,H(e.results),$(e.totalPages,Number(e.page)),E()}).catch(e=>{u.error({message:`${e}`})})}function g(){P().then(e=>{e.results.length||u.warning({message:"Sorry, this request did not match. Try changing the request parameters."}),_(e.results),$(e.totalPages,Number(e.page)),E()}).catch(e=>{u.error({message:`${e}`})})}const k={target:"Target",bodyPart:"Body Part",equipment:"Equipment",popularity:"Popular"};function j(e){let t="";return Object.keys(k).forEach(s=>{e.hasOwnProperty(s)&&(t+=`
         <li class="exercise-data-list-item">
           <p class="exercise-data-parameter-name">${k[s]}</p>
           <p class="exercise-data-parameter-value">${e[s]}</p>
@@ -81,7 +81,7 @@ import{r as a,d as U,e as P,f as q,q as y,a as c,F as C,g as A,h as O}from"./hea
           <p class="exercise-data-parameter-name">Burned Calories</p>
           <p class="exercise-data-parameter-value">${e.burnedCalories}/${e.time} min</p>
         </li>
-      `),t}function J(e){const t=`
+      `),t}function G(e){const t=`
     <div class="rating-star-container">
       <svg class="rating-star rating-star--active">
         <use href="./images/icons.svg#icon-star"></use>
@@ -106,7 +106,7 @@ import{r as a,d as U,e as P,f as q,q as y,a as c,F as C,g as A,h as O}from"./hea
     <div class="rating rating--dark">
       <span class="rating-label">${Number.isInteger(e)?e.toFixed(1):e}</span>
       ${o}
-    </div>`}function R(e){return(JSON.parse(localStorage.getItem("favorites"))||[]).some(s=>s._id===e)}function j(e){return R(e)?`
+    </div>`}function J(e){return(JSON.parse(localStorage.getItem("favorites"))||[]).some(s=>s._id===e)}function R(e){return J(e)?`
     <button class="button popup-btn" id="remove-favorites">
       <span class="button-label">Remove from favorites</span>
         <svg class="button-icon icon" width="18" height="18">
@@ -120,7 +120,7 @@ import{r as a,d as U,e as P,f as q,q as y,a as c,F as C,g as A,h as O}from"./hea
           <use href="./images/icons.svg#icon-heart"></use>
         </svg>
     </button>
-    `}function z(e){const t=G(e),s=J(e.rating),i=j(e._id);return`
+    `}function z(e){const t=j(e),s=G(e.rating),i=R(e._id);return`
     <img class="exercise-instruction-image" src="${e.gifUrl}" alt="${e.name} instruction">
     <div class="exercise-panel-content">
     <p class="exercise-name">${e.name}</p>
@@ -136,11 +136,11 @@ import{r as a,d as U,e as P,f as q,q as y,a as c,F as C,g as A,h as O}from"./hea
 
     <div class="button-container">
       ${i}
-      <button class="button button--secondary popup-btn">
+      <button class="button button--secondary popup-btn js-add-rating">
         <span class="button-label">Give a rating</span>
       </button>
     </div>
 
     </div>
   `}let p=null,v=null;function S(e){V(e).then(t=>{p=null,v=null,p=document.querySelector("#add-favorites"),v=document.querySelector("#remove-favorites"),p&&(p.dataset.exercise=JSON.stringify(t),p.addEventListener("click",K,{passive:!0})),v&&(v.dataset.exercise=JSON.stringify(t)),a.exercisePopUpCloseBtn.addEventListener("click",f,{passive:!0}),a.exercisePopUpBackdrop.addEventListener("click",F,{passive:!0}),a.exercisePopUpBackdrop.classList.add("is-open"),a.body.classList.add("overflow-hidden"),document.addEventListener("keydown",N)}).catch(t=>{u.error({message:`${t}`})})}function f(){a.exercisePopUpBackdrop.classList.remove("is-open"),a.body.classList.remove("overflow-hidden"),p=null,v=null,a.exercisePopUpBackdrop.removeEventListener("click",F),a.exercisePopUpCloseBtn.removeEventListener("click",f),document.removeEventListener("keydown",N)}function V(e){return new Promise((t,s)=>{q(e).then(i=>{a.exercisePopUpContent.innerHTML=z(i),t(i)}).catch(i=>{s(i)})})}function F(e){e.target===a.exercisePopUpBackdrop&&f()}function Z(e){let t=JSON.parse(localStorage.getItem("favorites"))||[];t.some(i=>i._id===e._id)?u.warning({message:"Exercise is already in favorites!"}):(t.push(e),localStorage.setItem("favorites",JSON.stringify(t)),u.success({message:"Exercise added to favorites!"}))}function K(e){const t=JSON.parse(p.dataset.exercise);Z(t),e.stopPropagation(),S(t._id)}function N(e){e.code==="Escape"&&f()}function X(e){const t=e.target,s=t.closest("li.pagination-item:not(.active):not(.three-dots)")??t.closest("li.pagination-arrow:not(.disabled)");if(!s)return;const i=Number(s.dataset.id);y.set("page",i),c.set("page",i),a.exerciseHeaderSpan.dataset.exercise?g():I(),a.mainSection.scrollIntoView()}function Y(e){const s=e.target.closest("li[data-filter]");if(!s)return;document.querySelectorAll(".js-filters .active").forEach(n=>n.classList.remove("active")),s.classList.add("active"),a.searchForm.reset(),a.searchForm.classList.add("visually-hidden");const r=s.dataset.filter,o=Object.keys(C).find(n=>C[n]===r);o&&(y.set("filter",C[o]),y.set("page",1),c.delete("muscles"),c.delete("bodypart"),c.delete("equipment"),c.set("page",1),a.list.classList.replace("exercise-list","filtered-list"),I()),A()}function ee(e){const s=e.target.closest("li.category-card");if(!s)return;let i=s.dataset.filter.toString().toLowerCase();i==="body parts"&&(i="bodypart");const r=s.dataset.name;O(r),c.set(i,r),c.set("page",1),a.list.classList.replace("filtered-list","exercise-list"),a.searchForm.classList.remove("visually-hidden"),a.list.innerHTML="",g(),a.mainSection.scrollIntoView()}function B(e){e.preventDefault();const t=a.searchInput.value.trim();c.set("keyword",t),g()}function te(e){const t=e.target.closest(".exercise-start-btn");if(!t)return;const s=t.getAttribute("data-exercise-id");s&&S(s)}a.searchInputCrossIcon.addEventListener("click",()=>{c.set("page",1),c.delete("keyword"),a.searchForm.reset(),g()});a.searchInputSearchIcon.addEventListener("click",B);a.searchForm.addEventListener("submit",B);export{X as a,ee as b,te as c,Y as o,I as r};
-//# sourceMappingURL=search-input-f835893e.js.map
+//# sourceMappingURL=search-input-4b126355.js.map
