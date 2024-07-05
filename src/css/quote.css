@@ -5,7 +5,7 @@
   padding: 40px;
   border-radius: 20px;
   background: var(--dark);
-
+  min-height: var(--desktop-card-height);
   max-width: 500px;
 
   &.hidden {
