@@ -9,7 +9,6 @@ import { resetExerciseHeader, setExerciseHeader } from './header';
 import { openExercisePopUp } from './exercisePopUp.js';
 
 function onPaginationClick(e) {
-  debugger;
   const target = e.target;
   const paginationItem =
     target.closest('li.pagination-item:not(.active):not(.three-dots)') ??
@@ -62,7 +61,7 @@ function onFilterClick(e) {
 
 function onExerciseClick(e) {
   const target = e.target;
-  const exerciseItem = target.closest('li.filtered-item');
+  const exerciseItem = target.closest('li.category-card');
   if (!exerciseItem) return;
   let exerciseFilter = exerciseItem.dataset.filter.toString().toLowerCase();
   if (exerciseFilter === 'body parts') {
