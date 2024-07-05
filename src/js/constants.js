@@ -20,6 +20,7 @@ const refs = {
   body: document.querySelector('body'),
   scrollUpButton: document.querySelector('.scroll-up-button'),
   mainSection: document.querySelector('.main-section'),
+  buttonFavorites: document.querySelector('.button-favorites'),
 };
 
 const FILTERS = {
