@@ -18,6 +18,7 @@ const refs = {
   exercisesContainer: document.querySelector('.exercises-container'),
   body: document.querySelector('body'),
   scrollUpButton: document.querySelector('.scroll-up-button'),
+  mainSection: document.querySelector('.main-section'),
 };
 
 const FILTERS = {
