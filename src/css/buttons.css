@@ -52,6 +52,7 @@
   border-radius: 50%;
   background-color: var(--dark);
   box-shadow: -3px 4px 35px -1px rgba(177, 178, 199, 0.35);
+  border: 1px solid var(--white);
 
   .scroll-up-button-icon {
     width: 20px;
