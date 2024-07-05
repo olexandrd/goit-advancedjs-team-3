@@ -137,7 +137,9 @@ button {
         height: 40px;
       }
     }
-    
+  }
+}    
+
 .fade-item {
   transition: 0.5s all ease-in-out;
   opacity: 0;
