@@ -31,33 +31,52 @@ function createExerciseDataMarkup(exercise) {
 const ratingStarSize = 18;
 
 function createRatingStarsMarkup(rating) {
-  const fullStar = `<svg class="exercise-rating-star" width="${ratingStarSize}" height="${ratingStarSize}" viewBox="0 0 32 32"><use href="../images/icons.svg#icon-star" style="fill: var(--yellow);"></use></svg>`;
-  const emptyStar = `<svg class="exercise-rating-star" width="${ratingStarSize}" height="${ratingStarSize}" viewBox="0 0 32 32"><use href="../images/icons.svg#icon-star" style="fill: var(--light-20);"></use></svg>`;
+  const fullStar = `
+    <div class="rating-star-container">
+      <svg class="rating-star rating-star--active">
+        <use href="./images/icons.svg#icon-star"></use>
+      </svg>
+    </div>`;
+
+  const emptyStar = `
+    <div class="rating-star-container">
+      <svg class="rating-star">
+        <use href="./images/icons.svg#icon-star"></use>
+      </svg>
+    </div>`;
+
   const partialStarTemplate = (percentage) => `
-        <svg class="exercise-rating-star" width="${ratingStarSize}" height="${ratingStarSize}" viewBox="0 0 32 32">
-            <defs>
-                <linearGradient id="partial-star-${percentage}">
-                    <stop offset="${percentage}%" stop-color="var(--yellow)" />
-                    <stop offset="${percentage}%" stop-color="var(--light-20)" />
-                </linearGradient>
-            </defs>
-            <use href="../images/icons.svg#icon-star" style="fill: url(#partial-star-${percentage});"></use>
-        </svg>
-    `;
+    <div class="rating-star-container">
+      <svg class="rating-star">
+        <defs>
+          <linearGradient id="partial-star-${percentage}">
+            <stop offset="${percentage}%" stop-color="var(--yellow)" />
+            <stop offset="${percentage}%" stop-color="var(--light-20)" />
+          </linearGradient>
+        </defs>
+        <use href="./images/icons.svg#icon-star" style="fill: url(#partial-star-${percentage});"></use>
+      </svg>
+    </div>`;
+
+  let ratingRemain = rating;
 
   let starsMarkup = '';
   for (let i = 0; i < 5; i++) {
-    if (rating >= 1) {
+    if (ratingRemain >= 1) {
       starsMarkup += fullStar;
-    } else if (rating > 0) {
-      starsMarkup += partialStarTemplate(rating * 100);
+    } else if (ratingRemain > 0) {
+      starsMarkup += partialStarTemplate(ratingRemain * 100);
     } else {
       starsMarkup += emptyStar;
     }
-    rating--;
+    ratingRemain--;
   }
 
-  return starsMarkup;
+  return `
+    <div class="rating rating--dark">
+      <span class="rating-label">${Number.isInteger(rating) ? rating.toFixed(1) : rating}</span>
+      ${starsMarkup}
+    </div>`;
 }
 
 export function createExerciseMarkup(exercise) {
@@ -68,8 +87,11 @@ export function createExerciseMarkup(exercise) {
     <img class="exercise-instruction-image" src="${exercise.gifUrl}" alt="${exercise.name} instruction">
     <p class="exercise-name">${exercise.name}</p>
     <div class="exercise-rating-wrapper">
-      <p class="exercise-rating">${exercise.rating}</p>
-      <div class="exercise-rating-stars-wrapper">${ratingStarsMarkup}</div>
+    <div class="dark-container">
+      <div class="sub-container">
+      ${ratingStarsMarkup}
+      </div>
+    </div>
     </div>
     <ul class="exercise-data">${exerciseDataMarkup}</ul>
     <p class="exercise-description">${exercise.description}</p>
