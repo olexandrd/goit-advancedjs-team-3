@@ -25,19 +25,8 @@ function rerender() {
     .then(data => {
       dataOptions.totalPages = data.totalPages;
       renderCategories(data.results);
-      renderPagination(data.totalPages);
+      renderPagination(data.totalPages, Number(data.page));
       fadeItems();
-
-      Array.from(refs.pagination.childNodes).forEach(p => {
-        p.classList.remove('active');
-      });
-
-      const activePage = Array.from(refs.pagination.childNodes).find(
-        p => p.dataset.id == data.page
-      );
-      if (activePage) {
-        activePage.classList.add('active');
-      }
     })
     .catch(error => {
       iziToast.error({
@@ -57,18 +46,8 @@ function rerenderExercises() {
       }
 
       renderExercises(data.results);
-      renderPagination(data.totalPages);
-
-      Array.from(refs.pagination.childNodes).forEach(p => {
-        p.classList.remove('active');
-      });
-
-      const activePage = Array.from(refs.pagination.childNodes).find(
-        p => p.dataset.id == data.page
-      );
-      if (activePage) {
-        activePage.classList.add('active');
-      }
+      renderPagination(data.totalPages, Number(data.page));
+      fadeItems();
     })
     .catch(error => {
       iziToast.error({

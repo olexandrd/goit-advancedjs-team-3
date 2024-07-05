@@ -7,19 +7,101 @@
     justify-content: center;
     align-items: flex-start;
     border: none;
-    color: var(--light-grey);
-    font-size: 24px;
-    line-height: 1.33333;
-    letter-spacing: 0.96px;
-    cursor: pointer;
 
-    &.pagination-item--active {
+    & .pagination-link {
+      font-size: 24px;
+      line-height: 1.33333;
+      letter-spacing: 0.96px;
+      text-decoration: none;
+      color: var(--light-grey);
+      cursor: pointer;
+    }
+
+    &.three-dots {
+      cursor: default;
+
+      & .pagination-link {
+        cursor: default;
+      }
+    }
+
+    &.active {
       width: 32px;
       height: 32px;
       border-radius: 50%;
       border: 1px solid var(--dark);
       color: var(--dark);
       cursor: default;
+
+      & .pagination-link {
+        cursor: default;
+        text-decoration: none;
+        color: var(--dark);
+      }
+    }
+  }
+
+  .pagination-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--dark);
+    cursor: pointer;
+
+    .pagination-link {
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: relative;
+    }
+
+    .arrow-icon.first {
+      position: absolute;
+
+      &:first-child {
+        left: -4px;
+      }
+
+      &:last-child {
+        left: 2px;
+      }
+    }
+
+    .arrow-icon.last {
+      position: absolute;
+
+      &:first-child {
+        right: -4px;
+      }
+
+      &:last-child {
+        right: 2px;
+      }
+    }
+
+    &.disabled {
+      cursor: default;
+      border: 1px solid var(--light-grey);
+
+      .pagination-link {
+        cursor: default;
+      }
+
+      path {
+        fill: var(--dark);
+        fill-opacity: 0.5;
+      }
+    }
+
+    &.go-to-prev {
+      margin-right: 20px;
+    }
+
+    &.go-to-next {
+      margin-left: 20px;
     }
   }
 }
