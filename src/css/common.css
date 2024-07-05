@@ -116,3 +116,23 @@ button {
 .overflow-hidden {
   overflow: hidden;
 }
+
+.scroll-up-button-container {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+}
+
+@media screen and (min-width: 1440px) {
+  .scroll-up-button-container {
+    .scroll-up-button {
+      width: 100px;
+      height: 100px;
+
+      .scroll-up-button-icon {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
