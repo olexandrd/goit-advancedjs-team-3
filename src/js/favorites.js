@@ -2,18 +2,15 @@ import throttle from 'lodash.throttle';
 import { fadeItems } from './rerender.js';
 import { renderExercises } from './renderExercises.js';
 import { onExerciseStartClick } from './eventHandlers.js';
+import iziToast from 'izitoast';
 
-// 1. Retrieve the data from localStorage
-const retrievedData = localStorage.getItem('favorites');
-// 2. Convert the retrieved data back to an array
-const localData = JSON.parse(retrievedData) || [];
+let localData = [];
 const noCardsTextRef = document.querySelector('.favorites-text');
 const favoritesListRef = document.querySelector('.practice-list');
 const favoritesPaginationRef = document.querySelector('.favorites-pagination');
 
 if (!localData.length) {
   noCardsTextRef.classList.remove('visually-hidden');
-  favoritesListRef.classList.add('visually-hidden');
 }
 
 function splitHandler(arr, widthVP) {
@@ -31,24 +28,48 @@ function splitHandler(arr, widthVP) {
   }
 }
 
+export function removeExerciseFromFavorites(exerciseID) {
+  const exercise = localData.find(e => e._id === exerciseID);
+  if (!exercise) return;
+  const updatedFavorites = localData.filter(favorite => favorite._id !== exerciseID);
+  localData = updatedFavorites;
+  localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+  iziToast.success({
+    message: `Exercise ${exercise.name} removed from favorites!`,
+  });
+  resizerHandler(updatedFavorites);
+}
+
+function onExerciseRemoveClick(e) {
+  const target = e.target.closest('.exercise-remove-btn');
+  if (!target) return;
+  const exerciseID = target.getAttribute('data-exercise-id');
+  if (exerciseID) {
+    removeExerciseFromFavorites(exerciseID);
+  }
+}
+
 function itemHandler(arr) {
-  favoritesListRef.innerHTML = renderExercises(arr);
+  favoritesListRef.innerHTML = renderExercises(arr, true);
   fadeItems();
 }
 
-function resizerHandler() {
+function resizerHandler(data = localData) {
+  if (!data.length) {
+    noCardsTextRef.classList.remove('visually-hidden');
+  }
   const widthVP = window.innerWidth;
   favoritesPaginationRef.classList.add('visually-hidden');
 
   if (widthVP >= 1440) {
-    itemHandler(localData);
+    itemHandler(data);
   } else if (widthVP >= 768 && widthVP < 1440) {
-    if (localData.length <= 10) {
-      itemHandler(localData);
+    if (data.length <= 10) {
+      itemHandler(data);
     } else {
       favoritesPaginationRef.innerHTML = '';
       favoritesPaginationRef.classList.remove('visually-hidden');
-      const data = splitHandler(localData, widthVP);
+      const data = splitHandler(data, widthVP);
       itemHandler(data[0]);
 
       let pages = [];
@@ -68,12 +89,12 @@ function resizerHandler() {
       favoritesPaginationRef.append(...pages);
     }
   } else {
-    if (localData.length <= 8) {
-      itemHandler(localData);
+    if (data.length <= 8) {
+      itemHandler(data);
     } else {
       favoritesPaginationRef.innerHTML = '';
       favoritesPaginationRef.classList.remove('visually-hidden');
-      const data = splitHandler(localData, widthVP);
+      const data = splitHandler(data, widthVP);
       itemHandler(data[0]);
 
       let pages = [];
@@ -101,10 +122,15 @@ function resizerHandler() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. Retrieve the data from localStorage
+  const retrievedData = localStorage.getItem('favorites');
+  // 2. Convert the retrieved data back to an array
+  localData = JSON.parse(retrievedData) || [];
   // Initial run
-  resizerHandler();
+  resizerHandler(localData);
   const throttledHandleResize = throttle(resizerHandler, 50);
   // Throttle the resizerHandler function
   window.addEventListener('resize', throttledHandleResize);
   favoritesListRef.addEventListener('click', onExerciseStartClick);
+  favoritesListRef.addEventListener('click', onExerciseRemoveClick);
 });

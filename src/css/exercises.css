@@ -86,6 +86,12 @@
   color: var(--dark);
 }
 
+.trash-icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--dark);
+}
+
 .exercise-rating-icon {
   width: 18px;
   height: 18px;
@@ -103,7 +109,7 @@
   height: 24px;
 }
 
-.exercise-start-btn {
+.exercise-card-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -114,6 +120,10 @@
   height: 18px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.exercise-start-btn {
+  gap: 8px;
 }
 
 .exercise-card-top {
