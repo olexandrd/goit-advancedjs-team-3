@@ -12,10 +12,10 @@
   --dark-grey: #111111;
 
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --container-max-width: 375px;
   --animation-fast: var(--container-max-width) 0.5s ease-in-out;
   --tablet-max-width: 768px;
   --desktop-max-width: 1440px;
-  --container-max-width: 375px;
   --mobile-menu-max-width: 210px;
 
   --desktop-card-height: 242px;
