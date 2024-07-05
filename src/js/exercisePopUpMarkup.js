@@ -1,5 +1,8 @@
 const exerciseDataPropertiesMapping = {
-  target: 'Target', bodyPart: 'Body Part', equipment: 'Equipment', popularity: 'Popular',
+  target: 'Target',
+  bodyPart: 'Body Part',
+  equipment: 'Equipment',
+  popularity: 'Popular',
 };
 
 function createExerciseDataMarkup(exercise) {
@@ -33,7 +36,7 @@ const ratingStarSize = 18;
 function createRatingStarsMarkup(rating) {
   const fullStar = `<svg class="exercise-rating-star" width="${ratingStarSize}" height="${ratingStarSize}" viewBox="0 0 32 32"><use href="../images/icons.svg#icon-star" style="fill: var(--yellow);"></use></svg>`;
   const emptyStar = `<svg class="exercise-rating-star" width="${ratingStarSize}" height="${ratingStarSize}" viewBox="0 0 32 32"><use href="../images/icons.svg#icon-star" style="fill: var(--light-20);"></use></svg>`;
-  const partialStarTemplate = (percentage) => `
+  const partialStarTemplate = percentage => `
         <svg class="exercise-rating-star" width="${ratingStarSize}" height="${ratingStarSize}" viewBox="0 0 32 32">
             <defs>
                 <linearGradient id="partial-star-${percentage}">
@@ -68,7 +71,7 @@ export function createExerciseMarkup(exercise) {
     <img class="exercise-instruction-image" src="${exercise.gifUrl}" alt="${exercise.name} instruction">
     <p class="exercise-name">${exercise.name}</p>
     <div class="exercise-rating-wrapper">
-      <p class="exercise-rating">${exercise.rating}</p>
+      <p class="exercise-rating">${Number.isInteger(exercise.rating) ? exercise.rating.toFixed(1) : exercise.rating}</p>
       <div class="exercise-rating-stars-wrapper">${ratingStarsMarkup}</div>
     </div>
     <ul class="exercise-data">${exerciseDataMarkup}</ul>

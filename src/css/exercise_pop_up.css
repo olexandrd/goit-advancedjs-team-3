@@ -73,7 +73,7 @@
   margin-bottom: 20px;
 }
 
-.exercise-rating {
+.exercise-rating-wrapper .exercise-rating {
   display: inline;
   color: var(--light);
   font-weight: 400;

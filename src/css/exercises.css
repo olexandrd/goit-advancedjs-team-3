@@ -65,7 +65,7 @@
   flex-direction: row;
   gap: 10px;
 
-  border: 1px solid #242424;
+  border: 1px solid var(--dark);
   border-radius: 15px;
   padding: 5px 8px;
   width: 76px;
@@ -73,7 +73,7 @@
 
   font-weight: 500;
   font-size: 12px;
-  color: #242424;
+  color: var(--dark);
 }
 
 .exercise-rating {
@@ -82,12 +82,13 @@
   justify-content: center;
   flex-direction: row;
   gap: 2px;
+  color: var(--dark);
 }
 
 .exercise-rating-icon {
   width: 18px;
   height: 18px;
-  fill: #eea10c;
+  fill: var(--yellow);
 }
 
 .exercise-start-icon {
@@ -129,11 +130,11 @@
   text-transform: uppercase;
   padding: 5px 8px 5px 8px;
 
-  background-color: #fff;
+  background-color: var(--white);
 
   border-style: solid;
   border-width: 1px;
-  border-color: #242424;
+  border-color: var(--dark);
   border-radius: 15px;
 
   font-size: 12px;
