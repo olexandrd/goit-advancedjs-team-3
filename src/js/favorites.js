@@ -12,6 +12,7 @@ const headerRef = document.querySelector('.exercise-header');
 
 if (!localData.length) {
   noCardsTextRef.classList.remove('visually-hidden');
+  favoritesListRef.classList.add('visually-hidden');
 }
 
 function splitHandler(arr, widthVP) {
