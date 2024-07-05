@@ -2,10 +2,11 @@
   display: grid;
   grid-template-columns: min-content 1fr;
   column-gap: 16px;
-  padding: 40px;
+  padding: 20px;
   border-radius: 20px;
   background-color: var(--white);
   max-width: 500px;
+  height: 200px;
 }
 
 .info-block-title {
@@ -18,9 +19,9 @@
   font-feature-settings:
     'clig' off,
     'liga' off;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 20px;
   font-weight: 500;
-  line-height: 1.33333;
   margin-bottom: 6px;
 }
 
@@ -29,7 +30,7 @@
   opacity: 0.6;
   font-size: 14px;
   line-height: 1.28571;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .info-block-content {
@@ -37,6 +38,10 @@
   font-size: 14px;
   line-height: 1.28571;
   margin-bottom: 8px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 
 .circle {
@@ -47,4 +52,25 @@
   height: 32px;
   width: 32px;
   border-radius: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .info-block {
+    height: 250px;
+    padding: 40px;
+  }
+
+  .info-block-title-sub {
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .info-block {
+    height: 315px;
+  }
+
+  .info-block-content {
+    -webkit-line-clamp: 9;
+  }
 }
