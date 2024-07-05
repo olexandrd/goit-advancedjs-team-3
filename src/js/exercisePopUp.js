@@ -2,6 +2,7 @@ import { createExerciseMarkup } from './exercisePopUpMarkup.js';
 import { serviceGetExercisesById } from './services.js';
 import { refs } from './constants.js';
 import iziToast from 'izitoast';
+import { removeExerciseFromFavorites } from './favoritesStorageHandler.js';
 
 let exercisePopupAddFavoritesBtn = null;
 let exercisePopupRemoveFavoritesBtn = null;
@@ -23,8 +24,7 @@ export function openExercisePopUp(exerciseID) {
 
       if (exercisePopupRemoveFavoritesBtn) {
         exercisePopupRemoveFavoritesBtn.dataset.exercise = JSON.stringify(exercise);
-        // TODO will be used after handle function creation
-        // exercisePopupRemoveFavoritesBtn.addEventListener('click', handleAddToFavorites, { passive: true });
+        exercisePopupRemoveFavoritesBtn.addEventListener('click', handleRemoveFromFavorites, { passive: true });
       }
 
       refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp, { passive: true });
@@ -95,6 +95,15 @@ function handleAddToFavorites(event) {
     exercisePopupAddFavoritesBtn.dataset.exercise
   );
   addExerciseToFavorites(exercise);
+  event.stopPropagation();
+  openExercisePopUp(exercise._id);
+}
+
+function handleRemoveFromFavorites(event) {
+  const exercise = JSON.parse(
+    exercisePopupRemoveFavoritesBtn.dataset.exercise
+  );
+  removeExerciseFromFavorites(exercise._id);
   event.stopPropagation();
   openExercisePopUp(exercise._id);
 }

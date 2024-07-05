@@ -2,16 +2,12 @@ import throttle from 'lodash.throttle';
 import { fadeItems } from './rerender.js';
 import { renderExercises } from './renderExercises.js';
 import { onExerciseStartClick } from './eventHandlers.js';
-import iziToast from 'izitoast';
+import { getFavoritesData, removeExerciseFromFavorites } from './favoritesStorageHandler.js';
 
 let localData = [];
 const noCardsTextRef = document.querySelector('.favorites-text');
 const favoritesListRef = document.querySelector('.practice-list');
 const favoritesPaginationRef = document.querySelector('.favorites-pagination');
-
-if (!localData.length) {
-  noCardsTextRef.classList.remove('visually-hidden');
-}
 
 function splitHandler(arr, widthVP) {
   const splitter = widthVP < 768 ? 8 : 10;
@@ -28,17 +24,7 @@ function splitHandler(arr, widthVP) {
   }
 }
 
-export function removeExerciseFromFavorites(exerciseID) {
-  const exercise = localData.find(e => e._id === exerciseID);
-  if (!exercise) return;
-  const updatedFavorites = localData.filter(favorite => favorite._id !== exerciseID);
-  localData = updatedFavorites;
-  localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-  iziToast.success({
-    message: `Exercise ${exercise.name} removed from favorites!`,
-  });
-  resizerHandler(updatedFavorites);
-}
+
 
 function onExerciseRemoveClick(e) {
   const target = e.target.closest('.exercise-remove-btn');
@@ -46,6 +32,7 @@ function onExerciseRemoveClick(e) {
   const exerciseID = target.getAttribute('data-exercise-id');
   if (exerciseID) {
     removeExerciseFromFavorites(exerciseID);
+    resizerHandler(getFavoritesData());
   }
 }
 
@@ -122,10 +109,7 @@ function resizerHandler(data = localData) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Retrieve the data from localStorage
-  const retrievedData = localStorage.getItem('favorites');
-  // 2. Convert the retrieved data back to an array
-  localData = JSON.parse(retrievedData) || [];
+  localData =getFavoritesData();
   // Initial run
   resizerHandler(localData);
   const throttledHandleResize = throttle(resizerHandler, 50);
