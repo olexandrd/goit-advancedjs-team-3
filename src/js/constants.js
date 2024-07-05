@@ -16,10 +16,15 @@ const refs = {
   exercisePopUpContent: document.querySelector('.exercise-pop-up-content'),
   exercisePopUpCloseBtn: document.querySelector('.exercise-pop-up-close-btn'),
   exercisePopupAddFavoritesBtn: document.querySelector('#add-favorites'),
+  exercisePopupAddRatingBtn: document.querySelector('.js-add-rating'),
   exercisesContainer: document.querySelector('.exercises-container'),
   body: document.querySelector('body'),
   scrollUpButton: document.querySelector('.scroll-up-button'),
   mainSection: document.querySelector('.main-section'),
+  ratingPopUpBackdrop: document.querySelector('.rating-pop-up-backdrop'),
+  ratingPopUpContent: document.querySelector('.rating-pop-up-content'),
+  ratingPopUpCloseBtn: document.querySelector('.rating-pop-up-close-btn'),
+  ratingForm: document.querySelector('.form-rating'),
 };
 
 const FILTERS = {

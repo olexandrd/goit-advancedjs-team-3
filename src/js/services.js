@@ -46,10 +46,12 @@ export async function servicePatchExercisesByIdRating(
     `${BASE_URL}exercises/${id}/rating`,
     requestOptionsPatch
   );
+  const data = await res.json();
+
   if (!res.ok) {
-    throw new Error(`Ooops, status code: ${res.status}`);
+    throw new Error(data.message || 'Failed to set a rating');
   }
-  return await res.json();
+  return data;
 }
 
 // TODO test
