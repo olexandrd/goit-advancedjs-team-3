@@ -11,9 +11,9 @@ export function openExercisePopUp(exerciseID) {
       // Store exercise data in the button's dataset
       refs.exercisePopupAddFavoritesBtn.dataset.exercise = JSON.stringify(exercise);
 
-      refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp);
-      refs.exercisePopupAddFavoritesBtn.addEventListener('click', handleAddToFavorites);
-      refs.exercisePopUpBackdrop.addEventListener('click', handleBackdropClick);
+      refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp, { passive: true });
+      refs.exercisePopupAddFavoritesBtn.addEventListener('click', handleAddToFavorites, { passive: true });
+      refs.exercisePopUpBackdrop.addEventListener('click', handleBackdropClick, { passive: true });
     })
     .catch(error => {
       iziToast.error({
