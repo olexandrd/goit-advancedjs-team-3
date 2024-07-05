@@ -7,11 +7,10 @@ const localData = JSON.parse(retrievedData) || [];
 const noCardsTextRef = document.querySelector('.favorites-text');
 const favoritesListRef = document.querySelector('.practice-list');
 const favoritesPaginationRef = document.querySelector('.favorites-pagination');
-const headerDtRef = document.querySelector('.exercise-header-dt');
-const headerRef = document.querySelector('.exercise-header');
 
 if (!localData.length) {
   noCardsTextRef.classList.remove('visually-hidden');
+  favoritesListRef.classList.add('visually-hidden');
 }
 
 function splitHandler(arr, widthVP) {
@@ -87,12 +86,8 @@ function resizerHandler() {
   favoritesPaginationRef.classList.add('visually-hidden');
 
   if (widthVP >= 1440) {
-    headerDtRef.classList.remove('visually-hidden');
-    headerRef.classList.add('visually-hidden');
     itemHandler(localData);
   } else if (widthVP >= 768 && widthVP < 1440) {
-    headerDtRef.classList.add('visually-hidden');
-    headerRef.classList.remove('visually-hidden');
     if (localData.length <= 10) {
       itemHandler(localData);
     } else {
@@ -118,8 +113,6 @@ function resizerHandler() {
       favoritesPaginationRef.append(...pages);
     }
   } else {
-    headerDtRef.classList.add('visually-hidden');
-    headerRef.classList.remove('visually-hidden');
     if (localData.length <= 8) {
       itemHandler(localData);
     } else {

@@ -28,8 +28,6 @@ function createExerciseDataMarkup(exercise) {
   return markup;
 }
 
-const ratingStarSize = 18;
-
 function createRatingStarsMarkup(rating) {
   const fullStar = `
     <div class="rating-star-container">
@@ -79,12 +77,42 @@ function createRatingStarsMarkup(rating) {
     </div>`;
 }
 
+function isExerciseInFavoritesList(exerciseID) {
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  return favorites.some(fav => fav._id === exerciseID);
+}
+
+function createFavoritesButtonMarkup(exerciseID) {
+  if (!isExerciseInFavoritesList(exerciseID)) {
+    return `
+    <button class="button popup-btn" id="add-favorites">
+      <span class="button-label">Add to favorites</span>
+        <svg class="button-icon icon" width="18" height="18">
+          <use href="./images/icons.svg#icon-heart"></use>
+        </svg>
+    </button>
+    `;
+  } else {
+    return `
+    <button class="button popup-btn" id="remove-favorites">
+      <span class="button-label">Remove from favorites</span>
+        <svg class="button-icon icon" width="18" height="18">
+          <use href="./images/icons.svg#icon-trash"></use>
+        </svg>
+    </button>
+    `;
+  }
+}
+
 export function createExerciseMarkup(exercise) {
   const exerciseDataMarkup = createExerciseDataMarkup(exercise);
   const ratingStarsMarkup = createRatingStarsMarkup(exercise.rating);
+  const favoritesButtonMarkup = createFavoritesButtonMarkup(exercise._id);
 
   const markup = `
     <img class="exercise-instruction-image" src="${exercise.gifUrl}" alt="${exercise.name} instruction">
+    <div class="exercise-panel-content">
     <p class="exercise-name">${exercise.name}</p>
     <div class="exercise-rating-wrapper">
     <div class="dark-container">
@@ -95,6 +123,15 @@ export function createExerciseMarkup(exercise) {
     </div>
     <ul class="exercise-data">${exerciseDataMarkup}</ul>
     <p class="exercise-description">${exercise.description}</p>
+
+    <div class="button-container">
+      ${favoritesButtonMarkup}
+      <button class="button button--secondary popup-btn">
+        <span class="button-label">Give a rating</span>
+      </button>
+    </div>
+
+    </div>
   `;
 
   return markup;

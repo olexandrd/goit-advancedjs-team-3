@@ -15,7 +15,6 @@ const refs = {
   exercisePopUpBackdrop: document.querySelector('.exercise-pop-up-backdrop'),
   exercisePopUpContent: document.querySelector('.exercise-pop-up-content'),
   exercisePopUpCloseBtn: document.querySelector('.exercise-pop-up-close-btn'),
-  exercisePopupAddFavoritesBtn: document.querySelector('#add-favorites'),
   exercisePopupAddRatingBtn: document.querySelector('.js-add-rating'),
   exercisesContainer: document.querySelector('.exercises-container'),
   body: document.querySelector('body'),
