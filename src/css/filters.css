@@ -15,7 +15,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .filters-wrapper {
     flex-direction: row;
     justify-content: space-between;
@@ -51,7 +51,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .filters-container {
     gap: 30px;
   }
