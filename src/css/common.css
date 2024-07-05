@@ -164,16 +164,46 @@ button {
 
 .main-content {
   display: flex;
-  flex-direction: row;
-  gap: 32px;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 80px;
+}
+
+.exercises-container {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.aside{
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-bottom: 132px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .exercises-container {
     order: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .aside {
+    order: 1;
     display: flex;
     flex-direction: column;
     gap: 32px;
