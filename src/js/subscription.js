@@ -19,16 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       iziToast.success({
         title: 'Success',
-        message: 'Subscription successful!',
+        message: response.message,
       });
     } catch (error) {
       iziToast.error({
         title: 'Error',
-        message: 'Subscription failed. Please try again.',
+        message: error.message,
       });
     } finally {
       subscribeBtn.disabled = false;
       subscribeBtn.textContent = 'Send';
+      subscribeForm.reset();
     }
   });
 });
