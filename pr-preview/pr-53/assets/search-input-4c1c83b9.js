@@ -1,2 +1,0 @@
-import{r as e,a as r,i as a,j as s}from"./eventHandlers-ac18ba0b.js";e.searchInputCrossIcon.addEventListener("click",()=>{r.set("page",1),r.delete("keyword"),e.searchForm.reset(),a()});e.searchInputSearchIcon.addEventListener("click",s);e.searchForm.addEventListener("submit",s);
-//# sourceMappingURL=search-input-4c1c83b9.js.map
