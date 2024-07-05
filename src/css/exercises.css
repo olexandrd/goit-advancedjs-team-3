@@ -86,12 +86,6 @@
   color: var(--dark);
 }
 
-.trash-icon {
-  width: 18px;
-  height: 18px;
-  fill: var(--dark);
-}
-
 .exercise-rating-icon {
   width: 18px;
   height: 18px;
