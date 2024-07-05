@@ -1,5 +1,8 @@
 const exerciseDataPropertiesMapping = {
-  target: 'Target', bodyPart: 'Body Part', equipment: 'Equipment', popularity: 'Popular',
+  target: 'Target',
+  bodyPart: 'Body Part',
+  equipment: 'Equipment',
+  popularity: 'Popular',
 };
 
 function createExerciseDataMarkup(exercise) {
@@ -43,7 +46,7 @@ function createRatingStarsMarkup(rating) {
       </svg>
     </div>`;
 
-  const partialStarTemplate = (percentage) => `
+  const partialStarTemplate = percentage => `
     <div class="rating-star-container">
       <svg class="rating-star">
         <defs>
@@ -126,7 +129,7 @@ export function createExerciseMarkup(exercise) {
 
     <div class="button-container">
       ${favoritesButtonMarkup}
-      <button class="button button--secondary popup-btn">
+      <button class="button button--secondary popup-btn js-add-rating">
         <span class="button-label">Give a rating</span>
       </button>
     </div>

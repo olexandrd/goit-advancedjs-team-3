@@ -2,8 +2,6 @@ import iziToast from 'izitoast';
 import { refs } from './constants';
 import { servicePatchExercisesByIdRating } from './services';
 
-refs.exercisePopupAddRatingBtn.addEventListener('click', onGiveRatingBtnClick);
-
 let activeRating = 0;
 let exerciseId;
 
@@ -56,7 +54,7 @@ function onStarClick(e) {
 
 function onGiveRatingBtnClick() {
   exerciseId = JSON.parse(
-    document.querySelector('button#add-favorites').dataset.exercise
+    document.querySelector('button[data-exercise]').dataset.exercise
   )._id;
   refs.exercisePopUpBackdrop.classList.remove('is-open');
   refs.exercisePopUpBackdrop.style.display = 'none';
@@ -64,9 +62,7 @@ function onGiveRatingBtnClick() {
 
   refs.ratingPopUpContent.innerHTML = createRatingMarkup();
 
-  refs.ratingPopUpCloseBtn.addEventListener('click', closeRatingPopUp);
-  refs.ratingPopUpContent.addEventListener('click', onStarClick);
-  refs.ratingForm.addEventListener('submit', onRatingFormSubmit);
+  addRatingPopupListeners();
 }
 
 function closeRatingPopUp() {
@@ -74,9 +70,7 @@ function closeRatingPopUp() {
   refs.exercisePopUpBackdrop.style.display = 'flex';
   refs.exercisePopUpBackdrop.classList.add('is-open');
 
-  refs.ratingPopUpCloseBtn.removeEventListener('click', closeRatingPopUp);
-  refs.ratingPopUpContent.removeEventListener('click', onStarClick);
-  refs.ratingForm.removeEventListener('submit', onRatingFormSubmit);
+  removeRatingPopupListeners();
 }
 
 function createRatingStarsMarkup() {
@@ -115,3 +109,43 @@ function createRatingMarkup() {
 
   return markup;
 }
+
+function addRatingPopupListeners() {
+  refs.ratingPopUpCloseBtn.addEventListener('click', closeRatingPopUp);
+  refs.ratingPopUpContent.addEventListener('click', onStarClick);
+  refs.ratingForm.addEventListener('submit', onRatingFormSubmit);
+}
+
+function removeRatingPopupListeners() {
+  refs.ratingPopUpCloseBtn.removeEventListener('click', closeRatingPopUp);
+  refs.ratingPopUpContent.removeEventListener('click', onStarClick);
+  refs.ratingForm.removeEventListener('submit', onRatingFormSubmit);
+}
+
+// Function to check if the button exists and add the event listener
+function checkForButton() {
+  const button = document.querySelector('.js-add-rating');
+  if (button) {
+    button.addEventListener('click', onGiveRatingBtnClick);
+    return true;
+  }
+  return false;
+}
+
+// MutationObserver to monitor DOM changes and check for the button
+const observer = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+    if (mutation.type === 'childList' || mutation.type === 'subtree') {
+      checkForButton();
+    }
+  });
+});
+
+// Start observing the entire document
+observer.observe(document, {
+  childList: true,
+  subtree: true,
+});
+
+// Initial check in case the button is already present
+checkForButton();
