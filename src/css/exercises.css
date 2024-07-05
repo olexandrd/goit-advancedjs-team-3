@@ -23,6 +23,7 @@
   .exercise-list {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 32px 16px;
   }
 }
 
