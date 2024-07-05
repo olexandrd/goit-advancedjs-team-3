@@ -11,7 +11,7 @@ export function renderExercises(arr) {
   const markup = arr
     .map(
       ({ _id, name, rating, bodyPart, burnedCalories, target, time }) =>
-        `<li class="exercise-card">
+        `<li class="exercise-card fade-item">
           <div class="exercise-card-top">
             <div class="exercise-card-top-info">
               <h3 class="exercise-general-header">Workout</h3>

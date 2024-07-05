@@ -35,7 +35,7 @@
   width: 335px;
   height: 141px;
   padding: 16px;
-  transition: box-shadow var(--transition);
+  /* transition: box-shadow var(--transition); */
 }
 
 @media screen and (max-width: 375px) {
