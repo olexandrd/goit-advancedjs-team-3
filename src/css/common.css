@@ -176,7 +176,7 @@ button {
   justify-content: space-between;
 }
 
-.aside{
+.aside {
   order: 2;
   display: flex;
   flex-direction: column;
