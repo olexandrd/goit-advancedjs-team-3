@@ -131,6 +131,24 @@
   margin-bottom: 40px;
 }
 
-.add-exercise-to-favorites-btn {
-  margin-bottom: 10px;
+.exercise-pop-up-container .button-container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* have to have popup-btn class to increase the importance of the style */
+.popup-btn {
+  max-height: 42px; /* ensuring button height as designed */
+}
+
+.popup-btn .button-icon.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.exercise-pop-up-container .popup-btn .button-label {
+  font-size: 14px;
+  line-height: 18px;
 }
