@@ -47,10 +47,14 @@
 }
 
 .favorites-title {
+  color: var(--dark);
   font-size: 28px;
   font-weight: 400;
   line-height: 1.357;
   letter-spacing: -0.02em;
+
+  margin-top: 64px;
+  margin-bottom: 20px;
 }
 
 .favorites-container .exercise-card {
@@ -68,13 +72,15 @@
 }
 
 @media screen and (min-width: 768px) {
-  .exercise-header {
-    margin-top: 100px;
-    margin-bottom: 32px;
-    font-family: inherit;
+  .favorites-title {
     font-size: 44px;
+    font-style: normal;
     font-weight: 400;
-    line-height: 1.0909;
+    line-height: 1.09091; /* 109.091% */
+    letter-spacing: -0.88px;
+
+    margin-top: 80px;
+    margin-bottom: 32px;
   }
 
   .favorites-container {
@@ -130,6 +136,11 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .favorites-title {
+    margin-top: 70px;
+    margin-bottom: 32px;
+  }
+
   .favorite-hero-section {
     margin-bottom: unset;
     max-width: 494px;

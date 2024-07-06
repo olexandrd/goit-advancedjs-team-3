@@ -40,7 +40,7 @@ function onFilterClick(e) {
 
   listItem.classList.add('active');
   refs.searchForm.reset();
-  refs.searchForm.classList.add('visually-hidden');
+  refs.searchForm.classList.add('hidden');
 
   const filter = listItem.dataset.filter;
   const filterKey = Object.keys(FILTERS).find(key => FILTERS[key] === filter);
@@ -77,7 +77,7 @@ function onExerciseClick(e) {
   queryParamsExercises.set('page', 1);
 
   refs.list.classList.replace('filtered-list', 'exercise-list');
-  refs.searchForm.classList.remove('visually-hidden');
+  refs.searchForm.classList.remove('hidden');
 
   refs.list.innerHTML = '';
   rerenderExercises();
@@ -103,7 +103,6 @@ function onExerciseStartClick(e) {
     openExercisePopUp(exerciseID);
   }
 }
-
 
 export {
   onPaginationClick,

@@ -2,7 +2,10 @@ import throttle from 'lodash.throttle';
 import { fadeItems } from './rerender.js';
 import { renderExercises } from './renderExercises.js';
 import { onExerciseStartClick } from './eventHandlers.js';
-import { getFavoritesData, removeExerciseFromFavorites } from './favoritesStorageHandler.js';
+import {
+  getFavoritesData,
+  removeExerciseFromFavorites,
+} from './favoritesStorageHandler.js';
 import { createPaginationItem } from './renderPagination.js';
 
 let localData = [];
@@ -61,7 +64,7 @@ function resizerHandler(data = localData) {
   }
 
   const widthVP = window.innerWidth;
-  paginationElement.classList.add('visually-hidden');
+  paginationElement.classList.add('hidden');
   let itemsPerPage = widthVP < 768 ? 8 : 10;
 
   if (widthVP >= 1440) {
