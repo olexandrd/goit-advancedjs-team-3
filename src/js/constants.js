@@ -19,9 +19,9 @@ const refs = {
   body: document.querySelector('body'),
   scrollUpButton: document.querySelector('.scroll-up-button'),
   mainSection: document.querySelector('.main-section'),
-  ratingPopUpBackdrop: document.querySelector('.rating-pop-up-backdrop'),
+  ratingPopUpBackdrop: document.querySelector('.js-rating-pop-up-backdrop'),
   ratingPopUpContent: document.querySelector('.rating-pop-up-content'),
-  ratingPopUpCloseBtn: document.querySelector('.rating-pop-up-close-btn'),
+  ratingPopUpCloseBtn: document.querySelector('.js-close-rating-pop-up'),
   ratingForm: document.querySelector('.form-rating'),
 };
 

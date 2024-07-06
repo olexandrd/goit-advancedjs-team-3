@@ -74,7 +74,6 @@ function closeRatingPopUp() {
 }
 
 function createRatingStarsMarkup() {
-  // <svg class="rating-star rating-star--active">
   let starsMarkup = '';
 
   for (let i = 0; i < 5; i++) {
