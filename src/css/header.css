@@ -2,6 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 111;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: var(--light);
   transition: box-shadow var(--transition);
 }
@@ -14,8 +16,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .logo {
@@ -63,7 +63,9 @@
   color: var(--light);
   border-radius: 30px;
   outline: transparent;
-  transition: background-color var(--transition), color var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
 
 .nav-link.active,
@@ -86,7 +88,9 @@
   border: 1px solid rgba(36, 36, 36, 0.1);
   border-radius: 10px;
   outline: transparent;
-  transition: border-color var(--transition), background-color var(--transition);
+  transition:
+    border-color var(--transition),
+    background-color var(--transition);
 }
 
 .menu-soc-link:hover,

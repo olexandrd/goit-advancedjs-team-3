@@ -4,7 +4,7 @@
 }
 
 .hero-section {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .hero-wrap {
@@ -123,7 +123,7 @@ svg {
 
 @media screen and (min-width: 768px) {
   .hero-section {
-    padding-top: 100px;
+    padding-top: 80px;
   }
 
   .hero-img {
@@ -168,10 +168,6 @@ svg {
     letter-spacing: -0.02em;
   }
 
-  .hero-section {
-    padding-top: 72px;
-  }
-
   .hero-hashtags {
     margin-left: auto;
   }
@@ -184,6 +180,10 @@ svg {
 }
 
 @media screen and (min-width: 1440px) {
+  .hero-section {
+    padding-top: 76px;
+  }
+
   .hero-desktop-wrap {
     display: flex;
     justify-content: space-between;
