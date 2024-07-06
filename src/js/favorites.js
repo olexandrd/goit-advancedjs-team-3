@@ -24,8 +24,9 @@ function onExerciseRemoveClick(e) {
   if (!target) return;
   const exerciseID = target.getAttribute('data-exercise-id');
   if (exerciseID) {
-    removeExerciseFromFavorites(exerciseID);
+    if (removeExerciseFromFavorites(exerciseID)) {
     resizerHandler(getFavoritesData());
+    }
   }
 }
 
@@ -52,7 +53,7 @@ function updatePagination(pages, currentPage) {
   });
 }
 
-function resizerHandler(data = localData) {
+export function resizerHandler(data = localData) {
   if (!data.length) {
     noCardsTextRef.classList.remove('visually-hidden');
     return;
