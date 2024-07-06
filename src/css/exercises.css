@@ -21,16 +21,16 @@
 }
 
 .exercise-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
 @media only screen and (min-width: 768px) {
   .exercise-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 32px 16px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 32px;
   }
 
   .exercise-header {
@@ -47,31 +47,13 @@
   justify-content: space-between;
   background-color: #fff;
   border-radius: 15px;
-  width: 335px;
   height: 141px;
   padding: 16px;
 }
 
-@media screen and (max-width: 375px) {
-  .exercise-card {
-    width: 100%;
-  }
-}
 .exercise-card:hover {
   border-radius: 15px;
   box-shadow: var(--box-shadow-light);
-}
-
-@media only screen and (min-width: 768px) {
-  .exercise-card {
-    width: 344px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .exercise-card {
-    width: 442px;
-  }
 }
 
 .exercise-general-header {
@@ -277,27 +259,20 @@
 }
 
 .filtered-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
 @media only screen and (min-width: 768px) {
   .filtered-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 14px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .filtered-list {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
     row-gap: 32px;
   }
 }
 
 .category-card {
-  width: 335px;
   height: 225px;
   border-radius: 12px;
   transition: box-shadow var(--transition);
@@ -306,17 +281,9 @@
   cursor: pointer;
 }
 
-@media only screen and (min-width: 768px) {
-  .category-card {
-    width: 225px;
-    height: 225px;
-  }
-}
-
 @media only screen and (min-width: 1440px) {
   .category-card {
     height: var(--desktop-card-height);
-    width: 290px;
   }
 }
 
