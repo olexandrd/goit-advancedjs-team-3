@@ -75,6 +75,11 @@
   font-weight: 500;
   font-size: 12px;
   color: var(--dark);
+  text-transform: uppercase;
+}
+
+.exercise-remove-btn {
+  padding: 0;
 }
 
 .exercise-rating {
@@ -233,6 +238,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: capitalize;
 }
 
 @media only screen and (min-width: 768px) {
