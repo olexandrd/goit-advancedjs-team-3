@@ -32,7 +32,7 @@ function getRightArrow(className) {
               </svg>`;
 }
 
-function createPaginationItem({ pageId, content, liClassNames }) {
+export function createPaginationItem({ pageId, content, liClassNames }) {
   const li = document.createElement('li');
   const a = document.createElement('a');
 
