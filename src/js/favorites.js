@@ -64,6 +64,7 @@ export function resizerHandler(data = localData, isDeletion = false) {
   if (!data.length) {
     noCardsTextRef.classList.remove('visually-hidden');
     favoritesListRef.innerHTML = '';
+    favoritesListRef.classList.add('hidden');
     paginationElement.classList.add('hidden');
     return;
   } else {
