@@ -102,6 +102,10 @@ svg {
     margin-bottom: 16px;
   }
 
+  .hero-img {
+    height: 550px;
+  }
+
   .hero-text {
     max-width: 528px;
     font-size: 18px;
@@ -146,6 +150,10 @@ svg {
   .hero-img-wrap {
     margin-top: 32px;
     margin-bottom: 0;
+  }
+
+  .hero-img {
+    height: 350px;
   }
 
   .hero-title {
