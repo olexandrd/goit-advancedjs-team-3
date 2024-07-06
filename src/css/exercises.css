@@ -105,6 +105,13 @@
   stroke: var(--dark);
 }
 
+.exercise-card-icon-garbage {
+  width: 16px;
+  height: 16px;
+  fill: var(--light);
+  stroke: var(--dark);
+}
+
 .exercise-card-btn {
   display: flex;
   align-items: center;
@@ -130,7 +137,7 @@
 .exercise-card-top-info {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .exercise-card-tag {
@@ -180,7 +187,7 @@
 
 @media only screen and (min-width: 1440px) {
   .exercise-card-title-text {
-    max-width: 325px;
+    max-width: 265px;
   }
 }
 
@@ -245,7 +252,7 @@
   }
 
   .exercise-card-info-element-content-target-no-overflow {
-    max-width: 65px;
+    max-width: 35px;
   }
 }
 

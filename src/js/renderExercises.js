@@ -6,23 +6,21 @@ const capitalizeFirstLetter = string => {
 };
 
 export function renderExercises(arr, isFavorites = false) {
-
   return arr
-    .map(
-      ({ _id, name, rating, bodyPart, burnedCalories, target, time }) => {
-        const icon = (isFavorites) ? `<button class="exercise-card-btn exercise-remove-btn" data-exercise-id="${_id}" type="button">
-             <svg class="exercise-card-icon">
+    .map(({ _id, name, rating, bodyPart, burnedCalories, target, time }) => {
+      const icon = isFavorites
+        ? `<button class="exercise-card-btn exercise-remove-btn" data-exercise-id="${_id}" type="button">
+             <svg class="exercise-card-icon-garbage">
                <use href="./images/icons.svg#icon-trash">
               </use>
              </svg>
-          </button>` : `<p class="exercise-rating">${Number.isInteger(rating) ? rating.toFixed(1) : rating}
+          </button>`
+        : `<p class="exercise-rating">${Number.isInteger(rating) ? rating.toFixed(1) : rating}
                   <svg class="exercise-rating-icon">
                     <use href="./images/icons.svg#icon-star"></use>
                   </svg>
-                </p>`
-        ;
-
-        return `<li class="exercise-card fade-item">
+                </p>`;
+      return `<li class="exercise-card fade-item">
           <div class="exercise-card-top">
             <div class="exercise-card-top-info">
               <h3 class="exercise-general-header">Workout</h3>
@@ -56,8 +54,7 @@ export function renderExercises(arr, isFavorites = false) {
               </div>
             </div>
           </div>
-        </li>`
-      }
-    )
+        </li>`;
+    })
     .join('');
 }
