@@ -167,7 +167,7 @@ button {
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 80px;
   margin-bottom: 80px;
 }
 
