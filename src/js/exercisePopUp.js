@@ -2,7 +2,8 @@ import { createExerciseMarkup } from './exercisePopUpMarkup.js';
 import { serviceGetExercisesById } from './services.js';
 import { refs } from './constants.js';
 import iziToast from 'izitoast';
-import { removeExerciseFromFavorites } from './favoritesStorageHandler.js';
+import { getFavoritesData, removeExerciseFromFavorites } from './favoritesStorageHandler.js';
+import { resizerHandler } from './favorites.js';
 
 let exercisePopupAddFavoritesBtn = null;
 let exercisePopupRemoveFavoritesBtn = null;
@@ -10,41 +11,21 @@ let exercisePopupRemoveFavoritesBtn = null;
 export function openExercisePopUp(exerciseID) {
   renderExercisePopUp(exerciseID)
     .then(exercise => {
-      exercisePopupAddFavoritesBtn = null;
-      exercisePopupRemoveFavoritesBtn = null;
-
       exercisePopupAddFavoritesBtn = document.querySelector('#add-favorites');
-      exercisePopupRemoveFavoritesBtn =
-        document.querySelector('#remove-favorites');
-      // Store exercise data in the button's dataset
+      exercisePopupRemoveFavoritesBtn = document.querySelector('#remove-favorites');
+
       if (exercisePopupAddFavoritesBtn) {
-        exercisePopupAddFavoritesBtn.dataset.exercise =
-          JSON.stringify(exercise);
-        exercisePopupAddFavoritesBtn.addEventListener(
-          'click',
-          handleAddToFavorites,
-          { passive: true }
-        );
+        exercisePopupAddFavoritesBtn.dataset.exercise = JSON.stringify(exercise);
+        exercisePopupAddFavoritesBtn.addEventListener('click', handleAddToFavorites, { passive: true });
       }
 
       if (exercisePopupRemoveFavoritesBtn) {
-        exercisePopupRemoveFavoritesBtn.dataset.exercise =
-          JSON.stringify(exercise);
-        exercisePopupRemoveFavoritesBtn.addEventListener(
-          'click',
-          handleRemoveFromFavorites,
-          { passive: true }
-        );
+        exercisePopupRemoveFavoritesBtn.dataset.exercise = JSON.stringify(exercise);
+        exercisePopupRemoveFavoritesBtn.addEventListener('click', handleRemoveFromFavorites, { passive: true });
       }
 
-      refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp, {
-        passive: true,
-      });
-      refs.exercisePopUpBackdrop.addEventListener(
-        'click',
-        handleBackdropClick,
-        { passive: true }
-      );
+      refs.exercisePopUpCloseBtn.addEventListener('click', closeExercisePopUp, { passive: true });
+      refs.exercisePopUpBackdrop.addEventListener('click', handleBackdropClick, { passive: true });
 
       refs.exercisePopUpBackdrop.classList.add('is-open');
       refs.body.classList.add('overflow-hidden');
@@ -52,9 +33,7 @@ export function openExercisePopUp(exerciseID) {
       document.addEventListener('keydown', handleESCClick);
     })
     .catch(error => {
-      iziToast.error({
-        message: `${error}`,
-      });
+      iziToast.error({ message: `${error}` });
     });
 }
 
@@ -62,12 +41,20 @@ function closeExercisePopUp() {
   refs.exercisePopUpBackdrop.classList.remove('is-open');
   refs.body.classList.remove('overflow-hidden');
 
-  // Remove all event listeners
-  exercisePopupAddFavoritesBtn = null;
-  exercisePopupRemoveFavoritesBtn = null;
+  if (exercisePopupAddFavoritesBtn) {
+    exercisePopupAddFavoritesBtn.removeEventListener('click', handleAddToFavorites);
+  }
+
+  if (exercisePopupRemoveFavoritesBtn) {
+    exercisePopupRemoveFavoritesBtn.removeEventListener('click', handleRemoveFromFavorites);
+  }
+
   refs.exercisePopUpBackdrop.removeEventListener('click', handleBackdropClick);
   refs.exercisePopUpCloseBtn.removeEventListener('click', closeExercisePopUp);
   document.removeEventListener('keydown', handleESCClick);
+
+  exercisePopupAddFavoritesBtn = null;
+  exercisePopupRemoveFavoritesBtn = null;
 }
 
 function renderExercisePopUp(exerciseID) {
@@ -90,20 +77,13 @@ function handleBackdropClick(event) {
 }
 
 function addExerciseToFavorites(exercise) {
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-  const isFavorite = favorites.some(fav => fav._id === exercise._id);
-  if (isFavorite) {
-    iziToast.warning({
-      message: 'Exercise is already in favorites!',
-    });
-  } else {
-    favorites.push(exercise);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    iziToast.success({
-      message: 'Exercise added to favorites!',
-    });
+  let favorites = getFavoritesData();
+  favorites.push(exercise);
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+  if (window.location.pathname.includes('favorites.html')) {
+    resizerHandler(favorites);
   }
+  iziToast.success({ message: 'Exercise added to favorites!' });
 }
 
 function handleAddToFavorites(event) {
@@ -115,9 +95,12 @@ function handleAddToFavorites(event) {
 
 function handleRemoveFromFavorites(event) {
   const exercise = JSON.parse(exercisePopupRemoveFavoritesBtn.dataset.exercise);
-  removeExerciseFromFavorites(exercise._id);
-  event.stopPropagation();
+  const isRemoved = removeExerciseFromFavorites(exercise._id);
+  if (isRemoved && window.location.pathname.includes('favorites.html')) {
+    resizerHandler(getFavoritesData());
+  }
   openExercisePopUp(exercise._id);
+  event.stopPropagation();
 }
 
 function handleESCClick(e) {

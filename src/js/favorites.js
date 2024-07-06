@@ -27,8 +27,9 @@ function onExerciseRemoveClick(e) {
   if (!target) return;
   const exerciseID = target.getAttribute('data-exercise-id');
   if (exerciseID) {
-    removeExerciseFromFavorites(exerciseID);
-    resizerHandler(getFavoritesData());
+    if (removeExerciseFromFavorites(exerciseID)) {
+      resizerHandler(getFavoritesData());
+    }
   }
 }
 
@@ -55,7 +56,7 @@ function updatePagination(pages, currentPage) {
   });
 }
 
-function resizerHandler(data = localData) {
+export function resizerHandler(data = localData) {
   if (!data.length) {
     noCardsTextRef.classList.remove('visually-hidden');
     return;
@@ -81,12 +82,14 @@ function resizerHandler(data = localData) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  localData = getFavoritesData();
-  // Initial run
-  resizerHandler(localData);
-  const throttledHandleResize = throttle(() => resizerHandler(localData), 50);
-  // Throttle the resizerHandler function
-  window.addEventListener('resize', throttledHandleResize);
-  favoritesListRef.addEventListener('click', onExerciseStartClick);
-  favoritesListRef.addEventListener('click', onExerciseRemoveClick);
+  if (window.location.pathname.includes('favorites.html')) {
+    localData = getFavoritesData();
+    // Initial run
+    resizerHandler(localData);
+    const throttledHandleResize = throttle(() => resizerHandler(localData), 50);
+    // Throttle the resizerHandler function
+    window.addEventListener('resize', throttledHandleResize);
+    favoritesListRef.addEventListener('click', onExerciseStartClick);
+    favoritesListRef.addEventListener('click', onExerciseRemoveClick);
+  }
 });
