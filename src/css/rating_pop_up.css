@@ -1,0 +1,128 @@
+.rating-pop-up-container {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 335px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: var(--dark);
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .rating-pop-up-container {
+    max-width: 430px;
+    padding: 40px;
+  }
+}
+
+.rating-pop-up-content {
+  align-self: flex-start;
+}
+
+.rating-data-parameter-name {
+  color: var(--light-40);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.rating-pop-up-content .rating {
+  align-items: center;
+}
+
+.rating-pop-up-content .rating .rating-star-container {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.rating-pop-up-content .rating .rating-star-container .rating-star {
+  width: 20px;
+  height: 20px;
+}
+.form-rating {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .form-rating {
+    padding-top: 32px;
+  }
+}
+
+.rating-form-input {
+  width: 100%;
+  height: 42px;
+  padding: 12px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--light);
+  background-color: var(--dark);
+  transition:
+    outline var(--transition),
+    background-color var(--transition);
+  color: var(--light);
+}
+
+.rating-form-input:focus {
+  outline: 1px solid var(--light);
+  background-color: var(--dark);
+}
+
+@media screen and (min-width: 768px) {
+  .rating-form-input {
+    height: 48px;
+  }
+}
+
+.rating-form-comment {
+  width: 100%;
+  height: 93px;
+  padding: 12px 14px;
+  border: 1px solid var(--light);
+  border-radius: 15px;
+  background-color: var(--dark);
+  transition: outline var(--transition);
+  color: var(--light);
+}
+
+.rating-form-comment:focus {
+  outline: 1px solid var(--light);
+}
+
+@media screen and (min-width: 768px) {
+  .rating-form-comment {
+    height: 106px;
+  }
+}
+
+.form-rating .rating-btn-save {
+  height: 42px;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .form-rating .rating-btn-save {
+    height: 48px;
+    margin-top: 22px;
+  }
+}
+
+.rating-pop-up-container .rating-btn-save .button-label {
+  font-size: 14px;
+  line-height: 1.28571;
+}
+
+@media screen and (min-width: 768px) {
+  .rating-pop-up-container .rating-btn-save .button-label {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

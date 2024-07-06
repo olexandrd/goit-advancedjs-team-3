@@ -1,1 +1,36 @@
-<div></div>
+<div class="exercise-pop-up-backdrop js-rating-pop-up-backdrop">
+  <div class="rating-pop-up-container" id="rating-pop-up">
+    <button
+      class="exercise-pop-up-close-btn js-close-rating-pop-up"
+      aria-label="Close rating"
+    >
+      <svg class="exercise-pop-up-close-icon" width="24" height="24">
+        <use href="../images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+
+    <div class="rating-pop-up-content"></div>
+    <form class="form-rating js-form-rating">
+      <input
+        class="rating-form-input"
+        type="email"
+        name="email"
+        placeholder="Email"
+        pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        required
+        autocomplete="email"
+      />
+      <textarea
+        name="comment"
+        id="comment"
+        class="rating-form-comment"
+        placeholder="Your comment"
+        required
+      ></textarea>
+
+      <button class="button rating-btn-save" type="submit">
+        <span class="button-label">Send</span>
+      </button>
+    </form>
+  </div>
+</div>
