@@ -58,6 +58,7 @@ svg {
 
 .hero-img {
   overflow: hidden;
+  max-height: 460px;
 }
 
 .hero-right {
