@@ -52,12 +52,12 @@ svg {
   margin-bottom: 20px;
   border-radius: 30px;
   overflow: hidden;
-  background-position: top center;
-  background-size: cover;
+  height: 460px;
 }
 
 .hero-img {
-  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
 }
 
 .hero-right {
@@ -100,6 +100,7 @@ svg {
   .hero-img-wrap {
     margin-top: 32px;
     margin-bottom: 16px;
+    height: 550px;
   }
 
   .hero-text {
@@ -146,6 +147,7 @@ svg {
   .hero-img-wrap {
     margin-top: 32px;
     margin-bottom: 0;
+    height: 350px;
   }
 
   .hero-title {
