@@ -25,7 +25,7 @@ function onExerciseRemoveClick(e) {
   const exerciseID = target.getAttribute('data-exercise-id');
   if (exerciseID) {
     if (removeExerciseFromFavorites(exerciseID)) {
-    resizerHandler(getFavoritesData());
+      resizerHandler(getFavoritesData());
     }
   }
 }
@@ -79,12 +79,14 @@ export function resizerHandler(data = localData) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  localData = getFavoritesData();
-  // Initial run
-  resizerHandler(localData);
-  const throttledHandleResize = throttle(() => resizerHandler(localData), 50);
-  // Throttle the resizerHandler function
-  window.addEventListener('resize', throttledHandleResize);
-  favoritesListRef.addEventListener('click', onExerciseStartClick);
-  favoritesListRef.addEventListener('click', onExerciseRemoveClick);
+  if (window.location.pathname.includes('favorites.html')) {
+    localData = getFavoritesData();
+    // Initial run
+    resizerHandler(localData);
+    const throttledHandleResize = throttle(() => resizerHandler(localData), 50);
+    // Throttle the resizerHandler function
+    window.addEventListener('resize', throttledHandleResize);
+    favoritesListRef.addEventListener('click', onExerciseStartClick);
+    favoritesListRef.addEventListener('click', onExerciseRemoveClick);
+  }
 });

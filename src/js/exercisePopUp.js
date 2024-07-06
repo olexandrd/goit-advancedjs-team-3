@@ -2,8 +2,8 @@ import { createExerciseMarkup } from './exercisePopUpMarkup.js';
 import { serviceGetExercisesById } from './services.js';
 import { refs } from './constants.js';
 import iziToast from 'izitoast';
-import { removeExerciseFromFavorites, getFavoritesData } from './favoritesStorageHandler.js';
-import { resizerHandler } from './favorites.js';  // Import the resizerHandler
+import { getFavoritesData, removeExerciseFromFavorites } from './favoritesStorageHandler.js';
+import { resizerHandler } from './favorites.js';
 
 let exercisePopupAddFavoritesBtn = null;
 let exercisePopupRemoveFavoritesBtn = null;
@@ -77,16 +77,10 @@ function handleBackdropClick(event) {
 }
 
 function addExerciseToFavorites(exercise) {
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-  const isFavorite = favorites.some(fav => fav._id === exercise._id);
-  if (isFavorite) {
-    iziToast.warning({ message: 'Exercise is already in favorites!' });
-  } else {
-    favorites.push(exercise);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    iziToast.success({ message: 'Exercise added to favorites!' });
-  }
+  let favorites = getFavoritesData();
+  favorites.push(exercise);
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+  iziToast.success({ message: 'Exercise added to favorites!' });
 }
 
 function handleAddToFavorites(event) {
