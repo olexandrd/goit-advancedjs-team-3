@@ -24,9 +24,6 @@ export async function serviceGetExercises() {
   return await res.json();
 }
 
-// TODO test
-// serviceGetExercises({ equipment: 'band' });
-
 // NOTE: in case the mail has already did a review it can not be reused
 // you will get error message in response in format: {message: "Such email already exists"}
 // it should be handled in the catch() with toast message
@@ -54,13 +51,6 @@ export async function servicePatchExercisesByIdRating(
   return data;
 }
 
-// TODO test
-// servicePatchRating('64f389465ae26083f39b1a70', {
-//   rate: 5,
-//   email: 'test0000002@gmail.com',
-//   review: 'My best exercise',
-// });
-
 export async function serviceGetExercisesById(id) {
   const res = await fetch(`${BASE_URL}exercises/${id}`, requestOptionsGET);
   if (!res.ok) {
@@ -68,9 +58,6 @@ export async function serviceGetExercisesById(id) {
   }
   return await res.json();
 }
-
-// TODO test
-// serviceGetExercisesById('64f389465ae26083f39b1a70');
 
 // Filters
 
@@ -94,9 +81,6 @@ export async function serviceGetQuote() {
   return await res.json();
 }
 
-// TODO test
-// serviceGetQuote();
-
 // Subscriptions
 export async function servicePostSubscription(email) {
   const requestOptionsPost = {
@@ -115,6 +99,3 @@ export async function servicePostSubscription(email) {
   }
   return data;
 }
-
-// TODO test
-// servicePostSubscription('test0000002@gmail.com');
