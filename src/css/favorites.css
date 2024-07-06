@@ -119,6 +119,7 @@
     flex-wrap: wrap;
     gap: 16px;
     margin-top: 64px;
+    align-content: start;
   }
 
   .favorites-container .exercise-card {
@@ -136,6 +137,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .practice-list .exercise-card {
+    width: 405px;
+    max-width: 405px;
+  }
   .favorites-title {
     margin-top: 70px;
     margin-bottom: 32px;
