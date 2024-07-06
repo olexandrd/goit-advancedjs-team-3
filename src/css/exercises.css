@@ -234,7 +234,7 @@
 }
 
 .exercise-card-info-element-content-target-no-overflow {
-  max-width: 25px;
+  max-width: 37px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
