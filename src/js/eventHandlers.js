@@ -104,6 +104,7 @@ function onExerciseStartClick(e) {
   }
 }
 
+
 export {
   onPaginationClick,
   onFilterClick,

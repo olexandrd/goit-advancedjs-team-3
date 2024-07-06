@@ -1,4 +1,4 @@
-import { refs, dataOptions } from './constants';
+import { dataOptions, refs } from './constants';
 import { serviceGetExercises, serviceGetFilters } from './services';
 import { renderCategories } from './renderCategories';
 import { renderPagination } from './renderPagination';
@@ -7,7 +7,7 @@ import { renderExercises } from './renderExercises';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-function fadeItems() {
+export function fadeItems() {
   const items = document.getElementsByClassName('fade-item');
 
   for (let i = 0; i < items.length; ++i) {
@@ -45,7 +45,7 @@ function rerenderExercises() {
         });
       }
 
-      renderExercises(data.results);
+      refs.list.innerHTML = renderExercises(data.results);
       renderPagination(data.totalPages, Number(data.page));
       fadeItems();
     })

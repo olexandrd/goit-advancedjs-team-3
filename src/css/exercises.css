@@ -103,7 +103,7 @@
   height: 24px;
 }
 
-.exercise-start-btn {
+.exercise-card-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -114,6 +114,10 @@
   height: 18px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.exercise-start-btn {
+  gap: 8px;
 }
 
 .exercise-card-top {
