@@ -47,30 +47,17 @@ svg {
   letter-spacing: -0.02em;
 }
 
-.hero-img {
+.hero-img-wrap {
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 30px;
-  height: 460px;
-  background: url(../images/hero/hero-mobile.webp) no-repeat;
+  overflow: hidden;
   background-position: top center;
   background-size: cover;
 }
 
-@media (min-resolution: 192dpi) {
-  .hero-img {
-    background: url(../images/hero/hero-mobile@2x.webp) no-repeat;
-    background-position: top center;
-    background-size: cover;
-  }
-}
-
-@media (min-resolution: 288dpi) {
-  .hero-img {
-    background: url(../images/hero/hero-mobile@3x.webp) no-repeat;
-    background-position: top center;
-    background-size: cover;
-  }
+.hero-img {
+  overflow: hidden;
 }
 
 .hero-right {
@@ -99,26 +86,10 @@ svg {
   width: 168px;
   margin-left: 29px;
   margin-bottom: 32px;
-  background: url(../images/hero/hero-widget-desktop.webp) no-repeat;
+  overflow: hidden;
   border-radius: 20px;
   background-position: top center;
   background-size: cover;
-}
-
-@media (min-resolution: 192dpi) {
-  .hero-widget {
-    background: url(../images/hero/hero-widget-desktop@2x.webp) no-repeat;
-    background-position: top center;
-    background-size: cover;
-  }
-}
-
-@media (min-resolution: 288dpi) {
-  .hero-widget {
-    background: url(../images/hero/hero-widget-desktop@3x.webp) no-repeat;
-    background-position: top center;
-    background-size: cover;
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -126,27 +97,9 @@ svg {
     padding-top: 100px;
   }
 
-  .hero-img {
-    background: url(../images/hero/hero-tablet.webp) no-repeat;
+  .hero-img-wrap {
     margin-top: 32px;
     margin-bottom: 16px;
-    height: 550px;
-  }
-
-  @media (min-resolution: 192dpi) {
-    .hero-img {
-      background: url(../images/hero/hero-tablet@2x.webp) no-repeat;
-      background-position: top center;
-      background-size: cover;
-    }
-  }
-
-  @media (min-resolution: 288dpi) {
-    .hero-img {
-      background: url(../images/hero/hero-tablet@3x.webp) no-repeat;
-      background-position: top center;
-      background-size: cover;
-    }
   }
 
   .hero-text {
@@ -190,27 +143,9 @@ svg {
     align-items: flex-start;
   }
 
-  .hero-img {
-    background: url(../images/hero/hero-desktop.webp) no-repeat;
+  .hero-img-wrap {
     margin-top: 32px;
-    height: 350px;
     margin-bottom: 0;
-  }
-
-  @media (min-resolution: 192dpi) {
-    .hero-img {
-      background: url(../images/hero/hero-desktop@2x.webp) no-repeat;
-      background-position: top center;
-      background-size: cover;
-    }
-  }
-
-  @media (min-resolution: 288dpi) {
-    .hero-img {
-      background: url(../images/hero/hero-desktop@3x.webp) no-repeat;
-      background-position: top center;
-      background-size: cover;
-    }
   }
 
   .hero-title {

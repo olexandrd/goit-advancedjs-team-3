@@ -30,7 +30,18 @@
             </p>
           </div>
           <div class="hero-right">
-            <div class="hero-widget"></div>
+            <div class="hero-widget">
+              <img
+                src="../images/hero/hero-widget-desktop.webp"
+                alt="Widget image"
+                srcset="
+                  ../images/hero/hero-widget-desktop.webp,
+                  ../images/hero/hero-widget-desktop@2x.webp 2x,
+                  ../images/hero/hero-widget-desktop@3x.webp 3x
+                "
+                loading="lazy"
+              />
+            </div>
 
             <ul class="hero-hashtags">
               <li class="hero-hashtags-item">#Sport</li>
@@ -40,7 +51,30 @@
             </ul>
           </div>
         </div>
-        <div class="hero-img"></div>
+        <div class="hero-img-wrap">
+          <img
+            src="../images/hero/hero-mobile.webp"
+            srcset="
+              ../images/hero/hero-mobile.webp      375w,
+              ../images/hero/hero-mobile@2x.webp   750w,
+              ../images/hero/hero-mobile@3x.webp  1125w,
+              ../images/hero/hero-tablet.webp      768w,
+              ../images/hero/hero-tablet@2x.webp  1536w,
+              ../images/hero/hero-tablet@3x.webp  2304w,
+              ../images/hero/hero-desktop.webp    1440w,
+              ../images/hero/hero-desktop@2x.webp 2880w,
+              ../images/hero/hero-desktop@3x.webp 4320w
+            "
+            sizes="
+            (min-width: 1440px) 1440px,
+            (min-width: 768px) 768px,
+            (min-width: 375px) 375px,
+            100vw
+          "
+            class="hero-img"
+            alt="Hero Image"
+          />
+        </div>
         <ul class="hero-hashtags hidden">
           <li class="hero-hashtags-item">#Sport</li>
           <li class="hero-hashtags-item">#Healthy</li>

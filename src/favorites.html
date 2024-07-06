@@ -31,28 +31,45 @@
       <load src="./partials/header.html" />
     </header>
     <main>
-    <section class="container">
-      <h1 class="exercise-header favorites-title">Favorites</h1>
-      <section class="favorites-container">
-        <section class="favorite-hero-section">
-          <load src="/partials/quote.html" />
-          <load src="/partials/info_block_min.html" />
+      <section class="container">
+        <h1 class="exercise-header favorites-title">Favorites</h1>
+        <section class="favorites-container">
+          <section class="favorite-hero-section">
+            <load src="/partials/quote.html" />
+            <load src="/partials/info_block_min.html" />
 
-          <img
-            src="./img/favorite-baner_1.png"
-            alt="women sportswear workingout outdoors"
-            class="favorites-image"
-          />
+            <img
+              src="./public/images/favorite/favorite-banner-mobile.webp"
+              srcset="
+                ./public/images/favorite/favorite-banner-mobile.webp     375w,
+                ./public/images/favorite/favorite-banner-mobile@2x.webp  750w,
+                ./public/images/favorite/favorite-banner-mobile@3x.webp 1125w,
+                ./public/images/favorite/favorite-banner-tablet.webp     768w,
+                ./public/images/favorite/favorite-banner-tablet@2x.webp 1536w,
+                ./public/images/favorite/favorite-banner-tablet@3x.webp 2304w,
+                ./public/images/favorite/favorite-banner-pc.webp        1440w,
+                ./public/images/favorite/favorite-banner-pc@2x.webp     2880w,
+                ./public/images/favorite/favorite-banner-pc@3x.webp     4320w
+              "
+              sizes="
+                (min-width: 1440px) 1440px,
+                (min-width: 768px) 768px,
+                (min-width: 375px) 375px,
+                100vw
+              "
+              alt="women sportswear workingout outdoors"
+              class="favorites-image"
+            />
+          </section>
+          <p class="favorites-text visually-hidden">
+            It appears that you haven't added any exercises to your favorites
+            yet. To get started, you can add exercises that you like to your
+            favorites for easier access in the future.
+          </p>
+          <ul class="practice-list"></ul>
+          <ul class="pagination js-pagination"></ul>
         </section>
-        <p class="favorites-text visually-hidden">
-          It appears that you haven't added any exercises to your favorites yet.
-          To get started, you can add exercises that you like to your favorites
-          for easier access in the future.
-        </p>
-        <ul class="practice-list"></ul>
-        <ul class="pagination js-pagination"></ul>
       </section>
-    </section>
     </main>
 
     <!-- Up button -->
