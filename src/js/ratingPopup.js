@@ -20,6 +20,7 @@ function onRatingFormSubmit(e) {
           message: 'Thanks for rating!',
         });
         refs.ratingForm.reset();
+        activeRating = 0;
       })
       .catch(error => {
         iziToast.error({
