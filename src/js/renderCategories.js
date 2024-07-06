@@ -24,5 +24,8 @@ export function renderCategories(arr) {
     )
     .join('');
 
+  if (refs.list.classList.contains('exercise-list')) {
+    refs.list.classList.replace('exercise-list', 'filtered-list');
+  }
   refs.list.innerHTML = markup;
 }

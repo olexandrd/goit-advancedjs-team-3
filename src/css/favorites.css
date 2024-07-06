@@ -6,7 +6,6 @@
 }
 
 .favorites-container {
-  max-width: 345px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -19,15 +18,15 @@
 
 .practice-list {
   background-color: var(--light);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   margin-top: 40px;
   gap: 20px;
-}
+  flex: 1;
 
-.exercise-card {
-  max-width: 335px;
-  height: 141px;
+  &.hidden {
+    display: none;
+  }
 }
 
 .favorites-text {
@@ -57,11 +56,6 @@
   margin-bottom: 20px;
 }
 
-.favorites-container .exercise-card {
-  max-width: 335px;
-  height: 141px;
-}
-
 .favorites-container .exercise-header {
   margin-top: 60px;
   margin-bottom: 20px;
@@ -83,12 +77,8 @@
     margin-bottom: 32px;
   }
 
-  .favorites-container {
-    max-width: 704px;
-
-    .pagination {
-      margin-top: 32px;
-    }
+  .favorites-container .pagination {
+    margin-top: 32px;
   }
 
   .favorites-container .quote {
@@ -115,16 +105,11 @@
   }
 
   .practice-list {
-    flex-direction: unset;
-    flex-wrap: wrap;
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 32px;
     margin-top: 64px;
     align-content: start;
-  }
-
-  .favorites-container .exercise-card {
-    width: 344px;
-    max-width: 344px;
   }
 
   .favorites-text {
@@ -137,10 +122,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .practice-list .exercise-card {
-    width: 405px;
-    max-width: 405px;
-  }
   .favorites-title {
     margin-top: 70px;
     margin-bottom: 32px;
@@ -161,7 +142,6 @@
 
   .favorites-container {
     flex-direction: row;
-    max-width: 1376px;
     display: flex;
     gap: 32px;
 
@@ -185,9 +165,6 @@
   }
 
   .practice-list {
-    max-width: 850px;
-    column-gap: 16px;
-    row-gap: 32px;
     height: 487px;
     overflow: auto;
     margin-top: 0;
@@ -222,5 +199,6 @@
   .practice-list {
     scrollbar-width: thin;
     scrollbar-color: #242424 #2424241a;
+    padding-right: 19px;
   }
 }

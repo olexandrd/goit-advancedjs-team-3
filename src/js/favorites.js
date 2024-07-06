@@ -59,9 +59,11 @@ function updatePagination(pages, currentPage) {
 export function resizerHandler(data = localData) {
   if (!data.length) {
     noCardsTextRef.classList.remove('visually-hidden');
+    favoritesListRef.classList.add('hidden');
     return;
   } else {
     noCardsTextRef.classList.add('visually-hidden');
+    favoritesListRef.classList.remove('hidden');
   }
 
   const widthVP = window.innerWidth;
