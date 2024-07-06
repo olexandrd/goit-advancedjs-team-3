@@ -12,6 +12,7 @@
 .info-block-title {
   display: flex;
   flex-direction: column;
+  margin-bottom: 16px;
 }
 
 .info-block-title-main {
@@ -30,14 +31,12 @@
   opacity: 0.6;
   font-size: 14px;
   line-height: 1.28571;
-  margin-bottom: 16px;
 }
 
 .info-block-content {
   color: var(--dark);
   font-size: 14px;
   line-height: 1.28571;
-  margin-bottom: 8px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -60,7 +59,7 @@
     padding: 40px;
   }
 
-  .info-block-title-sub {
+  .info-block-title {
     margin-bottom: 24px;
   }
 }
