@@ -17,8 +17,8 @@ export function renderCategories(arr) {
               height="80"
             />
             <div class="category-card-content">
-              <h3 class="category-card-title">${capitalizeFirstLetter(filter)}</h3>
-              <p class="category-card-text">${capitalizeFirstLetter(name)}</p> 
+            <p class="category-card-title">${capitalizeFirstLetter(name)}</p> 
+            <h3 class="category-card-text">${capitalizeFirstLetter(filter)}</h3>
             </div>
         </li>`
     )

@@ -253,11 +253,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .footer-text-inner-wrap {
-  }
-}
-
-@media screen and (min-width: 768px) {
   .footer-year {
     margin-left: 178px;
   }
