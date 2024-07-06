@@ -80,6 +80,9 @@ function addExerciseToFavorites(exercise) {
   let favorites = getFavoritesData();
   favorites.push(exercise);
   localStorage.setItem('favorites', JSON.stringify(favorites));
+  if (window.location.pathname.includes('favorites.html')) {
+    resizerHandler(favorites);
+  }
   iziToast.success({ message: 'Exercise added to favorites!' });
 }
 
