@@ -27,10 +27,10 @@
     <link rel="icon" type="image/x-icon" href="./favicon.svg" />
     <script type="module" crossorigin src="/goit-advancedjs-team-3/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/vendor-7b59b48c.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/eventHandlers-bc7f8502.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-fadbfcb2.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/scroll-up-153f7a71.js">
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/eventHandlers-cb5561b5.css">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/eventHandlers-81f13d45.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/search-input-6392242f.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-team-3/assets/scroll-up-b7595a53.js">
+    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/eventHandlers-2b47e745.css">
     <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -525,11 +525,47 @@
 
 
     <!--  Rating pop-up -->
-    <div></div>
+    <div class="exercise-pop-up-backdrop js-rating-pop-up-backdrop">
+  <div class="rating-pop-up-container" id="rating-pop-up">
+    <button
+      class="exercise-pop-up-close-btn js-close-rating-pop-up"
+      aria-label="Close rating"
+    >
+      <svg class="exercise-pop-up-close-icon" width="24" height="24">
+        <use href="../images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+
+    <div class="rating-pop-up-content"></div>
+    <form class="form-rating js-form-rating">
+      <input
+        class="rating-form-input"
+        type="email"
+        name="email"
+        placeholder="Email"
+        pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        required
+        autocomplete="email"
+      />
+      <textarea
+        name="comment"
+        id="comment"
+        class="rating-form-comment"
+        placeholder="Your comment"
+        required
+      ></textarea>
+
+      <button class="button rating-btn-save" type="submit">
+        <span class="button-label">Send</span>
+      </button>
+    </form>
+  </div>
+</div>
 
 
     <!-- Load scripts -->
     
+
 
 
 
