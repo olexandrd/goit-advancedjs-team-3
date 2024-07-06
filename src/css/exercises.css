@@ -101,6 +101,8 @@
 .exercise-card-icon {
   width: 24px;
   height: 24px;
+  fill: var(--light);
+  stroke: var(--dark);
 }
 
 .exercise-card-btn {

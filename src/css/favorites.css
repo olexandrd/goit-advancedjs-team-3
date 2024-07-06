@@ -26,7 +26,6 @@
 .favorites-pagination {
   display: flex;
   height: 31px;
-  outline: 1px solid red;
   width: 80px;
   margin: 0 auto;
   margin-bottom: 80px;
