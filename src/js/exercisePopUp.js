@@ -97,7 +97,7 @@ function handleRemoveFromFavorites(event) {
   const exercise = JSON.parse(exercisePopupRemoveFavoritesBtn.dataset.exercise);
   const isRemoved = removeExerciseFromFavorites(exercise._id);
   if (isRemoved && window.location.pathname.includes('favorites.html')) {
-    resizerHandler(getFavoritesData());
+    resizerHandler(getFavoritesData(), true);
   }
   openExercisePopUp(exercise._id);
   event.stopPropagation();

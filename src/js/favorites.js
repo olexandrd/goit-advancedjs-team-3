@@ -13,11 +13,10 @@ const noCardsTextRef = document.querySelector('.favorites-text');
 const favoritesListRef = document.querySelector('.practice-list');
 const paginationElement = document.querySelector('.js-pagination');
 
-function splitHandler(arr, widthVP) {
-  const splitter = widthVP < 768 ? 8 : 10;
+function splitHandler(arr, itemsPerPage) {
   let result = [];
-  for (let i = 0; i < arr.length; i += splitter) {
-    result.push(arr.slice(i, i + splitter));
+  for (let i = 0; i < arr.length; i += itemsPerPage) {
+    result.push(arr.slice(i, i + itemsPerPage));
   }
   return result;
 }
@@ -28,7 +27,7 @@ function onExerciseRemoveClick(e) {
   const exerciseID = target.getAttribute('data-exercise-id');
   if (exerciseID) {
     if (removeExerciseFromFavorites(exerciseID)) {
-      resizerHandler(getFavoritesData());
+      resizerHandler(getFavoritesData(), true);
     }
   }
 }
@@ -54,12 +53,18 @@ function updatePagination(pages, currentPage) {
     });
     paginationElement.appendChild(pageItem);
   });
+
+  // Hide pagination if there's only one page
+  if (pages.length <= 1) {
+    paginationElement.classList.add('visually-hidden');
+  }
 }
 
-export function resizerHandler(data = localData) {
+export function resizerHandler(data = localData, isDeletion = false) {
   if (!data.length) {
     noCardsTextRef.classList.remove('visually-hidden');
-    favoritesListRef.classList.add('hidden');
+    favoritesListRef.innerHTML = '';
+    paginationElement.classList.add('hidden');
     return;
   } else {
     noCardsTextRef.classList.add('visually-hidden');
@@ -76,10 +81,29 @@ export function resizerHandler(data = localData) {
 
   if (data.length <= itemsPerPage) {
     itemHandler(data);
+    paginationElement.classList.add('visually-hidden');
   } else {
-    const pages = splitHandler(data, widthVP);
-    itemHandler(pages[0]);
-    updatePagination(pages, 0);
+    const pages = splitHandler(data, itemsPerPage);
+    let currentPage = 0;
+
+    if (isDeletion) {
+      const activePageItem = paginationElement.querySelector('.pagination-item.active');
+      currentPage = activePageItem
+        ? parseInt(activePageItem.getAttribute('data-id'), 10)
+        : 0;
+
+      if (currentPage >= pages.length) {
+        currentPage = pages.length - 1;
+      }
+    }
+
+    if (pages.length === 0) {
+      noCardsTextRef.classList.remove('visually-hidden');
+      paginationElement.classList.add('visually-hidden');
+    } else {
+      itemHandler(pages[currentPage]);
+      updatePagination(pages, currentPage);
+    }
   }
 }
 
