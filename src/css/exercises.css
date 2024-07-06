@@ -127,7 +127,7 @@
 .exercise-card-icon-garbage {
   width: 16px;
   height: 16px;
-  fill: var(--light);
+  fill: none;
   stroke: var(--dark);
 }
 
