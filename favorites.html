@@ -26,9 +26,9 @@
     <title>Your Energy</title>
     <link rel="icon" type="image/x-icon" href="./favicon.svg" />
     <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/vendor-347e8cf8.js"></script>
-    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/eventHandlers-35f83ab6.js"></script>
-    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/ratingPopup-4b4b8caa.js"></script>
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/eventHandlers-c45fa3b1.css">
+    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/eventHandlers-80e72665.js"></script>
+    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/ratingPopup-16409215.js"></script>
+    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/eventHandlers-982f37d2.css">
     <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -107,11 +107,11 @@
 
     </header>
     <main>
-    <section class="container">
-      <h1 class="exercise-header favorites-title">Favorites</h1>
-      <section class="favorites-container">
-        <section class="favorite-hero-section">
-          <div id="quote" class="quote hidden">
+      <section class="container">
+        <h1 class="exercise-header favorites-title">Favorites</h1>
+        <section class="favorites-container">
+          <section class="favorite-hero-section">
+            <div id="quote" class="quote hidden">
   <div>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +156,7 @@
   </div>
 </div>
 
-          <div id="info-block-min" class="info-block-min">
+            <div id="info-block-min" class="info-block-min">
   <div class="info-block-min-icon">
     <svg
       width="20"
@@ -177,21 +177,28 @@
 </div>
 
 
-          <img
-            src="/goit-advancedjs-team-3/assets/favorite-baner_1-40ad78cd.png"
-            alt="women sportswear workingout outdoors"
-            class="favorites-image"
-          />
+            <img
+              src="/goit-advancedjs-team-3/assets/favorite-banner-mobile-12a1e4ab.webp"
+              srcset="/goit-advancedjs-team-3/assets/favorite-banner-mobile-12a1e4ab.webp 375w, /goit-advancedjs-team-3/assets/favorite-banner-mobile@2x-9312ca7a.webp 750w, /goit-advancedjs-team-3/assets/favorite-banner-mobile@3x-a1c2483e.webp 1125w, /goit-advancedjs-team-3/assets/favorite-banner-tablet-2d288016.webp 768w, /goit-advancedjs-team-3/assets/favorite-banner-tablet@2x-65c7d018.webp 1536w, /goit-advancedjs-team-3/assets/favorite-banner-tablet@3x-e657ed1a.webp 2304w, /goit-advancedjs-team-3/assets/favorite-banner-pc-7c22e38b.webp 1440w, /goit-advancedjs-team-3/assets/favorite-banner-pc@2x-056a9bfd.webp 2880w, /goit-advancedjs-team-3/assets/favorite-banner-pc@3x-10524bbb.webp 4320w"
+              sizes="
+                (min-width: 1440px) 1440px,
+                (min-width: 768px) 768px,
+                (min-width: 375px) 375px,
+                100vw
+              "
+              alt="women sportswear workingout outdoors"
+              class="favorites-image"
+            />
+          </section>
+          <p class="favorites-text visually-hidden">
+            It appears that you haven't added any exercises to your favorites
+            yet. To get started, you can add exercises that you like to your
+            favorites for easier access in the future.
+          </p>
+          <ul class="practice-list"></ul>
+          <ul class="pagination js-pagination"></ul>
         </section>
-        <p class="favorites-text visually-hidden">
-          It appears that you haven't added any exercises to your favorites yet.
-          To get started, you can add exercises that you like to your favorites
-          for easier access in the future.
-        </p>
-        <ul class="practice-list"></ul>
-        <ul class="pagination js-pagination"></ul>
       </section>
-    </section>
     </main>
 
     <!-- Up button -->
