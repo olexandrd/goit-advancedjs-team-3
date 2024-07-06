@@ -3,8 +3,7 @@
   display: block;
   height: 119px;
   width: 335px;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 .favorites-container {
@@ -23,13 +22,9 @@
   gap: 20px;
 }
 
-.favorites-pagination {
-  display: flex;
-  height: 31px;
-  width: 80px;
-  margin: 0 auto;
-  margin-bottom: 80px;
-  gap: 20px;
+.exercise-card {
+  max-width: 335px;
+  height: 141px;
 }
 
 .favorites-text {
@@ -205,10 +200,5 @@
   .practice-list {
     scrollbar-width: thin;
     scrollbar-color: #242424 #2424241a;
-  }
-
-  .practice-list::-moz-scrollbar-thumb:hover {
-    background: #555;
-    cursor: pointer;
   }
 }
