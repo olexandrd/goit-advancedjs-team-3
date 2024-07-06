@@ -51,58 +51,58 @@
     border-radius: 50%;
     border: 1px solid var(--dark);
     cursor: pointer;
+  }
 
-    .pagination-link {
-      display: block;
-      width: 20px;
-      height: 20px;
-      position: relative;
-    }
+  .pagination-arrow .pagination-link {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
 
-    .arrow-icon.first {
-      position: absolute;
+  .pagination-arrow .arrow-icon.first {
+    position: absolute;
+  }
 
-      &:first-child {
-        left: -4px;
-      }
+  .pagination-arrow .arrow-icon.first:first-child {
+    left: -4px;
+  }
 
-      &:last-child {
-        left: 2px;
-      }
-    }
+  .pagination-arrow .arrow-icon.first:last-child {
+    left: 2px;
+  }
 
-    .arrow-icon.last {
-      position: absolute;
+  .pagination-arrow .arrow-icon.last {
+    position: absolute;
+  }
 
-      &:first-child {
-        right: -4px;
-      }
+  .pagination-arrow .arrow-icon.last:first-child {
+    right: -4px;
+  }
 
-      &:last-child {
-        right: 2px;
-      }
-    }
+  .pagination-arrow .arrow-icon.last:last-child {
+    right: 2px;
+  }
 
-    &.disabled {
-      cursor: default;
-      border: 1px solid var(--light-grey);
+  .pagination-arrow.disabled {
+    cursor: default;
+    border: 1px solid var(--light-grey);
+  }
 
-      .pagination-link {
-        cursor: default;
-      }
+  .pagination-arrow.disabled .pagination-link {
+    cursor: default;
+  }
 
-      svg {
-        fill: var(--dark);
-        opacity: 0.5;
-      }
-    }
+  .pagination-arrow.disabled svg {
+    fill: var(--dark);
+    opacity: 0.5;
+  }
 
-    &.go-to-prev {
-      margin-right: 20px;
-    }
+  .pagination-arrow.go-to-prev {
+    margin-right: 20px;
+  }
 
-    &.go-to-next {
-      margin-left: 20px;
-    }
+  .pagination-arrow.go-to-next {
+    margin-left: 20px;
   }
 }
