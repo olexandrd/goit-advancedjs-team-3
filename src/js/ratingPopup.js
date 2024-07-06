@@ -28,7 +28,6 @@ function onRatingFormSubmit(e) {
       })
       .finally(() => {
         activeRating = 0;
-        exerciseId = null;
       });
   } else {
     iziToast.warning({
