@@ -25,6 +25,10 @@ function onRatingFormSubmit(e) {
         iziToast.error({
           message: error.message,
         });
+      })
+      .finally(() => {
+        activeRating = 0;
+        exerciseId = null;
       });
   } else {
     iziToast.warning({
