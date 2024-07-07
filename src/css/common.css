@@ -99,7 +99,7 @@ button {
 
 @media screen and (min-width: 1440px) {
   .main-section {
-    padding: 132px;
+    padding-bottom: 132px;
   }
 
   .container {
