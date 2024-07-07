@@ -16,6 +16,11 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
+  .footer {
+    padding-top: 64px;
+    padding-bottom: 16px;
+  }
 }
 
 .footer-top-wrapper {
