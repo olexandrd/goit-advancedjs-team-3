@@ -2,18 +2,8 @@
   border-radius: 20px;
   display: block;
   height: 119px;
+  object-fit: cover;
   width: 100%;
-}
-
-.favorites-container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding-bottom: 20px;
-
-  .pagination {
-    margin-top: 20px;
-  }
 }
 
 .practice-list {
@@ -52,11 +42,6 @@
   line-height: 1.357;
   letter-spacing: -0.02em;
 
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-
-.favorites-container .exercise-header {
   margin-top: 60px;
   margin-bottom: 20px;
 }
@@ -130,6 +115,7 @@
   .favorite-hero-section {
     margin-bottom: unset;
     max-width: 494px;
+    flex-direction: row;
   }
 
   .favorites-text {
@@ -140,17 +126,12 @@
     margin-top: 114px;
   }
 
-  .favorites-container {
-    flex-direction: row;
-    display: flex;
-    gap: 32px;
-
-    .pagination {
-      display: none;
-    }
+  .info-block-min {
+    width: 237px;
+    height: 141px;
   }
 
-  .favorites-container #quote {
+  .favorites-container .quote {
     width: 494px;
   }
 
