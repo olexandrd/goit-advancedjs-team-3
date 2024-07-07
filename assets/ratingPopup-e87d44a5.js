@@ -17,4 +17,4 @@ import{e as g,d as y,i as l}from"./vendor-347e8cf8.js";import{f as b,r as n,g as
     </div>
     </div>
   `}function P(){n.ratingPopUpCloseBtn.addEventListener("click",p),n.ratingPopUpContent.addEventListener("click",f),n.ratingForm.addEventListener("submit",v)}function w(){n.ratingPopUpCloseBtn.removeEventListener("click",p),n.ratingPopUpContent.removeEventListener("click",f),n.ratingForm.removeEventListener("submit",v)}function k(){const e=document.querySelector(".js-add-rating");return e?(e.addEventListener("click",q),!0):!1}const M=new MutationObserver(e=>{e.forEach(t=>{(t.type==="childList"||t.type==="subtree")&&k()})});M.observe(document,{childList:!0,subtree:!0});k();
-//# sourceMappingURL=ratingPopup-9a4be52d.js.map
+//# sourceMappingURL=ratingPopup-e87d44a5.js.map
