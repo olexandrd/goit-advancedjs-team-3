@@ -1,19 +1,14 @@
+.favorites-main-section {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
 .favorites-image {
   border-radius: 20px;
   display: block;
   height: 119px;
+  object-fit: cover;
   width: 100%;
-}
-
-.favorites-container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding-bottom: 20px;
-
-  .pagination {
-    margin-top: 20px;
-  }
 }
 
 .practice-list {
@@ -56,16 +51,16 @@
   margin-bottom: 20px;
 }
 
-.favorites-container .exercise-header {
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-
 .favorites-container .quote {
   padding: 20px;
 }
 
 @media screen and (min-width: 768px) {
+  .favorites-main-section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
   .favorites-title {
     font-size: 44px;
     font-style: normal;
@@ -127,9 +122,15 @@
     margin-bottom: 32px;
   }
 
+  .favorites-main-section {
+    padding-top: 70px;
+    padding-bottom: 63px;
+  }
+
   .favorite-hero-section {
     margin-bottom: unset;
     max-width: 494px;
+    flex-direction: row;
   }
 
   .favorites-text {
@@ -140,17 +141,12 @@
     margin-top: 114px;
   }
 
-  .favorites-container {
-    flex-direction: row;
-    display: flex;
-    gap: 32px;
-
-    .pagination {
-      display: none;
-    }
+  .info-block-min {
+    width: 237px;
+    height: 141px;
   }
 
-  .favorites-container #quote {
+  .favorites-container .quote {
     width: 494px;
   }
 

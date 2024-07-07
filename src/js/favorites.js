@@ -10,7 +10,7 @@ import { createPaginationItem } from './renderPagination.js';
 
 let localData = [];
 const noCardsTextRef = document.querySelector('.favorites-text');
-const favoritesListRef = document.querySelector('.practice-list');
+const favoritesListRef = document.querySelector('.exercise-list');
 const paginationElement = document.querySelector('.js-pagination');
 
 function splitHandler(arr, itemsPerPage) {
