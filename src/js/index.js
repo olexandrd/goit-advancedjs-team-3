@@ -7,6 +7,7 @@ import {
   onExerciseStartClick,
 } from './eventHandlers';
 import './search-input';
+import { resetExerciseHeader } from './header';
 
 window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   if (e.matches) {
@@ -22,6 +23,7 @@ window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
 
   refs.searchForm.reset();
   refs.searchForm.classList.add('hidden');
+  resetExerciseHeader();
 
   rerender();
 });
