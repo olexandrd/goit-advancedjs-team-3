@@ -122,7 +122,6 @@ function handleAddToFavorites(event) {
   const exercise = JSON.parse(exercisePopupAddFavoritesBtn.dataset.exercise);
   addExerciseToFavorites(exercise);
   event.stopPropagation();
-  console.log(refs.exercisePopupAddFavoritesBtn);
   refs.exercisePopupAddFavoritesBtn.classList.add('visually-hidden');
   refs.exercisePopupRemoveFavoritesBtn.classList.remove('visually-hidden');
 }
