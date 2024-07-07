@@ -1,28 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Your Energy: Get Body in shape, Stay healthy."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Your Energy: Get Body in shape, Stay healthy."
+  />
 
-    
-    
-    <title>Your Energy</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.svg" />
-    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/vendor-347e8cf8.js"></script>
-    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/eventHandlers-1d7ab357.js"></script>
-    <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/ratingPopup-2c130eda.js"></script>
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/eventHandlers-ba4d2ba1.css">
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/ratingPopup-3d215c1c.css">
-  </head>
-  <body>
-    <header class="header">
-      <div class="container header-container">
+  
+  
+  <title>Your Energy</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.svg" />
+  <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/vendor-347e8cf8.js"></script>
+  <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/eventHandlers-23fc22c2.js"></script>
+  <script type="module" crossorigin src="/goit-advancedjs-team-3/assets/ratingPopup-082b8696.js"></script>
+  <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/eventHandlers-2b62a9f2.css">
+  <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/vendor-e5212ee8.css">
+  <link rel="stylesheet" href="/goit-advancedjs-team-3/assets/ratingPopup-3d215c1c.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-container">
   <a href="./" class="link logo" aria-label="Homepage">
     <svg class="icon-logo" width="132" height="24">
       <use href="./images/icons.svg#icon-logo"></use>
@@ -94,13 +94,16 @@
   </button>
 </div>
 
-    </header>
-    <main>
-      <section class="container">
-        <h1 class="exercise-header favorites-title">Favorites</h1>
-        <section class="favorites-container">
-          <section class="favorite-hero-section">
-            <div id="quote" class="quote hidden">
+</header>
+<main>
+  <section class="favorites-main-section">
+    <div class="container">
+      <div class="filters-wrapper">
+        <h1 class="exercise-header">Favorites</h1>
+      </div>
+      <div class="main-content">
+        <div class="favorite-hero-section favorites-container">
+          <div id="quote" class="quote hidden">
   <div>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +148,7 @@
   </div>
 </div>
 
-            <div id="info-block-min" class="info-block-min">
+          <div id="info-block-min" class="info-block-min">
   <div class="info-block-min-icon">
     <svg
       width="20"
@@ -166,9 +169,9 @@
 </div>
 
 
-            <img
-              src="./images/favorite/favorite-banner-mobile.webp"
-              srcset="
+          <img
+            src="./images/favorite/favorite-banner-mobile.webp"
+            srcset="
                 ./images/favorite/favorite-banner-mobile.webp     375w,
                 ./images/favorite/favorite-banner-mobile@2x.webp  750w,
                 ./images/favorite/favorite-banner-mobile@3x.webp 1125w,
@@ -179,29 +182,32 @@
                 ./images/favorite/favorite-banner-pc@2x.webp     2880w,
                 ./images/favorite/favorite-banner-pc@3x.webp     4320w
               "
-              sizes="
+            sizes="
                 (min-width: 1440px) 1440px,
                 (min-width: 768px) 768px,
                 (min-width: 375px) 375px,
                 100vw
               "
-              alt="women sportswear workingout outdoors"
-              class="favorites-image"
-            />
-          </section>
+            alt="women sportswear workingout outdoors"
+            class="favorites-image"
+          />
+        </div>
+        <div class="exercises-container">
           <p class="favorites-text visually-hidden">
             It appears that you haven't added any exercises to your favorites
             yet. To get started, you can add exercises that you like to your
             favorites for easier access in the future.
           </p>
-          <ul class="practice-list"></ul>
+          <ul class="exercise-list"></ul>
           <ul class="pagination js-pagination"></ul>
-        </section>
-      </section>
-    </main>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <!-- Up button -->
-    <div class="scroll-up-button-container visually-hidden">
+<!-- Up button -->
+<div class="scroll-up-button-container visually-hidden">
   <button
     class="scroll-up-button scroll-up-button pulse"
     aria-label="Scroll Up"
@@ -213,8 +219,8 @@
 </div>
 
 
-    <!--  Menu -->
-    <div class="menu-backdrop js-menu-container">
+<!--  Menu -->
+<div class="menu-backdrop js-menu-container">
   <div class="menu-container" id="mobile-menu">
     <button
       class="menu-toggle menu-close-btn js-close-menu"
@@ -276,8 +282,8 @@
 </div>
 
 
-    <!--  Exercise pop-up -->
-    <div class="exercise-pop-up-backdrop js-exercise-pop-up-container">
+<!--  Exercise pop-up -->
+<div class="exercise-pop-up-backdrop js-exercise-pop-up-container">
   <div class="exercise-pop-up-container" id="exercise-pop-up">
     <button
       class="exercise-pop-up-close-btn js-close-exercise-pop-up"
@@ -320,8 +326,8 @@
 </div>
 
 
-    <!--  Rating pop-up -->
-    <div class="exercise-pop-up-backdrop js-rating-pop-up-backdrop">
+<!--  Rating pop-up -->
+<div class="exercise-pop-up-backdrop js-rating-pop-up-backdrop">
   <div class="rating-pop-up-container" id="rating-pop-up">
     <button
       class="exercise-pop-up-close-btn js-close-rating-pop-up"
@@ -359,13 +365,13 @@
 </div>
 
 
-    <!-- Load scripts -->
-    
+<!-- Load scripts -->
 
 
 
 
 
 
-  </body>
+
+</body>
 </html>
