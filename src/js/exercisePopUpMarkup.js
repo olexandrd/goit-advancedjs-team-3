@@ -87,25 +87,20 @@ function isExerciseInFavoritesList(exerciseID) {
 }
 
 function createFavoritesButtonMarkup(exerciseID) {
-  if (!isExerciseInFavoritesList(exerciseID)) {
-    return `
-    <button class="button popup-btn" id="add-favorites">
+  return `
+    <button class="button popup-btn ${!isExerciseInFavoritesList(exerciseID) ? '' : 'visually-hidden'}" id="add-favorites">
       <span class="button-label">Add to favorites</span>
         <svg class="button-icon icon" width="18" height="18">
           <use href="./images/icons.svg#icon-heart"></use>
         </svg>
     </button>
-    `;
-  } else {
-    return `
-    <button class="button popup-btn" id="remove-favorites">
+    <button class="button popup-btn ${isExerciseInFavoritesList(exerciseID) ? '' : 'visually-hidden'}" id="remove-favorites">
       <span class="button-label">Remove from favorites</span>
         <svg class="button-icon icon" width="18" height="18">
           <use href="./images/icons.svg#icon-trash"></use>
         </svg>
     </button>
     `;
-  }
 }
 
 export function createExerciseMarkup(exercise) {
