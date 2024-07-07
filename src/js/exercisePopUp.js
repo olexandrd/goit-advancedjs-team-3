@@ -137,7 +137,7 @@ function handleRemoveFromFavorites(event) {
   event.stopPropagation();
 }
 
-function handleESCClick(e) {
+export function handleESCClick(e) {
   if (e.code === 'Escape') {
     closeExercisePopUp();
   }

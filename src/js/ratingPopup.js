@@ -1,6 +1,7 @@
 import iziToast from 'izitoast';
 import { refs } from './constants';
 import { servicePatchExercisesByIdRating } from './services';
+import { handleESCClick } from './exercisePopUp.js';
 
 let activeRating = 0;
 let exerciseId;
@@ -63,6 +64,7 @@ function onGiveRatingBtnClick() {
 
   refs.ratingPopUpContent.innerHTML = createRatingMarkup();
 
+  document.removeEventListener('keydown', handleESCClick);
   addRatingPopupListeners();
 }
 
@@ -71,7 +73,14 @@ function closeRatingPopUp() {
   refs.exercisePopUpBackdrop.style.display = 'flex';
   refs.exercisePopUpBackdrop.classList.add('is-open');
 
+  document.addEventListener('keydown', handleESCClick);
   removeRatingPopupListeners();
+}
+
+function handleESCRatingClick(e) {
+  if (e.code === 'Escape') {
+    closeRatingPopUp();
+  }
 }
 
 function createRatingStarsMarkup() {
@@ -114,12 +123,14 @@ function addRatingPopupListeners() {
   refs.ratingPopUpCloseBtn.addEventListener('click', closeRatingPopUp);
   refs.ratingPopUpContent.addEventListener('click', onStarClick);
   refs.ratingForm.addEventListener('submit', onRatingFormSubmit);
+  document.addEventListener('keydown', handleESCRatingClick);
 }
 
 function removeRatingPopupListeners() {
   refs.ratingPopUpCloseBtn.removeEventListener('click', closeRatingPopUp);
   refs.ratingPopUpContent.removeEventListener('click', onStarClick);
   refs.ratingForm.removeEventListener('submit', onRatingFormSubmit);
+  document.removeEventListener('keydown', handleESCRatingClick);
 }
 
 // Function to check if the button exists and add the event listener
